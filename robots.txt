@@ -1,0 +1,6 @@
+# robots.txt for Junker's Split Tracker
+# Default: allow all crawlers to index the site
+
+User-agent: *
+Disallow:
+
