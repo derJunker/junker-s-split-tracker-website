@@ -1,0 +1,194 @@
+:root {
+    --text: #000000;
+    --bg: #ffffff;
+    --accent: #65a524;
+    --border-radius: 8px;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Courier New', sans-serif;
+    font-weight: bold;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.btn {
+    background: linear-gradient(#7dc338, var(--accent));
+    color: var(--bg);
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    border: 2px solid var(--bg);
+    transition: transform 0.2s ease-in, box-shadow 0.15s ease-in-out, border-color 0.25s ease-in;
+}
+
+.btn:focus {
+    outline: transparent;
+}
+
+.btn.pressed:focus,
+.btn:focus-visible{
+    transform: translateY(2px);
+    box-shadow: inset 0 1px 0 2px rgb(0 0 0 / 90%);
+}
+
+a:focus-visible,
+.btn:focus-visible{
+    box-shadow: inset 0 1px 0 2px rgb(0 0 0 / 90%), 0 0 14px 6px rgba(101, 165, 36, 0.56);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    background-color:  var(--text);
+    color: var(--bg);
+
+    justify-content: space-between;
+    padding: 8px 16px;
+
+    #name {
+        width: fit-content;
+    }
+}
+
+#nav-btns {
+    display: flex;
+    gap: 16px;
+    white-space: nowrap;
+}
+
+#logo-n-name {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 1.5rem;
+
+    img {
+        width: 40px;
+        aspect-ratio: 1;
+    }
+}
+
+section {
+    padding: 32px 15vw;
+}
+
+#hero {
+    text-align: center;
+    line-height: 2.5rem;
+    background-color: var(--text);
+    background-image:
+            radial-gradient(circle, rgba(0,0 ,0, .25) 0%, rgba(0,0 ,0, 1) 100%),
+            url("/assets/pogostuck-tracker.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--bg);
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: 16px;
+    height: 60vh;
+    h1 {
+        max-width: 56rem;
+        margin-inline: auto;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6), 0 0 12px rgba(101, 165, 36, 0.18);
+    }
+}
+
+#about {
+    color: var(--bg);
+    background-color: var(--text);
+}
+
+#features {
+    ul {
+        list-style-type: none;
+        margin-inline: 3rem;
+    }
+
+    #features-list li::marker {
+        content: "✓ ";
+        color: var(--accent);
+    }
+
+    #limitations-list li::marker {
+        content: "✗ ";
+        color: var(--accent);
+    }
+}
+
+p {
+    margin-bottom: 16px;
+    margin-inline: 32px;
+}
+
+a {
+    color: var(--accent);
+}
+
+h2 {
+    margin-bottom: 8px;
+    font-size: 2.5rem;
+    text-decoration: underline var(--accent) .125rem;
+    text-underline-offset: 0.5rem;
+}
+
+.double-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+    margin-bottom: 32px;
+}
+
+@media (max-width: 56rem) {
+    section {
+        padding: 32px 5vw;
+    }
+
+    .double-column {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 38.5rem) {
+    #nav-download-btn {
+        display: none;
+    }
+}
+
+@media (max-width: 30.5rem) {
+    #name {
+        font-size:  1rem;
+    }
+}

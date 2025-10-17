@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="./assets/clipboard.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Junker's Split Tracker</title>
+</head>
+<body>
+<nav>
+    <span id="logo-n-name">
+        <img src="assets/clipboard.ico" alt="split tracker logo">
+        <span data-i18n="app_name" id="name">Junker's Split Tracker</span>
+    </span>
+    <span id="nav-btns">
+        <button id="nav-download-btn" class="btn" onclick="openDownload()" data-i18n="download_button">Download</button>
+        <button id="lang-toggle" class="btn" onclick="toggleLanguage()">日本語</button>
+    </span>
+</nav>
+<section id="hero">
+    <h1 data-i18n="hero_h1">Level up your Pogostuck Speedrunning expierience.</h1>
+    <button  data-i18n="try_button" class="btn" onclick="openDownload()">Try it out now!</button>
+</section>
+<section id="features">
+    <h2 data-i18n="features_title">Features</h2>
+    <div class="double-column" id="features-list">
+        <ul>
+            <li data-i18n="feature_default">Default Pogostuck Splittracker functionality</li>
+            <li data-i18n="feature_gold_splits">Gold Splits</li>
+            <li data-i18n="feature_gold_paces">Gold Paces</li>
+            <li data-i18n="feature_pace_estimations">Pace Estimations</li>
+            <li data-i18n="feature_sum_of_best">Sum of Best</li>
+            <li data-i18n="feature_race_your_best">Race your best times</li>
+        </ul>
+        <ul>
+            <li data-i18n="feature_reset_counters">Reset Counters</li>
+            <li data-i18n="feature_custom_modes">Custom Modes</li>
+            <li data-i18n="feature_loot_seed">Loot Seed display</li>
+            <li data-i18n="feature_more_customization">More Customization (coloring, hide skipped splits, size)</li>
+            <li data-i18n="feature_reversed_ud">Reversed UD Splits</li>
+        </ul>
+    </div>
+    <h2 data-i18n="limitations_title">Limitations</h2>
+    <div class="double-column" id="limitations-list">
+        <ul>
+            <li data-i18n="limitation_borderless_only">Only works with borderless not fullscreen</li>
+            <li data-i18n="limitation_windows_only">Only tested on Windows</li>
+        </ul>
+        <ul>
+            <li data-i18n="limitation_av_warning">Anti-Virus programs might give a warning when installing :)</li>
+        </ul>
+    </div>
+
+</section>
+<section id="about">
+    <h2 data-i18n="about_title">About</h2>
+    <p data-i18n="about_p1">Hey :). Thanks for checking out my split tracker :D. I put a lot of effort into it and i hope you like it.</p>
+    <p data-i18n="about_p2">If you play borderless you can use it just like the default split timer ingame just with more features. It allows you to play custom modes like Boostless with their own split times.</p>
+    <p data-i18n="about_p3">If you play with fullscreen there is currently no way for me to overlay the tracker. However you can let it run on a second monitor, or just in the background to track your gold splits.</p>
+    <p data-i18n="about_p4" data-i18n-html>I hope you like it and feedback is greatly appreciated! The program is completely free
+                             to use, however if you want to support me you can choose <a
+            href="https://buymeacoffee.com/derjunker" target="_blank"
+                                                                                                       title="buy me a coffee">to do so
+                                                                                                                here</a>.</p>
+</section>
+<script src="i18n.js" type="module"></script>
+<script>
+document.querySelectorAll(".btn").forEach(function(btn) {
+    btn.addEventListener("mousedown", function() {
+        btn.classList.add("pressed");
+    });
+    btn.addEventListener("mouseup", function() {
+        btn.classList.remove("pressed");
+    });
+});
+
+function openDownload() {
+    window.open("https://github.com/derJunker/pogostuck-split-tracker/releases/latest", "_blank");
+}
+</script>
+</body>
+</html>
