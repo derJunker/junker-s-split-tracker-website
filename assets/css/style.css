@@ -1,4 +1,20 @@
 :root {
+    color-scheme: light;
+    -webkit-color-scheme: light;
+}
+
+img.no-dark {
+    filter: none !important;
+    -webkit-filter: none !important;
+    forced-color-adjust: none;
+    image-rendering: auto;
+}
+
+html, body, #hero {
+    forced-color-adjust: none;
+}
+
+:root {
     --text: #000000;
     --bg: #ffffff;
     --accent: #65a524;

@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="./assets/clipboard.ico" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Prefer a light color scheme to opt out of browser automatic "force dark" transformations -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <!-- Suggest the theme color for UI (status bar / address bar) -->
+    <meta name="theme-color" content="#ffffff">
     <meta name="description" content="Junker's Split Tracker — a feature-rich Pogostuck split tracker for speedrunners. Gold splits, pace estimations, custom modes and more.">
     <meta name="keywords"
           content="Pogostuck, split tracker, speedrun, splits, gold splits, pace estimation, Rage with your friends">
@@ -22,7 +27,7 @@
 <body>
 <nav>
     <span id="logo-n-name">
-        <img src="assets/clipboard.ico" alt="split tracker logo">
+        <img src="assets/clipboard.ico" alt="split tracker logo" class="no-dark">
         <span data-i18n="app_name" id="name">Junker's Split Tracker</span>
     </span>
     <span id="nav-btns">
@@ -86,6 +91,12 @@ document.querySelectorAll(".btn").forEach(function(btn) {
         btn.classList.remove("pressed");
     });
 });
+
+document.addEventListener('mouseup', function() {
+    document.querySelectorAll(".btn.pressed").forEach(function(btn) {
+        btn.classList.remove("pressed");
+    });
+})
 
 function openDownload() {
     window.open("https://github.com/derJunker/pogostuck-split-tracker/releases/latest", "_blank");
