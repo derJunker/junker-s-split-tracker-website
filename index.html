@@ -36,13 +36,13 @@
 </nav>
 <section id="hero">
     <h1 data-i18n="hero_h1">Level up your Pogostuck Speedrunning expierience.</h1>
-    <button  data-i18n="try_button" class="btn" onclick="openDownload()">Try it out now!</button>
+    <button  data-i18n="try_button" class="btn" onclick="openLatestRelease()">Try it out now!</button>
 </section>
 <section id="features">
     <h2 data-i18n="features_title">Features</h2>
     <div class="double-column" id="features-list">
         <ul>
-            <li data-i18n="feature_default">Default Pogostuck Splittracker functionality</li>
+            <li data-i18n="feature_default">Default Pogostuck Split-Tracker Functionality</li>
             <li data-i18n="feature_gold_splits">Gold Splits</li>
             <li data-i18n="feature_gold_paces">Gold Paces</li>
             <li data-i18n="feature_pace_estimations">Pace Estimations</li>
@@ -80,6 +80,17 @@
                                                                                                        title="buy me a coffee">to do so
                                                                                                                 here</a>.</p>
 </section>
+<footer>
+    <span data-i18n="creator">Made by @derjunker</span>
+    <a href="https://github.com/derJunker/pogostuck-split-tracker" target="_blank" data-i18n="a_github_page">Github
+                                                                                                          -Page</a>
+    <a href="https://github.com/derJunker/pogostuck-split-tracker/releases/latest" target="_blank"
+       data-i18n="a_latest_release">Latest
+                                                                                                    Split-Tracker Release</a>
+    <a href="https://www.youtube.com/watch?v=TiV_zLOi0zc" target="_blank" data-i18n="a_setup_guide">Setup Guide
+                                                                                                  (Video)</a>
+    <a href="https://discord.gg/pnqrjdWF7R" target="_blank" data-i18n="a_discord">Pogostuck Discord</a>
+</footer>
 <script src="i18n.js" type="module"></script>
 <script>
 document.querySelectorAll(".btn").forEach(function(btn) {
@@ -96,9 +107,30 @@ document.addEventListener('mouseup', function() {
         btn.classList.remove("pressed");
     });
 })
+const latestReleaseUrl = "https://github.com/derJunker/pogostuck-split-tracker/releases/latest";
+let downloadLink = latestReleaseUrl;
+findDownloadLink()
 
+function openLatestRelease() {
+    window.open(latestReleaseUrl, "_blank");
+}
 function openDownload() {
-    window.open("https://github.com/derJunker/pogostuck-split-tracker/releases/latest", "_blank");
+    window.open(downloadLink, "_blank");
+}
+
+async function findDownloadLink() {
+    try {
+        let response = await fetch("https://api.github.com/repos/derJunker/pogostuck-split-tracker/releases/latest");
+        let data = await response.json();
+        for (let asset of data.assets) {
+            if (asset.name.endsWith(".exe")) {
+                downloadLink = asset.browser_download_url;
+                break;
+            }
+        }
+    } catch (error) {
+        console.error("Error fetching download link:", error);
+    }
 }
 </script>
 </body>

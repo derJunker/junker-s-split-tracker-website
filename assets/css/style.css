@@ -54,6 +54,22 @@ body {
     padding: 0;
 }
 
+html {
+    --scrollbar-color: var(--bg);
+    --scrollbar-track-color: var(--text);
+    scrollbar-width:  thin;
+    scrollbar-color: var(--scrollbar-track-color) var(--scrollbar-color);
+    &::-webkit-scrollbar {
+        width: 10px; /* Mostly for vertical scrollbars */
+    }
+    &::-webkit-scrollbar-thumb { /* Foreground */
+        background: var(--scrollbar-color);
+    }
+    &::-webkit-scrollbar-track { /* Background */
+        background: var(--scrollbar-track-color);
+    }
+}
+
 .btn {
     background: linear-gradient(#7dc338, var(--accent));
     color: var(--bg);
@@ -116,6 +132,7 @@ nav {
     }
 }
 
+footer,
 section {
     padding: 32px 15vw;
 }
@@ -187,7 +204,16 @@ h2 {
     margin-bottom: 32px;
 }
 
+footer {
+    display: grid;
+    row-gap: 8px;
+    grid-template-columns: repeat(2, 15rem);
+    font-size: .75rem;
+    justify-content: start;
+}
+
 @media (max-width: 56rem) {
+    footer,
     section {
         padding: 32px 5vw;
     }

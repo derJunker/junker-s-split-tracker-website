@@ -7,7 +7,7 @@ const translations = {
         features_title: "Features",
         limitations_title: "Limitations",
         about_title: "About",
-        feature_default: "Default Pogostuck Splittracker functionality",
+        feature_default: "Default Pogostuck Split-Tracker Functionality",
         feature_gold_splits: "Gold Splits",
         feature_gold_paces: "Gold Paces",
         feature_pace_estimations: "Pace Estimations",
@@ -25,6 +25,11 @@ const translations = {
         about_p2: "If you play borderless you can use it just like the default split timer ingame just with more features. It allows you to play custom modes like Boostless with their own split times.",
         about_p3: "If you play with fullscreen there is currently no way for me to overlay the tracker. However you can let it run on a second monitor, or just in the background to track your gold splits.",
         about_p4: "I hope you like it and feedback is greatly appreciated! The program is completely free to use, however if you want to support me you can choose <a href=\"https://buymeacoffee.com/derjunker\" target=\"_blank\" title=\"buy me a coffee\">to do so here</a>.",
+        creator: "Made by @derjunker",
+        a_github_page: "Github Page",
+        a_latest_release: "Latest Split-Tracker Release",
+        a_setup_guide: "Setup Guide (Video)",
+        a_discord: "Pogostuck Discord",
     },
     ja: {
         app_name: "Junkerのスプリットトラッカー",
@@ -52,6 +57,11 @@ const translations = {
         about_p2: "ボーダーレスでプレイする場合、ゲーム内のデフォルトタイマーと同じように使えますが、より多くの機能があります。Boostlessなどのカスタムモードも、それぞれの分割時間でプレイできます。",
         about_p3: "フルスクリーンでプレイする場合、現状オーバーレイをゲーム上に重ねる方法はありません。ただし、セカンドモニターで実行するか、バックグラウンドで動かしてベストスプリットを記録できます。",
         about_p4: "気に入っていただけたら嬉しいです。フィードバックは大歓迎です！プログラムは完全に無料でご利用いただけますが、支援していただける場合はこちらからお願いいたします：<a href=\"https://buymeacoffee.com/derjunker\" target=\"_blank\" title=\"buy me a coffee\">こちら</a>。",
+        creator: "@derjunker 作",
+        a_github_page: "Github ページ",
+        a_latest_release: "最新のスプリットトラッカーリリース",
+        a_setup_guide: "セットアップガイド（ビデオ）",
+        a_discord: "Pogostuck Discord",
     }
 };
 
