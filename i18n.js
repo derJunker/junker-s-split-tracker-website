@@ -30,6 +30,8 @@ const translations = {
         a_latest_release: "Latest Split-Tracker Release",
         a_setup_guide: "Setup Guide (Video)",
         a_discord: "Pogostuck Discord",
+        btn_feedback: "Feedback",
+        a_feedback_form: "Leave me feedback / Report a bug"
     },
     ja: {
         app_name: "Junkerのスプリットトラッカー",
@@ -62,6 +64,8 @@ const translations = {
         a_latest_release: "最新のスプリットトラッカーリリース",
         a_setup_guide: "セットアップガイド（ビデオ）",
         a_discord: "Pogostuck Discord",
+        btn_feedback: "フィードバック",
+        a_feedback_form: "フィードバックを残す / バグを報告する"
     }
 };
 

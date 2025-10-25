@@ -221,20 +221,19 @@ footer {
     .double-column {
         grid-template-columns: 1fr;
     }
+    #name {
+        font-size:  1rem;
+    }
 }
 
 @media (max-width: 38.5rem) {
-    #nav-download-btn {
-        display: none;
-    }
-
     footer {
         grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 30.5rem) {
-    #name {
-        font-size:  1rem;
+@media (max-width: 34.5rem) {
+    #nav-download-btn {
+        display: none;
     }
 }
