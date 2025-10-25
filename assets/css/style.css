@@ -143,7 +143,7 @@ section {
     background-color: var(--text);
     background-image:
             radial-gradient(circle, rgba(0,0 ,0, .25) 0%, rgba(0,0 ,0, 1) 100%),
-            url("../pogostuck-tracker.jpg");
+            url("../pogostuck-tracker.png");
     background-position: center;
     background-repeat: no-repeat;
     color: var(--bg);
