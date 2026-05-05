@@ -26,18 +26,19 @@
     <title>Junker's Split Tracker</title>
 </head>
 <body>
-
-<nav>
+<header>
     <span id="logo-n-name">
         <img src="assets/clipboard.ico" alt="split tracker logo" class="no-dark">
         <span data-i18n="app_name" id="name">Junker's Split Tracker</span>
     </span>
-    <span id="nav-btns">
-        <button class="btn" data-i18n="btn_feedback" onclick="openFeedbackLink()">Feedback</button>
-        <button id="nav-download-btn" class="btn" onclick="openDownload()" data-i18n="download_button">Download</button>
-        <button id="lang-toggle" class="btn" onclick="toggleLanguage()">日本語</button>
-    </span>
-</nav>
+    <nav>
+        <span id="nav-btns">
+            <button class="btn" data-i18n="btn_feedback" onclick="openFeedbackLink()">Feedback</button>
+            <button id="nav-download-btn" class="btn" onclick="openDownload()" data-i18n="download_button">Download</button>
+            <button id="lang-toggle" class="btn" onclick="toggleLanguage()">日本語</button>
+        </span>
+    </nav>
+</header>
 <div class="splits-cnt">
     <div id="splits" class=""
          style="--reset-count-width: 3ch; --splits-rows: var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height);">
