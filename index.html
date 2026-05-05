@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="ycQ2INecHZ29fdAjtyUJ8R-D2Es1qjogIem8-PxPvqM" />
+    <meta name="google-site-verification" content="ycQ2INecHZ29fdAjtyUJ8R-D2Es1qjogIem8-PxPvqM"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="./assets/clipboard.ico" type="image/x-icon">
@@ -10,34 +10,52 @@
     <meta name="color-scheme" content="light">
     <meta name="supported-color-schemes" content="light">
     <meta name="theme-color" content="#ffffff">
-    <meta name="description" content="Junker's Split Tracker — a feature-rich Pogostuck split tracker for speedrunners. Gold splits, pace estimations, custom modes and more.">
+    <meta name="description"
+          content="Junker's Split Tracker — a feature-rich Pogostuck split tracker for speedrunners. Gold splits, pace estimations, custom modes and more.">
     <meta name="keywords"
           content="Pogostuck, split tracker, speedrun, splits, gold splits, pace estimation, Rage with your friends">
     <meta name="author" content="derJunker">
     <link rel="canonical" href="https://github.com/derJunker/pogostuck-split-tracker">
     <meta name="robots" content="index,follow">
     <meta property="og:title" content="Junker's Split Tracker">
-    <meta property="og:description" content="Level up your Pogostuck Speedrunning experience with advanced split tracking.">
+    <meta property="og:description"
+          content="Level up your Pogostuck Speedrunning experience with advanced split tracking.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://github.com/derJunker/pogostuck-split-tracker">
     <meta property="og:image" content="./assets/clipboard.ico">
     <title>Junker's Split Tracker</title>
 </head>
 <body>
+
 <nav>
     <span id="logo-n-name">
         <img src="assets/clipboard.ico" alt="split tracker logo" class="no-dark">
         <span data-i18n="app_name" id="name">Junker's Split Tracker</span>
     </span>
     <span id="nav-btns">
-        <button class="btn" data-i18n="btn_feedback" onclick="openFeedbackLink()">Feedback</a>
+        <button class="btn" data-i18n="btn_feedback" onclick="openFeedbackLink()">Feedback</button>
         <button id="nav-download-btn" class="btn" onclick="openDownload()" data-i18n="download_button">Download</button>
         <button id="lang-toggle" class="btn" onclick="toggleLanguage()">日本語</button>
     </span>
 </nav>
+<div class="splits-cnt">
+    <div id="splits" class=""
+         style="--reset-count-width: 3ch; --splits-rows: var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height);">
+        <div class="split animate-hidden" id="0"><span class="split-name">Hero</span><span
+                class="split-resets animate-hidden">0</span><span class="split-diff"></span><span class="split-time">00:19.234</span>
+        </div>
+        <div class="split animate-hidden" id="1"><span class="split-name">Advantages</span><span
+                class="split-resets animate-hidden">0</span><span class="split-diff"></span><span class="split-time">00:49.410</span>
+        </div>
+        <div class="split animate-hidden" id="pb"><span class="split-name">PB</span><span
+                class="split-resets animate-hidden">0</span><span class="split-diff"></span><span
+                class="split-time">?</span></div>
+    </div>
+
+</div>
 <section id="hero">
     <h1 data-i18n="hero_h1">Level up your Pogostuck Speedrunning expierience.</h1>
-    <button  data-i18n="try_button" class="btn" onclick="openLatestRelease()">Try it out now!</button>
+    <button data-i18n="try_button" class="btn" onclick="openLatestRelease()">Try it out now!</button>
 </section>
 <section id="features">
     <h2 data-i18n="features_title">Features</h2>
@@ -72,73 +90,115 @@
 </section>
 <section id="about">
     <h2 data-i18n="about_title">About</h2>
-    <p data-i18n="about_p1">Hey :). Thanks for checking out my split tracker :D. I put a lot of effort into it and i hope you like it.</p>
-    <p data-i18n="about_p2">If you play borderless you can use it just like the default split timer ingame just with more features. It allows you to play custom modes like Boostless with their own split times.</p>
-    <p data-i18n="about_p3">If you play with fullscreen there is currently no way for me to overlay the tracker. However you can let it run on a second monitor, or just in the background to track your gold splits.</p>
-    <p data-i18n="about_p4" data-i18n-html>I hope you like it and feedback is greatly appreciated! The program is completely free
-                             to use, however if you want to support me you can choose <a
-            href="https://buymeacoffee.com/derjunker" target="_blank"
-                                                                                                       title="buy me a coffee">to do so
-                                                                                                                here</a>.</p>
+    <p data-i18n="about_p1">Hey :). Thanks for checking out my split tracker :D. I put a lot of effort into it and i
+        hope you like it.</p>
+    <p data-i18n="about_p2">If you play borderless you can use it just like the default split timer ingame just with
+        more features. It allows you to play custom modes like Boostless with their own split times.</p>
+    <p data-i18n="about_p3">If you play with fullscreen there is currently no way for me to overlay the tracker. However
+        you can let it run on a second monitor, or just in the background to track your gold splits.</p>
+    <p data-i18n="about_p4" data-i18n-html>I hope you like it and feedback is greatly appreciated! The program is
+        completely free
+        to use, however if you want to support me you can choose <a
+                href="https://buymeacoffee.com/derjunker" target="_blank"
+                title="buy me a coffee">to do so
+            here</a>.</p>
 </section>
 <footer>
     <span data-i18n="creator">Made by @derjunker</span>
     <a href="https://github.com/derJunker/pogostuck-split-tracker" target="_blank" data-i18n="a_github_page">Github
-                                                                                                          -Page</a>
+        -Page</a>
     <a href="https://github.com/derJunker/pogostuck-split-tracker/releases/latest" target="_blank"
        data-i18n="a_latest_release">Latest
-                                                                                                    Split-Tracker Release</a>
+        Split-Tracker Release</a>
     <a href="https://www.youtube.com/watch?v=TiV_zLOi0zc" target="_blank" data-i18n="a_setup_guide">Setup Guide
-                                                                                                  (Video)</a>
+        (Video)</a>
     <a href="https://discord.gg/pnqrjdWF7R" target="_blank" data-i18n="a_discord">Pogostuck Discord</a>
     <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSeXa6HiFg7rdbIEup3HRJPcMTwQiwQxi5fOc5Fe1AJEw4nPmQ/viewform?usp=publish-editor" target="_blank"
-         data-i18n="a_feedback_form">Leave me feedback / Report a bug</a>
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeXa6HiFg7rdbIEup3HRJPcMTwQiwQxi5fOc5Fe1AJEw4nPmQ/viewform?usp=publish-editor"
+            target="_blank"
+            data-i18n="a_feedback_form">Leave me feedback / Report a bug</a>
 </footer>
 <script src="i18n.js" type="module"></script>
 <script>
-document.querySelectorAll(".btn").forEach(function(btn) {
-    btn.addEventListener("mousedown", function() {
-        btn.classList.add("pressed");
-    });
-    btn.addEventListener("mouseup", function() {
-        btn.classList.remove("pressed");
-    });
-});
+    const headerElement = document.querySelector("header") || document.querySelector("nav");
+    const headerHeightCssVar = "--header-height";
+    const rootStyle = document.documentElement.style;
+    let headerHeightRaf = null;
 
-document.addEventListener('mouseup', function() {
-    document.querySelectorAll(".btn.pressed").forEach(function(btn) {
-        btn.classList.remove("pressed");
-    });
-})
-const latestReleaseUrl = "https://github.com/derJunker/pogostuck-split-tracker/releases/latest";
-let downloadLink = latestReleaseUrl;
-findDownloadLink()
-
-function openLatestRelease() {
-    window.open(latestReleaseUrl, "_blank");
-}
-function openDownload() {
-    window.open(downloadLink, "_blank");
-}
-function openFeedbackLink() {
-    window.open("https://docs.google.com/forms/d/e/1FAIpQLSeXa6HiFg7rdbIEup3HRJPcMTwQiwQxi5fOc5Fe1AJEw4nPmQ/viewform?usp=publish-editor", "_blank");
-}
-
-async function findDownloadLink() {
-    try {
-        let response = await fetch("https://api.github.com/repos/derJunker/pogostuck-split-tracker/releases/latest");
-        let data = await response.json();
-        for (let asset of data.assets) {
-            if (asset.name.endsWith(".exe")) {
-                downloadLink = asset.browser_download_url;
-                break;
-            }
+    function updateHeaderHeight() {
+        if (!headerElement) {
+            rootStyle.setProperty(headerHeightCssVar, "0px");
+            return;
         }
-    } catch (error) {
-        console.error("Error fetching download link:", error);
+
+        const headerHeight = `${Math.ceil(headerElement.getBoundingClientRect().height)}px`;
+        rootStyle.setProperty(headerHeightCssVar, headerHeight);
     }
-}
+
+    function scheduleHeaderHeightUpdate() {
+        if (headerHeightRaf !== null) {
+            return;
+        }
+
+        headerHeightRaf = requestAnimationFrame(function () {
+            headerHeightRaf = null;
+            updateHeaderHeight();
+        });
+    }
+
+    updateHeaderHeight();
+    window.addEventListener("resize", scheduleHeaderHeightUpdate);
+    window.addEventListener("load", scheduleHeaderHeightUpdate);
+
+    if (headerElement && "ResizeObserver" in window) {
+        const headerObserver = new ResizeObserver(scheduleHeaderHeightUpdate);
+        headerObserver.observe(headerElement);
+    }
+
+    document.querySelectorAll(".btn").forEach(function (btn) {
+        btn.addEventListener("mousedown", function () {
+            btn.classList.add("pressed");
+        });
+        btn.addEventListener("mouseup", function () {
+            btn.classList.remove("pressed");
+        });
+    });
+
+    document.addEventListener('mouseup', function () {
+        document.querySelectorAll(".btn.pressed").forEach(function (btn) {
+            btn.classList.remove("pressed");
+        });
+    })
+    const latestReleaseUrl = "https://github.com/derJunker/pogostuck-split-tracker/releases/latest";
+    let downloadLink = latestReleaseUrl;
+    findDownloadLink()
+
+    function openLatestRelease() {
+        window.open(latestReleaseUrl, "_blank");
+    }
+
+    function openDownload() {
+        window.open(downloadLink, "_blank");
+    }
+
+    function openFeedbackLink() {
+        window.open("https://docs.google.com/forms/d/e/1FAIpQLSeXa6HiFg7rdbIEup3HRJPcMTwQiwQxi5fOc5Fe1AJEw4nPmQ/viewform?usp=publish-editor", "_blank");
+    }
+
+    async function findDownloadLink() {
+        try {
+            let response = await fetch("https://api.github.com/repos/derJunker/pogostuck-split-tracker/releases/latest");
+            let data = await response.json();
+            for (let asset of data.assets) {
+                if (asset.name.endsWith(".exe")) {
+                    downloadLink = asset.browser_download_url;
+                    break;
+                }
+            }
+        } catch (error) {
+            console.error("Error fetching download link:", error);
+        }
+    }
 </script>
 </body>
 </html>
