@@ -1,8 +1,9 @@
 .text-image {
     &>.inside {
         display: flex;
-        flex-direction: row;
-
+        flex-direction: column;
+        row-gap: var(--gap-xl);
+        column-gap: var(--gap-xl);
         .left {
             flex: 1;
             display: flex;
@@ -18,8 +19,13 @@
     }
 }
 
-.text-image.reversed {
-    &>.inside {
-        flex-direction: row-reverse;
+@media (min-width: 768px) {
+    .text-image {
+        &>.inside {
+            flex-direction: row;
+        }
+        &.reversed >.inside {
+            flex-direction: row-reverse;
+        }
     }
 }

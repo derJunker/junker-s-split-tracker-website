@@ -1,3 +1,14 @@
+html {
+    --min-font-size: 14px;
+    --max-font-size: 18px;
+
+    font-size: clamp(
+            var(--min-font-size),
+            calc(1rem + 0.8vw),
+            var(--max-font-size)
+    );
+}
+
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
