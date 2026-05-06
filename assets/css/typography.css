@@ -1,0 +1,24 @@
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+h1, h2, h3, h4,
+.text-border {
+    --border-width: 1px;
+    color: white;
+    text-shadow: calc(var(--border-width)*-1) 0 black, 0 var(--border-width) black, var(--border-width) 0 black, 0 calc(var(--border-width)*-1) black;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+ul.check-list {
+    list-style-type: none;
+    margin-inline-start: 3ch;
+
+    li::marker {
+        content: "✓ ";
+        color: var(--accent);
+    }
+}

@@ -1,7 +1,10 @@
 @import 'overlay.css';
 @import 'buttons.css';
+@import 'typography.css';
 @import 'header.css';
-@import 'hero.css';
+@import 'sections/hero.css';
+@import 'sections/text-image.css';
+@import 'sections/separator.css';
 
 :root {
     --text: #636363;
@@ -13,6 +16,8 @@
     --gap-m: .5rem;
     --gap-l: .1rem;
     --gap-xl: 2rem;
+
+    --section-spacing: 6rem;
 }
 
 *,
@@ -27,10 +32,6 @@ img {
     width: 100%;
     height: auto;
     display: block;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
 }
 
 input,
@@ -53,12 +54,7 @@ html {
     background-size: cover;
 }
 
-h1, h2, h3, h4,
-.text-border {
-    --border-width: 1px;
-    color: white;
-    text-shadow: calc(var(--border-width)*-1) 0 black, 0 var(--border-width) black, var(--border-width) 0 black, 0 calc(var(--border-width)*-1) black;
-}
+
 
 html {
     --scrollbar-color: black;
@@ -95,7 +91,12 @@ footer {
     border-radius: 8px;
 }
 
+.section {
+    margin-block-start: var(--section-spacing);
+}
+
 .inside {
     max-width: 1200px;
+    margin-inline: auto;
     padding-inline: 1rem;
 }

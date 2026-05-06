@@ -1,0 +1,25 @@
+.text-image {
+    &>.inside {
+        display: flex;
+        flex-direction: row;
+
+        .left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            h2 {
+                margin-block-end: var(--gap-m);
+            }
+        }
+        .right {
+            flex-basis: 40%;
+        }
+    }
+}
+
+.text-image.reversed {
+    &>.inside {
+        flex-direction: row-reverse;
+    }
+}

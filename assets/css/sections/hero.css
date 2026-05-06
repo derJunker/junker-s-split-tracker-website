@@ -1,9 +1,12 @@
+:root {
+    --hero-image-margin: -300px;
+}
+
 .hero {
-    --image-margin: -300px;
     min-height: calc(100dvh - var(--header-height));
     display: grid;
     justify-items: center;
-    margin-block-end: calc(-1*var(--image-margin));
+    margin-block-end: calc(-1*var(--hero-image-margin));
     &>.inside {
         display: flex;
         flex-direction: column;
@@ -28,7 +31,11 @@
         .config-window-preview {
             --box-shadow-position: -4px;
             max-width: 900px;
-            margin-bottom: var(--image-margin);
+            margin-bottom: var(--hero-image-margin);
         }
     }
+}
+
+.hero + .section {
+    margin-top: calc(-1*var(--hero-image-margin) + var(--section-spacing));
 }
