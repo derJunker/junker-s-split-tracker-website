@@ -6,6 +6,7 @@
 @import 'sections/text-image.css';
 @import 'sections/separator.css';
 @import 'sections/preview-list.css';
+@import 'sections/faq.css';
 
 :root {
     --text: #636363;

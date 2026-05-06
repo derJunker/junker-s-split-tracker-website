@@ -1,0 +1,63 @@
+.faq-section {
+    &>.inside {
+        .faq-item {
+            --line-height: 1rem;
+            --padding-block: 1rem;
+            --border-width: 1px;
+            overflow: hidden;
+            height: calc(var(--line-height) + var(--padding-block)*2 + var(--border-width)*2);
+            transition: height 0.25s;
+            border: color-mix(in srgb, var(--accent) 60%, transparent) var(--border-width) solid;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+            .faq-question {
+                position: relative;
+                background: white;
+                border: none;
+                padding-inline: 1rem;
+                width: 100%;
+                line-height: var(--line-height);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .question-text {
+                    padding-block: var(--padding-block);
+                }
+                .faq-icon {
+                    aspect-ratio: 1;
+                    height: 1.5rem;
+                    box-shadow: none;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    background: linear-gradient(
+                            to right,
+                            transparent,
+                            color-mix(in srgb, var(--accent) 40%, transparent) 40% 60%,
+                            transparent
+                    );
+                    height: 1px;
+                    width: 100%;
+                    transform: scaleX(0);
+                    transform-origin: center;
+                    transition: transform 0.25s ease .25s;
+                    bottom: 0;
+                }
+            }
+            .faq-answer {
+                padding-inline: 1rem;
+                overflow-y: auto;
+                height: calc(var(--line-height)*3 + var(--padding-block)*2);
+                padding-block: var(--padding-block);
+            }
+
+            &.faq-open {
+                height: calc(var(--line-height)*4 + var(--padding-block)*4 + var(--border-width)*2);
+                .faq-question::after {
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+}

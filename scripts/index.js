@@ -5,6 +5,7 @@ import 'aos/dist/aos.css';
 import './i18n.js';
 import './header.js';
 import './buttons.js';
+import './faq.js';
 
 const fadeUpSelector = '.text-image .left, .text-image .right';
 const staggeredListSelector = 'ul.animate-aos';
