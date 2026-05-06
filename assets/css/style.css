@@ -16,7 +16,7 @@
     --gap-xs: .1rem;
     --gap-sm: .25rem;
     --gap-m: .5rem;
-    --gap-l: .1rem;
+    --gap-l: 1rem;
     --gap-xl: 2rem;
 
     --section-spacing: 6rem;

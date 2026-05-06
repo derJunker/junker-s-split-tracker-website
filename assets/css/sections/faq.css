@@ -1,11 +1,14 @@
 .faq-section {
     &>.inside {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-l);
         .faq-item {
             --line-height: 1rem;
             --padding-block: 1rem;
             --border-width: 1px;
             overflow: hidden;
-            height: calc(var(--line-height) + var(--padding-block)*2 + var(--border-width)*2);
+            height: calc(var(--line-height)*2 + var(--padding-block)*2 + var(--border-width)*2);
             transition: height 0.25s;
             border: color-mix(in srgb, var(--accent) 60%, transparent) var(--border-width) solid;
             border-radius: var(--border-radius);
@@ -16,14 +19,18 @@
                 border: none;
                 padding-inline: 1rem;
                 width: 100%;
+                height: calc(var(--line-height)*2 + var(--padding-block)*2);
                 line-height: var(--line-height);
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                font-weight: 700;
                 .question-text {
                     padding-block: var(--padding-block);
+                    text-align: start;
                 }
                 .faq-icon {
+                    flex-shrink: 0;
                     aspect-ratio: 1;
                     height: 1.5rem;
                     box-shadow: none;
@@ -44,7 +51,7 @@
                     width: 100%;
                     transform: scaleX(0);
                     transform-origin: center;
-                    transition: transform 0.25s ease .25s;
+                    transition: transform 0.25s ease .15s;
                     bottom: 0;
                 }
             }
@@ -53,10 +60,11 @@
                 overflow-y: auto;
                 height: calc(var(--line-height)*3 + var(--padding-block)*2);
                 padding-block: var(--padding-block);
+                background: rgba(0, 0, 0, 0.025);
             }
 
             &.faq-open {
-                height: calc(var(--line-height)*4 + var(--padding-block)*4 + var(--border-width)*2);
+                height: calc(var(--line-height)*5 + var(--padding-block)*4 + var(--border-width)*2);
                 .faq-question::after {
                     transform: scaleX(1);
                 }

@@ -33,3 +33,7 @@ ul.check-list {
         color: var(--accent);
     }
 }
+
+a {
+    color: var(--accent);
+}
