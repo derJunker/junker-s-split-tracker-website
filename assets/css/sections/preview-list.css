@@ -6,18 +6,26 @@
     }
     .preview-container {
         position: relative;
-        height: 100%;
         width: 100%;
+        aspect-ratio: 1;
         .preview-el {
             position: absolute;
             inset: 0;
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
             pointer-events: none;
+            img {
+                object-fit: cover;
+                height: 100%;
+            }
         }
         .preview-el.active {
             opacity: 1;
             pointer-events: auto;
         }
     }
+}
+
+.preview-list.text-image .right {
+    --basis: 30%;
 }

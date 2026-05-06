@@ -14,7 +14,8 @@
             }
         }
         .right {
-            flex-basis: 40%;
+            --basis: 45%;
+            flex-basis: var(--basis);
         }
     }
 }
