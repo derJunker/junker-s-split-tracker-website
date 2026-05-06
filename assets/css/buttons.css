@@ -1,10 +1,10 @@
 .btn {
     background: linear-gradient(#7dc338, var(--accent));
-    color: var(--bg);
+    color: white;
     padding: 8px 16px;
     border-radius: var(--border-radius);
     font-size: 1rem;
-    border: 2px solid var(--bg);
+    border: 2px solid white;
     transition: transform 0.2s ease-in, box-shadow 0.15s ease-in-out, border-color 0.25s ease-in;
 }
 

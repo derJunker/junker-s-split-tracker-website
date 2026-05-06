@@ -4,9 +4,15 @@
 @import 'hero.css';
 
 :root {
-    --text: white;
+    --text: #636363;
     --accent: #65a524;
     --border-radius: 8px;
+
+    --gap-xs: .1rem;
+    --gap-sm: .25rem;
+    --gap-m: .5rem;
+    --gap-l: .1rem;
+    --gap-xl: 2rem;
 }
 
 *,
@@ -23,6 +29,10 @@ img {
     display: block;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
 input,
 button,
 textarea {
@@ -37,11 +47,17 @@ html {
     font-weight: bold;
     line-height: 1.6;
     font-size: clamp(1rem, 1vw, 1.5rem);
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     margin: 0;
     padding: 0;
     background: url("/assets/aurora-gradient-1778021307601.png");
     background-size: cover;
+}
+
+h1, h2, h3, h4,
+.text-border {
+    --border-width: 1px;
+    color: white;
+    text-shadow: calc(var(--border-width)*-1) 0 black, 0 var(--border-width) black, var(--border-width) 0 black, 0 calc(var(--border-width)*-1) black;
 }
 
 html {

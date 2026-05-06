@@ -40,7 +40,7 @@
     </nav>
 </header>
 <div class="splits-cnt">
-    <div id="splits" class=""
+    <div id="splits" class="text-border"
          style="--reset-count-width: 3ch; --splits-rows: var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height) var(--grid-row-height);">
         <div class="split animate-hidden" id="0"><span class="split-name">Hero</span><span
                 class="split-resets animate-hidden">0</span><span class="split-diff"></span><span class="split-time">00:19.234</span>
@@ -56,11 +56,15 @@
 </div>
 <div class="hero section">
     <div class="inside">
-        <h1 data-i18n="hero_h1">
-            Level up your Pogostuck Speedrunning experience
-        </h1>
+        <div class="hero__content">
+            <h1 data-i18n="hero_h1">
+                Level up your Pogostuck Speedrunning experience
+            </h1>
+            <p>A simple overlay for a split tracker with a bunch of new features.</p>
+            <button data-i18n="try_button" class="btn" onclick="openLatestRelease()">Try it out now!</button>
+        </div>
         <div class="config-window-preview media-container">
-            <img src="assets/config-preferences_cropped.png" alt="split tracker config preferences">
+            <img src="assets/config-preferences.png" alt="split tracker config preferences">
         </div>
     </div>
 </div>
@@ -129,87 +133,8 @@
             target="_blank"
             data-i18n="a_feedback_form">Leave me feedback / Report a bug</a>
 </footer>
-<script src="i18n.js" type="module"></script>
-<script>
-    const headerElement = document.querySelector("header") || document.querySelector("nav");
-    const headerHeightCssVar = "--header-height";
-    const rootStyle = document.documentElement.style;
-    let headerHeightRaf = null;
-
-    function updateHeaderHeight() {
-        if (!headerElement) {
-            rootStyle.setProperty(headerHeightCssVar, "0px");
-            return;
-        }
-
-        const headerHeight = `${Math.ceil(headerElement.getBoundingClientRect().height)}px`;
-        rootStyle.setProperty(headerHeightCssVar, headerHeight);
-    }
-
-    function scheduleHeaderHeightUpdate() {
-        if (headerHeightRaf !== null) {
-            return;
-        }
-
-        headerHeightRaf = requestAnimationFrame(function () {
-            headerHeightRaf = null;
-            updateHeaderHeight();
-        });
-    }
-
-    updateHeaderHeight();
-    window.addEventListener("resize", scheduleHeaderHeightUpdate);
-    window.addEventListener("load", scheduleHeaderHeightUpdate);
-
-    if (headerElement && "ResizeObserver" in window) {
-        const headerObserver = new ResizeObserver(scheduleHeaderHeightUpdate);
-        headerObserver.observe(headerElement);
-    }
-
-    document.querySelectorAll(".btn").forEach(function (btn) {
-        btn.addEventListener("mousedown", function () {
-            btn.classList.add("pressed");
-        });
-        btn.addEventListener("mouseup", function () {
-            btn.classList.remove("pressed");
-        });
-    });
-
-    document.addEventListener('mouseup', function () {
-        document.querySelectorAll(".btn.pressed").forEach(function (btn) {
-            btn.classList.remove("pressed");
-        });
-    })
-    const latestReleaseUrl = "https://github.com/derJunker/pogostuck-split-tracker/releases/latest";
-    let downloadLink = latestReleaseUrl;
-    findDownloadLink()
-
-    function openLatestRelease() {
-        window.open(latestReleaseUrl, "_blank");
-    }
-
-    function openDownload() {
-        window.open(downloadLink, "_blank");
-    }
-
-    function openFeedbackLink() {
-        window.open("https://docs.google.com/forms/d/e/1FAIpQLSeXa6HiFg7rdbIEup3HRJPcMTwQiwQxi5fOc5Fe1AJEw4nPmQ/viewform?usp=publish-editor", "_blank");
-    }
-
-    async function findDownloadLink() {
-        try {
-            let response = await fetch("https://api.github.com/repos/derJunker/pogostuck-split-tracker/releases/latest");
-            let data = await response.json();
-            for (let asset of data.assets) {
-                if (asset.name.endsWith(".exe")) {
-                    downloadLink = asset.browser_download_url;
-                    break;
-                }
-            }
-        } catch (error) {
-            console.error("Error fetching download link:", error);
-        }
-    }
-</script>
+<script src="/scripts/i18n.js" type="module"></script>
+<script src="/scripts/header.js" type="module"></script>
+<script src="/scripts/buttons.js" type="module"></script>
 </body>
 </html>
