@@ -27,7 +27,10 @@
                     aspect-ratio: 1;
                     height: 1.5rem;
                     box-shadow: none;
+                    transition: transform 0.25s;
                 }
+                .faq-icon-closed {position:initial;}
+                .faq-icon-open {position: absolute; visibility: hidden}
                 &::after {
                     content: "";
                     position: absolute;
@@ -56,6 +59,12 @@
                 height: calc(var(--line-height)*4 + var(--padding-block)*4 + var(--border-width)*2);
                 .faq-question::after {
                     transform: scaleX(1);
+                }
+                .faq-question .faq-icon-closed {position: absolute; visibility: hidden}
+                .faq-question .faq-icon-open {
+                    position: initial;
+                    visibility: visible;
+                    transform: scale(1.1) translateY(-2px);
                 }
             }
         }
