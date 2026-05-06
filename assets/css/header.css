@@ -11,9 +11,10 @@ header {
 
     justify-content: space-between;
     padding: 8px 16px;
+    z-index: 100;
 
     #name {
-        width: fit-content;
+        color: white;
     }
 }
 

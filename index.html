@@ -57,13 +57,20 @@
 <div class="hero section">
     <div class="inside">
         <div class="hero__content">
-            <h1 data-i18n="hero_h1">
+            <h1 data-i18n="hero_h1" data-aos="fade-down">
                 Level up your Pogostuck Speedrunning experience
             </h1>
-            <p>A simple overlay for a split tracker with a bunch of new features.</p>
-            <button data-i18n="try_button" class="btn" onclick="openLatestRelease()">Try it out now!</button>
+            <!-- TODO add translate -->
+            <p data-aos="fade-down" data-aos-delay="500">A simple overlay for a split tracker with a bunch of new features.</p>
+            <div data-aos="fade-down"
+                 data-aos-delay="1000">
+                <button class="btn" onclick="openLatestRelease()"
+                        data-i18n="try_button">
+                    Try it out now!
+                </button>
+            </div>
         </div>
-        <div class="config-window-preview media-container">
+        <div class="config-window-preview media-container" data-aos="fade-up" data-aos-delay="1500">
             <img src="assets/config-preferences.png" alt="split tracker config preferences">
         </div>
     </div>
@@ -133,8 +140,6 @@
             target="_blank"
             data-i18n="a_feedback_form">Leave me feedback / Report a bug</a>
 </footer>
-<script src="/scripts/i18n.js" type="module"></script>
-<script src="/scripts/header.js" type="module"></script>
-<script src="/scripts/buttons.js" type="module"></script>
+<script type="module" src="/scripts/index.js"></script>
 </body>
 </html>
