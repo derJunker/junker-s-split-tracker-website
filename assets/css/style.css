@@ -1,10 +1,10 @@
 @import 'overlay.css';
 @import 'buttons.css';
 @import 'header.css';
+@import 'hero.css';
 
 :root {
-    --text: #000000;
-    --bg: #ffffff;
+    --text: white;
     --accent: #65a524;
     --border-radius: 8px;
 }
@@ -31,20 +31,22 @@ textarea {
     color: inherit;
 }
 
-body {
-    background-color: var(--bg);
+html {
     color: var(--text);
     font-family: 'Courier New', sans-serif;
     font-weight: bold;
     line-height: 1.6;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1vw, 1.5rem);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     margin: 0;
     padding: 0;
+    background: url("/assets/aurora-gradient-1778021307601.png");
+    background-size: cover;
 }
 
 html {
-    --scrollbar-color: var(--bg);
-    --scrollbar-track-color: var(--text);
+    --scrollbar-color: black;
+    --scrollbar-track-color: white;
     scrollbar-width:  thin;
     scrollbar-color: var(--scrollbar-track-color) var(--scrollbar-color);
     &::-webkit-scrollbar {
@@ -64,4 +66,20 @@ footer {
     grid-template-columns: repeat(2, 15rem);
     font-size: .75rem;
     justify-content: start;
+}
+
+#hero {
+    margin-top: 200vh;
+}
+
+.media-container {
+    --box-shadow-position: 4px;
+    overflow: hidden;
+    box-shadow: 0 var(--box-shadow-position) 8px 0 rgba(0, 0, 0, 0.2), 0 calc(var(--box-shadow-position)*1.1) 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
+}
+
+.inside {
+    max-width: 1200px;
+    padding-inline: 1rem;
 }

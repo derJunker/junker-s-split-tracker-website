@@ -1,0 +1,22 @@
+.hero {
+    min-height: calc(100vh - var(--header-height));
+    display: grid;
+    justify-items: center;
+    &>.inside {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        height: 100%;
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black
+        }
+
+        .config-window-preview {
+            --box-shadow-position: -4px;
+            max-width: 800px;
+        }
+    }
+}
