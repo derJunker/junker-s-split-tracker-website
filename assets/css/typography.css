@@ -22,6 +22,7 @@ h1, h2, h3, h4,
 
 h2 {
     font-size: 2rem;
+    margin-block-end: var(--gap-l);
 }
 
 ul.check-list {

@@ -1,0 +1,5 @@
+.text-block {
+    p {
+        margin-bottom: var(--gap-m);
+    }
+}
