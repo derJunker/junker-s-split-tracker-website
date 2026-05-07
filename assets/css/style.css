@@ -2,6 +2,7 @@
 @import 'buttons.css';
 @import 'typography.css';
 @import 'header.css';
+@import 'footer.css';
 @import 'sections/hero.css';
 @import 'sections/text-image.css';
 @import 'sections/separator.css';
@@ -73,14 +74,6 @@ html {
     }
 }
 
-footer {
-    display: grid;
-    row-gap: 8px;
-    grid-template-columns: repeat(2, 15rem);
-    font-size: .75rem;
-    justify-content: start;
-}
-
 #hero {
     margin-top: 200vh;
 }
@@ -102,15 +95,23 @@ footer {
     padding-inline: 1rem;
 }
 
-.section.bg-primary {
-    background: var(--accent);
+.section.about {
+    position: relative;
     padding-block: calc(var(--section-spacing)/2);
-    color: white;
-    p {
-        --border-width: 1px;
-        text-shadow: calc(var(--border-width)*-1) 0 black, 0 var(--border-width) black, var(--border-width) 0 black, 0 calc(var(--border-width)*-1) black;
-        a {
-            color: white;
-        }
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        left: 0; right: 0;
+        height: 1px;
+        background: linear-gradient(
+                to right,
+                transparent,
+                color-mix(in srgb, var(--accent) 40%, transparent) 40% 60%,
+                transparent
+        );
     }
+    &::before { top: 2px; }
+    &::after { bottom: 2px; }
 }
