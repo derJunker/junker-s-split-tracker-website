@@ -12,6 +12,7 @@
 
 :root {
     --text: #636363;
+    --text-muted: rgba(0, 0, 0, 0.36);
     --accent: #65a524;
     --border-radius: 8px;
 

@@ -28,6 +28,7 @@ h2 {
 ul.check-list {
     list-style-type: none;
     margin-inline-start: 3ch;
+    line-height: 1.5;
 
     li::marker {
         content: "✓ ";

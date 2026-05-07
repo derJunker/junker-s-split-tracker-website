@@ -17,6 +17,22 @@ document.querySelectorAll(".preview-link").forEach(function (link) {
         if (targetPreview) {
             targetPreview.classList.add("active");
         }
+        // Mark this link as shown (for tracking which previews the user hovered)
+        link.classList.add("shown");
+
+        // If all preview links in this preview-list have been shown, add .all-shown to the preview-list
+        const previewList = link.closest('.preview-list');
+        if (previewList) {
+            const links = Array.from(previewList.querySelectorAll('.preview-link'));
+            const allShown = links.length > 0 && links.every(function (l) {
+                return l.classList.contains('shown');
+            });
+            if (allShown) {
+                previewList.classList.add('all-shown');
+            } else {
+                previewList.classList.remove('all-shown');
+            }
+        }
     });
 
     link.addEventListener("mouseleave", function () {
