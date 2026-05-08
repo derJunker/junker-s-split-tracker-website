@@ -30,6 +30,10 @@ function openFeedbackLink() {
     window.open("https://docs.google.com/forms/d/e/1FAIpQLSeXa6HiFg7rdbIEup3HRJPcMTwQiwQxi5fOc5Fe1AJEw4nPmQ/viewform?usp=publish-editor", "_blank");
 }
 
+window.openLatestRelease = openLatestRelease;
+window.openDownload = openDownload;
+window.openFeedbackLink = openFeedbackLink;
+
 async function findDownloadLink() {
     try {
         let response = await fetch("https://api.github.com/repos/derJunker/pogostuck-split-tracker/releases/latest");

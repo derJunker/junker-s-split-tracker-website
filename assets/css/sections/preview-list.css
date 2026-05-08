@@ -69,6 +69,8 @@
             position: relative;
             display: inline;
             .click-hint {
+                user-select: none;
+                pointer-events: none;
                 display: flex;
                 gap: var(--gap-xl);
                 position: absolute;
