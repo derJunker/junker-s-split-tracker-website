@@ -6,6 +6,8 @@ import './i18n.js';
 import './header.js';
 import './buttons.js';
 import './faq.js';
+import './speedrun/overlay-interface'
+import {startSpeedrun} from "./speedrun/speedrun";
 
 const fadeUpSelector = '.text-image .left, .text-image .right';
 const staggeredListSelector = 'ul.animate-aos';
@@ -40,3 +42,7 @@ AOS.init({
     duration: 1500,
     once: true,
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    startSpeedrun()
+})
