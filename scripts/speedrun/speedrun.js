@@ -23,7 +23,7 @@ export function startSpeedrun() {
             const index = Number(sectionElement.dataset.speedIndex);
             const sectionClass = sectionNameToClassMap[sectionName];
             if (!sectionClass) throw new Error(`No section element found for ${sectionName}`);
-            speedrunSections[index] = new sectionClass(() => onSectionCompleted(index, sectionName), sectionName, sectionElement);
+            speedrunSections[index] = new sectionClass(() => onSectionCompleted(index), sectionName, sectionElement);
         })
     startSpeedrunSection(0)
 }
@@ -31,11 +31,11 @@ export function startSpeedrun() {
 function startSpeedrunSection(index) {
     let prevSection = currentSection;
     const nextSection = speedrunSections[index];
-    const nextSectionElement = nextSection.sectionElement;
+    const nextSectionElement = nextSection?.sectionElement;
     const prevSectionElement = prevSection?.sectionElement;
 
     prevSectionElement?.classList.remove("active-speedrun-section");
-    nextSectionElement.classList.add("active-speedrun-section");
+    nextSectionElement?.classList.add("active-speedrun-section");
 
     currentSection = nextSection;
 
@@ -52,11 +52,9 @@ function startSpeedrunSection(index) {
     }
     lastSectionEndTime = time;
 
-    nextSection.onStart();
+    nextSection?.onStart();
 }
 
-function onSectionCompleted(index, name) {
-    if (index < speedrunSections.length-1) {
-        startSpeedrunSection(index+1)
-    }
+function onSectionCompleted(index) {
+    startSpeedrunSection(index+1)
 }

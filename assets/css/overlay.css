@@ -46,41 +46,12 @@
     transition: grid-template-columns .1s ease-out, grid-template-rows .1s ease-out;
 }
 
-#splits:has(.split .split-resets.hidden) {
-    grid-template-columns: auto 0 auto auto;
-}
-
-#totals,
-#status-msg {
-    padding-top: .2rem;
-}
-
-#status-msg {
-    display: flex;
-    flex-direction: column;
-    gap: .8rem;
-}
-#status-msg > div {
-    padding-left: 1rem;
-}
-#status-msg > div:first-child {
-    padding-left: 0;
-}
-
-#active-img {
-    margin: .5rem 1rem;
-    width: 2.5rem;
-}
-
 .split {
     position: relative;
     display: contents;
     text-wrap: nowrap
 }
 
-#totals {
-    margin-top: .5ch;
-}
 /*Split names should be the one shrinking*/
 .split-name {
     text-overflow: ellipsis;
@@ -142,69 +113,9 @@
     font-family: inherit;
     font-size: 1rem;
 }
-.split-resets:not(.hidden)::before {
+.split-resets::before {
     content: '[';
 }
-.split-resets:not(.hidden)::after {
+.split-resets::after {
     content: ']';
-}
-
-#totals {
-    display: flex;
-    gap: 2rem;
-}
-
-#totals > * {
-    display: flex;
-    justify-content:  end;
-}
-
-#custom-mode-display {
-    display: inline;
-    padding-top: .2em;
-}
-
-#overlay-messages {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    gap: 4px;
-    flex-direction: column;
-    align-items: end;
-    justify-content: start;
-    z-index: 10;
-    margin: .5rem 3rem;
-}
-
-.overlay-message {
-    background-color: rgba(0,0,0,0.5);
-    padding: 1rem;
-    border-radius: 6px;
-    border: 2px solid white;
-    -webkit-text-stroke-width: 0;
-    font-weight: normal;
-    font-size: .7rem;
-}
-
-#loot-timer {
-    text-align: end;
-}
-
-.animate-hidden.hidden {
-    transform: translateY(-50%);
-}
-.animate-hidden:not(.hidden) {
-    transform: translate(0);
-}
-
-.animate-hidden {
-    opacity: 1;
-    transition: transform 50ms ease-in-out, opacity 50ms ease-in-out;
-}
-
-.hidden {
-    opacity: 0!important;
 }
