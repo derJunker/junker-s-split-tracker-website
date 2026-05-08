@@ -1,12 +1,15 @@
 import HeroSpeedrunSection from "./sections/hero";
 import FeaturesSpeedrunSection from "./sections/features";
 import SpeedrunSection from "./sections/speedrun-section";
+import {registerSplitPassed} from "./overlay-interface";
 
 /**
  * @type Array<SpeedrunSection>
  */
 const speedrunSections = [];
 let currentSection = null;
+let startTime = null;
+let lastSectionEndTime = null;
 
 const sectionNameToClassMap = {
     "hero": HeroSpeedrunSection,
@@ -38,6 +41,18 @@ function startSpeedrunSection(index) {
     currentSection = nextSection;
 
     prevSection?.onStop();
+    const time = new Date().getTime();
+    if (!prevSection) startTime = time;
+    else {
+        registerSplitPassed(
+            (time - startTime) / 1000,
+            (time - lastSectionEndTime) / 1000,
+            index-1,
+            prevSection.sectionName
+        )
+    }
+    lastSectionEndTime = time;
+
     nextSection.onStart();
 }
 

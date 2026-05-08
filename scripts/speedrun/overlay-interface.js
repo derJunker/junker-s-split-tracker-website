@@ -1,12 +1,45 @@
 let overlay = null;
+let splitInfos = null
 
 document.addEventListener("DOMContentLoaded", function() {
     overlay = document.getElementById("splits");
     initSplits()
 })
 
+export function registerSplitPassed(time, splitDuration, index, splitName) {
+    const splitElement = overlay.querySelector(`.split[data-split-id="${index}"][data-split-name="${splitName}"]`);
+    splitElement.querySelector(".split-time").textContent = formatPbTime(time);
+    const splitInfo = splitInfos[splitName];
+    const {gold, goldPace, early, late, diff} = getSplitPassInfo(splitInfo, time, splitDuration);
+    addSplitPassInfoColorClasses(gold, goldPace, early, late, splitElement);
+    let sign = '';
+    if (diff >= 0) sign = '+';
+    else if (diff < 0) sign = '-';
+    const absDiff = Math.abs(diff);
+    splitElement.querySelector(".split-diff .sign").textContent = sign
+    splitElement.querySelector(".split-diff .num").textContent = formatPbTime(absDiff, true);
+}
+
+function getSplitPassInfo(splitInfo, time, splitDuration) {
+    const diff = time - splitInfo.pbTime ;
+    const gold = splitInfo.goldTime > splitDuration;
+    const goldPace = splitInfo.goldPace > time;
+    const early = diff < 0;
+    const late = diff > 0;
+    return { gold, goldPace, early, late, diff };
+}
+
+function addSplitPassInfoColorClasses(gold, goldPace, early, late, splitElement) {
+    const diffAndTime = splitElement.querySelectorAll(".split-diff, .split-time");
+    if (gold) diffAndTime.forEach(el => el.classList.add("golden"))
+    else if (early) diffAndTime.forEach(el => el.classList.add("early"))
+    else if (late) diffAndTime.forEach(el => el.classList.add("late"))
+
+    if (goldPace) splitElement.querySelector(".split-name").classList.add("gold-pace")
+}
+
 function initSplits() {
-    const splitInfos = readSplitInfo();
+    splitInfos = readSplitInfo();
     Object.keys(splitInfos).forEach(key => {
         setSplitInfo(key, splitInfos[key])
     })

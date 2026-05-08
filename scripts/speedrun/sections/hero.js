@@ -6,9 +6,19 @@ export default class HeroSpeedrunSection extends SpeedrunSection {
     }
 
     onStart() {
-        setTimeout(this.stopEventCallback, 2000)
+        this.scrollListener = () => {
+            const nextSibling = this.sectionElement.nextSibling.nextSibling
+            const siblingYPos = nextSibling.offsetTop
+
+            const documentBottomY = document.documentElement.scrollTop + window.innerHeight;
+            if (siblingYPos < documentBottomY) {
+                this.stopEventCallback();
+            }
+        }
+        document.addEventListener("scroll", this.scrollListener);
     }
 
     onStop() {
+        document.removeEventListener("scroll", this.scrollListener);
     }
 }
