@@ -1,6 +1,5 @@
 import HeroSpeedrunSection from "./sections/hero";
 import FeaturesSpeedrunSection from "./sections/features";
-import SpeedrunSection from "./sections/speedrun-section";
 import {registerSplitPassed} from "./overlay-interface";
 
 /**
