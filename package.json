@@ -5,6 +5,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
     "aos": "^2.3.4"
   },
   "devDependencies": {

@@ -16,7 +16,7 @@ document.addEventListener('mouseup', function () {
 
 const latestReleaseUrl = "https://github.com/derJunker/pogostuck-split-tracker/releases/latest";
 let downloadLink = latestReleaseUrl;
-findDownloadLink()
+// findDownloadLink()
 
 function openLatestRelease() {
     window.open(latestReleaseUrl, "_blank");
