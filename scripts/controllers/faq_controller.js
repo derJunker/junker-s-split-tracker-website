@@ -4,6 +4,7 @@ export default class extends Controller {
     static targets = ['item', 'question', 'answer'];
 
     connect() {
+        // TODO if you would want to make it perfect, i would need a listener to these, but it's a minor edge case
         this.answerHeight = this.answerTarget.getBoundingClientRect().height;
         this.questionHeight = this.questionTarget.getBoundingClientRect().height;
 
@@ -12,7 +13,7 @@ export default class extends Controller {
     }
 
     disconnect() {
-        console.log("FAQController disconnected");
+
     }
 
     toggle() {

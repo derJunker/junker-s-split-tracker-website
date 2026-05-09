@@ -16,10 +16,9 @@ export default class FeaturesSpeedrunSection extends SpeedrunSection {
 
     onStop() {
         this.observer.disconnect();
-        console.log("Disconnected");
     }
 
-    handleMutations(mutationsList, observer) {
+    handleMutations(mutationsList) {
         for (const mutation of mutationsList) {
             // Check if the "class" attribute was modified
             if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
