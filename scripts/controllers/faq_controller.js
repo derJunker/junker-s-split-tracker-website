@@ -8,9 +8,6 @@ export default class extends Controller {
         this.answerHeight = this.answerTarget.getBoundingClientRect().height;
         this.questionHeight = this.questionTarget.getBoundingClientRect().height;
 
-        console.log("question height", this.questionHeight)
-        console.log("answer height", this.answerHeight)
-
         this.itemTarget.style.setProperty("--question-height", this.questionHeight+ "px")
         this.itemTarget.style.setProperty("--answer-height", this.answerHeight + "px")
     }
