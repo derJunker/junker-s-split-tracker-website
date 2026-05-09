@@ -52,12 +52,12 @@
                 class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
                 class="num"></span></span><span class="split-time">00:49.410</span>
         </div>
-        <div class="split" data-split-id="2" data-overlay-target="split"><span
+        <div class="split" data-split-name="configure" data-split-id="2" data-overlay-target="split"><span
                 class="split-name">Customization</span><span
                 class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
                 class="num"></span></span><span class="split-time">00:49.410</span>
         </div>
-        <div class="split" data-split-id="3" data-overlay-target="split"><span class="split-name">FAQ</span><span
+        <div class="split" data-split-name="faq" data-split-id="3" data-overlay-target="split"><span class="split-name">FAQ</span><span
                 class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
                 class="num"></span></span><span class="split-time">00:49.410</span>
         </div>
@@ -95,7 +95,8 @@
 <div class="separator section">
     <div class="inside"></div>
 </div>
-<div class="features section text-image preview-list" data-controller="preview-list" data-preview-list-target="list" data-speed-section="features" data-speed-index="1">
+<div class="features section text-image preview-list" data-controller="preview-list" data-preview-list-target="list"
+     data-speed-section="features" data-speed-index="1">
     <div class="inside">
         <div class="left">
             <h2 data-i18n="features_title" data-aos-delay="250" data-aos="fade-down">
@@ -119,16 +120,31 @@
                     </div>
 
                 </li>
-                <li data-i18n="feature_gold_splits" class="preview-link" data-preview="1" data-preview-list-target="link">Gold Splits</li>
-                <li data-i18n="feature_gold_paces" class="preview-link" data-preview="2" data-preview-list-target="link">Gold Paces</li>
-                <li data-i18n="feature_pace_estimations" class="preview-link" data-preview="3" data-preview-list-target="link">Pace Estimations</li>
-                <li data-i18n="feature_sum_of_best" class="preview-link" data-preview="4" data-preview-list-target="link">Sum of Best</li>
-                <li data-i18n="feature_reset_counters" class="preview-link" data-preview="6" data-preview-list-target="link">Reset Counters</li>
-                <li data-i18n="feature_custom_modes" class="preview-link" data-preview="7" data-preview-list-target="link">Custom Modes</li>
-                <li data-i18n="feature_more_customization" class="preview-link" data-preview="9" data-preview-list-target="link">More Customization
+                <li data-i18n="feature_gold_splits" class="preview-link" data-preview="1"
+                    data-preview-list-target="link">Gold Splits
+                </li>
+                <li data-i18n="feature_gold_paces" class="preview-link" data-preview="2"
+                    data-preview-list-target="link">Gold Paces
+                </li>
+                <li data-i18n="feature_pace_estimations" class="preview-link" data-preview="3"
+                    data-preview-list-target="link">Pace Estimations
+                </li>
+                <li data-i18n="feature_sum_of_best" class="preview-link" data-preview="4"
+                    data-preview-list-target="link">Sum of Best
+                </li>
+                <li data-i18n="feature_reset_counters" class="preview-link" data-preview="6"
+                    data-preview-list-target="link">Reset Counters
+                </li>
+                <li data-i18n="feature_custom_modes" class="preview-link" data-preview="7"
+                    data-preview-list-target="link">Custom Modes
+                </li>
+                <li data-i18n="feature_more_customization" class="preview-link" data-preview="9"
+                    data-preview-list-target="link">More Customization
                     (coloring, hide skipped splits, size)
                 </li>
-                <li data-i18n="feature_reversed_ud" class="preview-link" data-preview="10" data-preview-list-target="link">Reversed UD Splits</li>
+                <li data-i18n="feature_reversed_ud" class="preview-link" data-preview="10"
+                    data-preview-list-target="link">Reversed UD Splits
+                </li>
             </ul>
         </div>
         <div class="right">
@@ -169,121 +185,163 @@
     </div>
 </div>
 <!-- TODO add translate -->
-<div class="section tiles">
+<div class="section tiles" data-speed-section="configure" data-speed-index="2" data-controller="configure"
+     data-configure-target="section">
     <div class="inside">
         <h2>
             Configure it to your liking.
         </h2>
         <ul class="tile-list">
-            <li>
-                <h3>Launch Pogostuck at the same time</h3>
-                <p>Just open the split-tracker and Pogostuck will open automatically.</p>
+            <li class="tile-cnt" data-aos="fade-up" data-aos-delay="0">
+                <div class="tile" data-configure-target="tile">
+
+                    <h3>Launch Pogostuck at the same time</h3>
+                    <p>Just open the split-tracker and Pogostuck will open automatically.</p>
+
+                </div>
             </li>
-            <li>
-                <h3>Adjust Split Colors</h3>
-                <p>Change any of the used colors: fast, slow, gold splits and even gold pace.</p>
+            <li class="tile-cnt" data-aos="fade-up" data-aos-delay="400">
+                <div class="tile" data-configure-target="tile">
+
+                    <h3>Adjust Split Colors</h3>
+                    <p>Change any of the used colors: fast, slow, gold splits and even gold pace.</p>
+
+                </div>
             </li>
-            <li>
-                <h3>Use it as an overlay or on a second monitor</h3>
-                <p>If you play on fullscreen the overlay is not an option.</p>
-                <p>Just set a background and put it on a 2nd monitor (or let it run in the background).</p>
+            <li class="tile-cnt" data-aos="fade-up" data-aos-delay="800">
+                <div class="tile" data-configure-target="tile">
+
+                    <h3>Use it as an overlay or on a second monitor</h3>
+                    <p>If you play on fullscreen the overlay is not an option.</p>
+                    <p>Just set a background and put it on a 2nd monitor (or let it run in the background).</p>
+
+                </div>
             </li>
-            <li>
-                <h3>Hide features you don't want</h3>
-                <p>You just want the gold splits but not the rest of the fuss? Sure thing, just hide them in the settings!</p>
+            <li class="tile-cnt" data-aos="fade-up" data-aos-delay="800">
+                <div class="tile" data-configure-target="tile">
+
+                    <h3>Hide features you don't want</h3>
+                    <p>You just want the gold splits but not the rest of the fuss? Sure thing, just hide them in the
+                        settings!</p>
+
+                </div>
             </li>
-            <li>
-                <h3>Old Split Names</h3>
-                <p>I can't relate, but <span id="hover-pug">"some"</span> people like them.</p>
+            <li class="tile-cnt" data-aos="fade-up" data-aos-delay="400">
+                <div class="tile" data-configure-target="tile">
+
+                    <h3>Old Split Names</h3>
+                    <p>I can't relate, but <span id="hover-pug">"some"</span> people like them.</p>
+
+                </div>
             </li>
-            <li>
-                <h3>Add a Background Color or leave it transparent</h3>
-                <p>Background is best for 2nd Monitors, transparent for an overlay.</p>
+            <li class="tile-cnt" data-aos="fade-up" data-aos-delay="000">
+                <div class="tile" data-configure-target="tile">
+
+                    <h3>Add a Background Color or leave it transparent</h3>
+                    <p>Background is best for 2nd Monitors, transparent for an overlay.</p>
+
+                </div>
             </li>
         </ul>
     </div>
 </div>
-<div class="faq-section section">
+<div class="faq-section section" data-controller="faq-section" data-speed-section="faq" data-speed-index="3">
     <div class="inside">
         <h2>Frequently Asked Questions</h2>
-        <div class="faq-item" data-controller="faq" data-faq-target="item">
-            <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
-                <span class="question-text">On what OS does the Split Tracker run?</span>
-                <span class="media-container faq-icon faq-icon-open">
+        <div class="faq-item-wrapper" data-aos="fade-up">
+            <div class="faq-item" data-controller="faq" data-faq-target="item">
+                <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
+                    <span class="question-text">On what OS does the Split Tracker run?</span>
+                    <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
-                <span class="media-container faq-icon faq-icon-closed">
+                    <span class="media-container faq-icon faq-icon-closed">
                     <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
                 </span>
-            </button>
-            <div class="faq-answer" data-faq-target="answer">
-                Only Windows. There might be plans to make it compatible with Linux. If you are a Linux user let me
-                know!
+                </button>
+                <div class="faq-answer" data-faq-target="answer">
+                    Only Windows. There might be plans to make it compatible with Linux. If you are a Linux user let me
+                    know!
+                </div>
             </div>
+
         </div>
-        <div class="faq-item" data-controller="faq" data-faq-target="item">
-            <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
-                <span class="question-text">How do I set it up?</span>
-                <span class="media-container faq-icon faq-icon-open">
+        <div class="faq-item-wrapper" data-aos="fade-up">
+            <div class="faq-item" data-controller="faq" data-faq-target="item">
+                <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
+                    <span class="question-text">How do I set it up?</span>
+                    <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
-                <span class="media-container faq-icon faq-icon-closed">
+                    <span class="media-container faq-icon faq-icon-closed">
                     <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
                 </span>
-            </button>
-            <div class="faq-answer" data-faq-target="answer">
-                Download the installer (there might be a virus warning, as the program isn't signed). There is a "Setup"
-                tab in the program itself. If that isn't enough check out <a
-                    href="https://www.youtube.com/watch?v=TiV_zLOi0zc" target="_blank">this video</a>
+                </button>
+                <div class="faq-answer" data-faq-target="answer">
+                    Download the installer (there might be a virus warning, as the program isn't signed). There is a
+                    "Setup"
+                    tab in the program itself. If that isn't enough check out <a
+                        href="https://www.youtube.com/watch?v=TiV_zLOi0zc" target="_blank">this video</a>
+                </div>
             </div>
+
         </div>
-        <div class="faq-item" data-controller="faq" data-faq-target="item">
-            <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
-                <span class="question-text">How do i leave feedback / report a bug?</span>
-                <span class="media-container faq-icon faq-icon-open">
+        <div class="faq-item-wrapper" data-aos="fade-up">
+            <div class="faq-item" data-controller="faq" data-faq-target="item">
+                <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
+                    <span class="question-text">How do i leave feedback / report a bug?</span>
+                    <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
-                <span class="media-container faq-icon faq-icon-closed">
+                    <span class="media-container faq-icon faq-icon-closed">
                     <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
                 </span>
-            </button>
-            <div class="faq-answer" data-faq-target="answer">
-                Easy! Just click here <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSeXa6HiFg7rdbIEup3HRJPcMTwQiwQxi5fOc5Fe1AJEw4nPmQ/viewform?usp=publish-editor"
-                    target="_blank">here</a>.
+                </button>
+                <div class="faq-answer" data-faq-target="answer">
+                    Easy! Just click here <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSeXa6HiFg7rdbIEup3HRJPcMTwQiwQxi5fOc5Fe1AJEw4nPmQ/viewform?usp=publish-editor"
+                        target="_blank">here</a>.
+                </div>
             </div>
+
         </div>
-        <div class="faq-item" data-controller="faq" data-faq-target="item">
-            <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
-                <span class="question-text">Is this tool really that awesome?</span>
-                <span class="media-container faq-icon faq-icon-open">
+        <div class="faq-item-wrapper" data-aos="fade-up">
+            <div class="faq-item" data-controller="faq" data-faq-target="item">
+                <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
+                    <span class="question-text">Is this tool really that awesome?</span>
+                    <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
-                <span class="media-container faq-icon faq-icon-closed">
+                    <span class="media-container faq-icon faq-icon-closed">
                     <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
                 </span>
-            </button>
-            <div class="faq-answer" data-faq-target="answer">
-                Not sure, weird question to ask tbh.
+                </button>
+                <div class="faq-answer" data-faq-target="answer">
+                    Not sure, weird question to ask tbh.
+                </div>
             </div>
+
         </div>
-        <div class="faq-item" data-controller="faq" data-faq-target="item">
-            <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
-                <span class="question-text">How can i show appreciation?</span>
-                <span class="media-container faq-icon faq-icon-open">
+        <div class="faq-item-wrapper" data-aos="fade-up">
+            <div class="faq-item" data-controller="faq" data-faq-target="item">
+                <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
+                    <span class="question-text">How can i show appreciation?</span>
+                    <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
-                <span class="media-container faq-icon faq-icon-closed">
+                    <span class="media-container faq-icon faq-icon-closed">
                     <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
                 </span>
-            </button>
-            <div class="faq-answer" data-faq-target="answer">
-                Wow, so nice of you to ask. You don't have to pay anything to use the split tracker.<br>
-                A lot of effort went into this, so if you want to <a
-                    href="https://buymeacoffee.com/derjunker" target="_blank"
-                    title="buy me a coffee">you can buy me a coffee
-                here</a>
+                </button>
+                <div class="faq-answer" data-faq-target="answer">
+                    Wow, so nice of you to ask. You don't have to pay anything to use the split tracker.<br>
+                    A lot of effort went into this, so if you want to <a
+                        href="https://buymeacoffee.com/derjunker" target="_blank"
+                        title="buy me a coffee">you can buy me a coffee
+                    here</a>
+                </div>
             </div>
+
         </div>
     </div>
 </div>

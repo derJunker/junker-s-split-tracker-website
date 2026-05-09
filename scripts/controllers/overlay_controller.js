@@ -28,17 +28,31 @@ export default class extends Controller {
         return {
             "hero": {
                 index: 0,
-                resets: 10,
+                resets: 12,
                 pbTime: 3.501,
                 goldTime: 2.500,
                 goldPace: 2.500
             },
             "features": {
                 index: 1,
-                resets: 4,
+                resets: 9,
                 pbTime: 6.120,
                 goldTime: 2.241,
                 goldPace: 5.400
+            },
+            "configure": {
+                index: 2,
+                resets: 2,
+                pbTime: 12.120,
+                goldTime: 5.241,
+                goldPace: 9.900
+            },
+            "faq": {
+                index: 3,
+                resets: 0,
+                pbTime: 18.120,
+                goldTime: 3.241,
+                goldPace: 9.900
             }
         }
     }

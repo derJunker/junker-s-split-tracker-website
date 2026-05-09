@@ -1,6 +1,8 @@
 import HeroSpeedrunSection from "./sections/hero";
 import FeaturesSpeedrunSection from "./sections/features";
 import {getSingularControllerForIdentifier} from "../controllers/register-controller";
+import ConfigureSpeedrunSection from "./sections/configure";
+import FaqSpeedrunSection from "./sections/faq";
 
 /**
  * @type Array<SpeedrunSection>
@@ -12,7 +14,9 @@ let lastSectionEndTime = null;
 
 const sectionNameToClassMap = {
     "hero": HeroSpeedrunSection,
-    "features": FeaturesSpeedrunSection
+    "features": FeaturesSpeedrunSection,
+    "configure": ConfigureSpeedrunSection,
+    "faq": FaqSpeedrunSection,
 }
 
 export function startSpeedrun() {
@@ -52,7 +56,6 @@ function startSpeedrunSection(index) {
         );
     }
     lastSectionEndTime = time;
-
     nextSection?.onStart();
 }
 
