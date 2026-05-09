@@ -7,8 +7,6 @@
             --line-height: 1rem;
             --padding-block: 1rem;
             --border-width: 1px;
-            --question-height: 60px; /* Set via js in faq_controller */
-            --answer-height: 90px; /* Set via js in faq_controller */
             overflow: hidden;
             height: calc(var(--question-height) + var(--border-width)*2);
             transition: height 0.25s;
@@ -73,6 +71,9 @@
                     position: initial;
                     visibility: visible;
                     transform: scale(1.1) translateY(-2px);
+                }
+                .faq-answer {
+                    height: var(--answer-height);
                 }
             }
         }

@@ -9,6 +9,7 @@
 @import 'sections/preview-list.css';
 @import 'sections/faq.css';
 @import 'sections/text-block.css';
+@import 'sections/tiles.css';
 
 :root {
     --text: #636363;

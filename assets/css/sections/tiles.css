@@ -1,0 +1,35 @@
+.tiles {
+    &>.inside {
+        h2 {text-align: center}
+        ul.tile-list {
+            display: grid;
+            gap: var(--gap-l);
+            li {
+                background-color: rgba(240, 240, 240, 0.2);
+                border-radius: var(--border-radius);
+                border: 2px solid color-mix(
+                    in srgb,
+                    var(--accent) 60%,
+                    transparent
+                );
+                list-style: none;
+                padding: 1rem;
+                h3 {
+                    line-height: 1;
+                    font-size: 1.2rem;
+                    min-height: 2.4rem;
+                    margin-block-end: var(--gap-m);
+                }
+                p {
+                    margin-block-end: var(--gap-sm);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .tiles > .inside .tile-list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
