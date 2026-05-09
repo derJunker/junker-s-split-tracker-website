@@ -1,6 +1,6 @@
 import HeroSpeedrunSection from "./sections/hero";
 import FeaturesSpeedrunSection from "./sections/features";
-import {registerSplitPassed} from "./overlay-interface";
+import {getSingularControllerForIdentifier} from "../controllers/register-controller";
 
 /**
  * @type Array<SpeedrunSection>
@@ -43,12 +43,13 @@ function startSpeedrunSection(index) {
     const time = new Date().getTime();
     if (!prevSection) startTime = time;
     else {
-        registerSplitPassed(
+        const overlayController = getSingularControllerForIdentifier('overlay')
+        overlayController.registerSplitPassed(
             (time - startTime) / 1000,
             (time - lastSectionEndTime) / 1000,
-            index-1,
+            index - 1,
             prevSection.sectionName
-        )
+        );
     }
     lastSectionEndTime = time;
 
