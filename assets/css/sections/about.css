@@ -1,15 +1,21 @@
 .about {
     & > .inside {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h2 { text-align: center}
         .character-speech-cnt {
             display: grid;
+            gap: var(--gap-m);
             align-items: start;
 
             .character {
-                padding-inline: 2rem;
-
                 .character-container {
                     border-radius: 100%;
-                    padding: 1rem;
+                    padding: .5rem;
+                    max-height: 10rem;
+                    aspect-ratio: 1;
+                    border: 2px var(--accent) solid;
                 }
             }
 
@@ -19,7 +25,6 @@
                 /*  grouping these, bc i inquire the dimensions of the paragraphs with js to set it for the speech bubble
                     so they have to have the same styling for padding and border
                  */
-
                 .speech,
                 p[data-about-target="speechParagraph"] {
                     padding: .5rem 1rem;
@@ -33,6 +38,7 @@
                     border-color: black;
                     border-radius: var(--border-radius);
                     display: inline-block;
+                    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 
                     &::before,
                     &::after {
@@ -60,6 +66,29 @@
                     transition-timing-function: ease-in-out;
                     width: var(--speech-width);
                     height: var(--speech-height);
+
+                    .next-icon-button {
+                        position: absolute;
+                        bottom: var(--gap-m);
+                        right: var(--gap-m);
+                        opacity: 0;
+                        pointer-events: none;
+                        transition: opacity .5s;
+                        background-color: transparent;
+                        font-weight: 800;
+                        width: 0;
+                        height: 0;
+                        border: 5px solid black;
+                        clip-path: polygon(0 0%, 0% 0%, 100% 50%, 100% 50%, 0% 100%);
+                    }
+                    &.has-next-text {
+                        .next-icon-button {
+                            opacity: 1;
+                            animation: blink 2s infinite;
+                            pointer-events: visible;
+                            cursor: pointer;
+                        }
+                    }
                 }
 
                 p[data-about-target="speechParagraph"] {
@@ -71,7 +100,27 @@
                 }
 
             }
+            margin-bottom: var(--gap-xl);
         }
+        .buttons {
+            opacity: 0;
+            transition: opacity 1s, transform 1.5s;
+            transform: translateY(10px);
+            display: inline-grid;
+            grid-template-columns: 1fr 1fr;
+            margin-inline: auto;
+            gap: var(--gap-m);
+            .btn {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.about.dialog-done {
+    .buttons {
+        opacity: 1;
+        transform: none;
     }
 }
 
@@ -86,13 +135,15 @@
                     left: -19px;
                     border: 8px solid;
                     border-color: black black transparent transparent;
+                    transform: scaleY(-1);
                 }
 
                 &::after {
-                    top: 17px;
+                    top: 15px;
                     left: -11px;
                     border: 6px solid;
                     border-color: white white transparent transparent;
+                    transform: scaleY(-1)
                 }
             }
         }

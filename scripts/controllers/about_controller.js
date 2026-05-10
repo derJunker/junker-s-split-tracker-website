@@ -5,15 +5,17 @@ export default class extends Controller {
     static values = { index: Number, isSpeaking: Boolean, skipCurrentAnimation: Boolean }
 
     connect() {
-        this.speechParagraphTargets.forEach(target => {
-            console.log(target)
-        })
+        if (this.speechParagraphTargets.length > 1) this.speechTarget.classList.add('has-next-text')
     }
 
     next() {
         if (this.isSpeakingValue) {
             this.skipCurrentAnimationValue = true;
         } else {
+            if (this.indexValue === this.speechParagraphTargets.length-2) {
+                this.element.classList.add('dialog-done')
+                this.speechTarget.classList.remove('has-next-text')
+            } else this.speechTarget.classList.add('has-next-text')
             this.indexValue = (this.indexValue + 1) % this.speechParagraphTargets.length;
         }
     }

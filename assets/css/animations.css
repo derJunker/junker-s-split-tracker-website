@@ -1,0 +1,14 @@
+@keyframes blink {
+    from {
+        opacity: 0;
+    }
+    32% {
+        opacity: 0;
+    }
+    34% {
+        opacity: 1;
+    }
+    to {
+        opacity: 1;
+    }
+}

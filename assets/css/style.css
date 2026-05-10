@@ -3,6 +3,7 @@
 @import 'typography.css';
 @import 'header.css';
 @import 'footer.css';
+@import 'animations.css';
 @import 'sections/hero.css';
 @import 'sections/text-image.css';
 @import 'sections/separator.css';

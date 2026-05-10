@@ -24,7 +24,7 @@ const translations = {
         about_p1: "Hey :). Thanks for checking out my split tracker :D. I put a lot of effort into it and i hope you like it.",
         about_p2: "If you play borderless you can use it just like the default split timer ingame just with more features. It allows you to play custom modes like Boostless with their own split times.",
         about_p3: "If you play with fullscreen there is currently no way for me to overlay the tracker. However you can let it run on a second monitor, or just in the background to track your gold splits.",
-        about_p4: "I hope you like it and feedback is greatly appreciated! The program is completely free to use, however if you want to support me you can choose <a href=\"https://buymeacoffee.com/derjunker\" target=\"_blank\" title=\"buy me a coffee\">to do so here</a>.",
+        about_p4: "I hope you like it and feedback is greatly appreciated! The program is completely free to use, however if you want to support me you can choose to do so with the buttons below</a>.",
         creator: "Made by @derjunker",
         a_github_page: "Github Page",
         a_latest_release: "Latest Split-Tracker Release",
