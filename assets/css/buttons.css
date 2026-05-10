@@ -23,3 +23,7 @@ a:focus-visible,
     box-shadow: inset 0 1px 0 2px rgb(0 0 0 / 90%), 0 0 14px 6px rgba(101, 165, 36, 0.56);
     border-color: rgba(255, 255, 255, 0.5);
 }
+
+a.btn {
+    text-decoration: none;
+}
