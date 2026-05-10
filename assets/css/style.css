@@ -16,7 +16,7 @@
 :root {
     --text: #636363;
     --text-muted: rgba(0, 0, 0, 0.36);
-    --accent: #65a524;
+    --accent: #b7d019;
     --border-radius: 8px;
 
     --gap-xs: .1rem;
@@ -97,4 +97,8 @@ html {
     max-width: 1200px;
     margin-inline: auto;
     padding-inline: 1rem;
+}
+
+[data-aos] {
+    opacity: 0;
 }

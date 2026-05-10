@@ -37,16 +37,15 @@ document.querySelectorAll(staggeredListSelector).forEach((list) => {
     });
 });
 
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual'; // disable browser auto-restore
+}
+document.documentElement.scrollTop = 0;
+document.body.scrollTop = 0; // Safari fallback
+
 AOS.init({
     duration: 1500,
     once: true,
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual'; // disable browser auto-restore
-    }
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0; // Safari fallback
-    startSpeedrun()
-})
+document.addEventListener("DOMContentLoaded", () => startSpeedrun());

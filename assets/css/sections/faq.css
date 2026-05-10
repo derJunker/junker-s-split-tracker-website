@@ -13,6 +13,13 @@
             border: color-mix(in srgb, var(--accent) 60%, transparent) var(--border-width) solid;
             border-radius: var(--border-radius);
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+            &:has(.faq-question:focus-visible) {
+                outline: color-mix(in srgb, var(--accent) 50%, transparent) 1px solid;
+                box-shadow: 0 0 14px 6px rgba(183, 208, 25, 0.38);
+                .faq-question {
+                    outline: none;
+                }
+            }
             .faq-question {
                 position: relative;
                 background: white;

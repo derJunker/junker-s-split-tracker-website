@@ -73,13 +73,16 @@
                         right: var(--gap-m);
                         opacity: 0;
                         pointer-events: none;
-                        transition: opacity .5s;
+                        transition: opacity .5s, transform .25s;
                         background-color: transparent;
                         font-weight: 800;
                         width: 0;
                         height: 0;
                         border: 5px solid black;
                         clip-path: polygon(0 0%, 0% 0%, 100% 50%, 100% 50%, 0% 100%);
+                        &:focus-visible {
+                            box-shadow: 0 0 14px 6px rgba(183, 208, 25, 0.38);
+                        }
                     }
                     &.has-next-text {
                         .next-icon-button {

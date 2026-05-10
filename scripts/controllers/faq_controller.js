@@ -1,4 +1,7 @@
 import {Controller} from "@hotwired/stimulus";
+import AOS from 'aos';
+import 'aos/dist/aos.js';
+import 'aos/dist/aos.css';
 
 export default class extends Controller {
     static targets = ['item', 'question', 'answer'];
@@ -10,6 +13,7 @@ export default class extends Controller {
 
         this.itemTarget.style.setProperty("--question-height", this.questionHeight+ "px")
         this.itemTarget.style.setProperty("--answer-height", this.answerHeight + "px")
+        AOS.refresh();
     }
 
     disconnect() {
