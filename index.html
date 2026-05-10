@@ -23,7 +23,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://github.com/derJunker/pogostuck-split-tracker">
     <meta property="og:image" content="./assets/clipboard.ico">
-    <title>Junker's Split Tracker</title>
+    <title data-i18n="app_name">Junker's Split Tracker</title>
 </head>
 <body>
 <header>
@@ -41,25 +41,27 @@
 <div class="splits-cnt">
     <div id="splits" class="text-border" data-controller="overlay" data-overlay-target="overlay">
         <div class="split" data-split-name="hero" data-split-id="0" data-overlay-target="split"><span
-                class="split-name">Hero</span><span
+                class="split-name" data-i18n="overlay_split_hero">Hero</span><span
                 class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
                 class="num"></span></span><span class="split-time">00:19.234</span>
         </div>
         <div class="split" data-split-name="features" data-split-id="1" data-overlay-target="split"><span
-                class="split-name">Features</span><span
+                class="split-name" data-i18n="overlay_split_features">Features</span><span
                 class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
                 class="num"></span></span><span class="split-time">00:49.410</span>
         </div>
         <div class="split" data-split-name="configure" data-split-id="2" data-overlay-target="split"><span
-                class="split-name">Customization</span><span
+                class="split-name" data-i18n="overlay_split_customization">Customization</span><span
                 class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
                 class="num"></span></span><span class="split-time">00:49.410</span>
         </div>
-        <div class="split" data-split-name="faq" data-split-id="3" data-overlay-target="split"><span class="split-name">FAQ</span><span
+        <div class="split" data-split-name="faq" data-split-id="3" data-overlay-target="split"><span
+                class="split-name" data-i18n="overlay_split_faq">FAQ</span><span
                 class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
                 class="num"></span></span><span class="split-time">00:49.410</span>
         </div>
-        <div class="split" data-split-name="about" data-split-id="4" data-overlay-target="split"><span class="split-name">PB</span><span
+        <div class="split" data-split-name="about" data-split-id="4" data-overlay-target="split"><span
+                class="split-name" data-i18n="overlay_split_pb">PB</span><span
                 class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
                 class="num"></span></span><span class="split-time">00:49.410</span>
         </div>
@@ -72,8 +74,7 @@
             <h1 data-i18n="hero_h1" data-aos="fade-down">
                 Level up your Pogostuck Speedrunning experience
             </h1>
-            <!-- TODO add translate -->
-            <p data-aos="fade-down">A simple overlay for a split tracker with a bunch of new features.</p>
+            <p data-i18n="hero_intro" data-aos="fade-down">A simple overlay for a split tracker with a bunch of new features.</p>
             <div data-aos="fade-down">
                 <button class="btn" onclick="openLatestRelease()"
                         data-i18n="try_button">
@@ -109,7 +110,7 @@
                                               points="5120.277 82.057 5026.746 109.679 4944.299 149.387 4798.292 236.744 4705.624 310.693 4633.648 390.564 4593.901 457.622 4580.467 508.268 4580.043 544.604 4593.888 590.85 4626.597 620.416 4689.954 651.679 4774.905 653.787 4860.811 641.863 4933.609 613.854 4998.458 570.251 5031.756 520.203 5035.388 494.926 5031.604 473.673 5019.287 456.221 5003.237 446.278 4976.419 434.15 4935.795 426.381 4886.737 427.405 4836.813 434.841 4776.01 452.987 4715.157 481.331 4676.242 510.016 4626.959 549.55 4548.201 622.066 4494.345 687.861 4438.645 764.555 4366.044 880.474 4303.146 1000.908 4210.314 1214.683 4186.388 1260.108 4140.507 1101.261 4186.809 1260.583 4332.773 1161.142"/>
                                 </svg>
                             </div>
-                            <span> Hover me :)</span>
+                            <span data-i18n="feature_hover_hint"> Hover me :)</span>
                         </div>
                     </div>
 
@@ -178,44 +179,43 @@
         </div>
     </div>
 </div>
-<!-- TODO add translate -->
 <div class="section tiles" data-speed-section="configure" data-speed-index="2" data-controller="configure"
      data-configure-target="section">
     <div class="inside">
-        <h2>
+        <h2 data-i18n="configure_title">
             Configure it to your liking.
         </h2>
         <ul class="tile-list">
             <li class="tile-cnt" data-aos="fade-up" data-aos-delay="0">
                 <div class="tile" data-configure-target="tile">
 
-                    <h3>Launch Pogostuck at the same time</h3>
-                    <p>Just open the split-tracker and Pogostuck will open automatically.</p>
+                    <h3 data-i18n="configure_launch_title">Launch Pogostuck at the same time</h3>
+                    <p data-i18n="configure_launch_text">Just open the split-tracker and Pogostuck will open automatically.</p>
 
                 </div>
             </li>
             <li class="tile-cnt" data-aos="fade-up" data-aos-delay="400">
                 <div class="tile" data-configure-target="tile">
 
-                    <h3>Adjust Split Colors</h3>
-                    <p>Change any of the used colors: fast, slow, gold splits and even gold pace.</p>
+                    <h3 data-i18n="configure_colors_title">Adjust Split Colors</h3>
+                    <p data-i18n="configure_colors_text">Change any of the used colors: fast, slow, gold splits and even gold pace.</p>
 
                 </div>
             </li>
             <li class="tile-cnt" data-aos="fade-up" data-aos-delay="800">
                 <div class="tile" data-configure-target="tile">
 
-                    <h3>Use it as an overlay or on a second monitor</h3>
-                    <p>If you play on fullscreen the overlay is not an option.</p>
-                    <p>Just set a background and put it on a 2nd monitor (or let it run in the background).</p>
+                    <h3 data-i18n="configure_overlay_title">Use it as an overlay or on a second monitor</h3>
+                    <p data-i18n="configure_overlay_text_1">If you play on fullscreen the overlay is not an option.</p>
+                    <p data-i18n="configure_overlay_text_2">Just set a background and put it on a 2nd monitor (or let it run in the background).</p>
 
                 </div>
             </li>
             <li class="tile-cnt" data-aos="fade-up" data-aos-delay="800">
                 <div class="tile" data-configure-target="tile">
 
-                    <h3>Hide features you don't want</h3>
-                    <p>You just want the gold splits but not the rest of the fuss? Sure thing, just hide them in the
+                    <h3 data-i18n="configure_hide_title">Hide features you don't want</h3>
+                    <p data-i18n="configure_hide_text">You just want the gold splits but not the rest of the fuss? Sure thing, just hide them in the
                         settings!</p>
 
                 </div>
@@ -223,16 +223,16 @@
             <li class="tile-cnt" data-aos="fade-up" data-aos-delay="400">
                 <div class="tile" data-configure-target="tile">
 
-                    <h3>Old Split Names</h3>
-                    <p>I can't relate, but <span id="hover-pug">"some"</span> people like them.</p>
+                    <h3 data-i18n="configure_old_names_title">Old Split Names</h3>
+                    <p data-i18n-html="configure_old_names_text">I can't relate, but <span id="hover-pug">"some"</span> people like them.</p>
 
                 </div>
             </li>
             <li class="tile-cnt" data-aos="fade-up" data-aos-delay="000">
                 <div class="tile" data-configure-target="tile">
 
-                    <h3>Add a Background Color or leave it transparent</h3>
-                    <p>Background is best for 2nd Monitors, transparent for an overlay.</p>
+                    <h3 data-i18n="configure_background_title">Add a Background Color or leave it transparent</h3>
+                    <p data-i18n="configure_background_text">Background is best for 2nd Monitors, transparent for an overlay.</p>
 
                 </div>
             </li>
@@ -241,11 +241,11 @@
 </div>
 <div class="faq-section section" data-controller="faq-section" data-speed-section="faq" data-speed-index="3">
     <div class="inside">
-        <h2>Frequently Asked Questions</h2>
+        <h2 data-i18n="faq_title">Frequently Asked Questions</h2>
         <div class="faq-item-wrapper" data-aos="fade-up">
             <div class="faq-item" data-controller="faq" data-faq-target="item">
                 <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
-                    <span class="question-text">On what OS does the Split Tracker run?</span>
+                    <span class="question-text" data-i18n="faq_question_os">On what OS does the Split Tracker run?</span>
                     <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
@@ -253,7 +253,7 @@
                     <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
                 </span>
                 </button>
-                <div class="faq-answer" data-faq-target="answer">
+                <div class="faq-answer" data-faq-target="answer" data-i18n="faq_answer_os">
                     Only Windows. There might be plans to make it compatible with Linux. If you are a Linux user let me
                     know!
                 </div>
@@ -263,7 +263,7 @@
         <div class="faq-item-wrapper" data-aos="fade-up">
             <div class="faq-item" data-controller="faq" data-faq-target="item">
                 <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
-                    <span class="question-text">How do I set it up?</span>
+                    <span class="question-text" data-i18n="faq_question_setup">How do I set it up?</span>
                     <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
@@ -271,7 +271,7 @@
                     <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
                 </span>
                 </button>
-                <div class="faq-answer" data-faq-target="answer">
+                <div class="faq-answer" data-faq-target="answer" data-i18n-html="faq_answer_setup">
                     Download the installer (there might be a virus warning, as the program isn't signed). There is a
                     "Setup"
                     tab in the program itself. If that isn't enough check out <a
@@ -283,7 +283,7 @@
         <div class="faq-item-wrapper" data-aos="fade-up">
             <div class="faq-item" data-controller="faq" data-faq-target="item">
                 <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
-                    <span class="question-text">How do i leave feedback / report a bug?</span>
+                    <span class="question-text" data-i18n="faq_question_feedback">How do i leave feedback / report a bug?</span>
                     <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
@@ -291,7 +291,7 @@
                     <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
                 </span>
                 </button>
-                <div class="faq-answer" data-faq-target="answer">
+                <div class="faq-answer" data-faq-target="answer" data-i18n-html="faq_answer_feedback">
                     Easy! Just click here <a
                         href="https://docs.google.com/forms/d/e/1FAIpQLSeXa6HiFg7rdbIEup3HRJPcMTwQiwQxi5fOc5Fe1AJEw4nPmQ/viewform?usp=publish-editor"
                         target="_blank">here</a>.
@@ -302,7 +302,7 @@
         <div class="faq-item-wrapper" data-aos="fade-up">
             <div class="faq-item" data-controller="faq" data-faq-target="item">
                 <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
-                    <span class="question-text">Does this tool work borderless and fullscreen?</span>
+                    <span class="question-text" data-i18n="faq_question_overlay">Does this tool work borderless and fullscreen?</span>
                     <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
@@ -310,7 +310,7 @@
                     <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
                 </span>
                 </button>
-                <div class="faq-answer" data-faq-target="answer">
+                <div class="faq-answer" data-faq-target="answer" data-i18n="faq_answer_overlay">
                     Sadly no, on Windows fullscreen does not allow other windows in front :(. So sadly you can only put this tool on your second monitor, or let it run in the background to track your golds.
                 </div>
             </div>
@@ -318,7 +318,7 @@
         <div class="faq-item-wrapper" data-aos="fade-up">
             <div class="faq-item" data-controller="faq" data-faq-target="item">
                 <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
-                    <span class="question-text">Why is a virus warning showing up when i want to install it?</span>
+                    <span class="question-text" data-i18n="faq_question_warning">Why is a virus warning showing up when i want to install it?</span>
                     <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
@@ -326,7 +326,7 @@
                     <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
                 </span>
                 </button>
-                <div class="faq-answer" data-faq-target="answer">
+                <div class="faq-answer" data-faq-target="answer" data-i18n="faq_answer_warning">
                     Sry for that! Because the installer has no signed certificate, some virus programs give out a warning.
                     If you don't trust it, don't use it^^. Otherwise you can also check out the source code on GitHub and ask around on the Pogostuck Discord.
                 </div>
@@ -335,7 +335,7 @@
         <div class="faq-item-wrapper" data-aos="fade-up">
             <div class="faq-item" data-controller="faq" data-faq-target="item">
                 <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
-                    <span class="question-text">Is this tool really that awesome?</span>
+                    <span class="question-text" data-i18n="faq_question_awesome">Is this tool really that awesome?</span>
                     <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
@@ -343,7 +343,7 @@
                     <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
                 </span>
                 </button>
-                <div class="faq-answer" data-faq-target="answer">
+                <div class="faq-answer" data-faq-target="answer" data-i18n="faq_answer_awesome">
                     Not sure, weird question to ask tbh.
                 </div>
             </div>
@@ -351,7 +351,7 @@
         <div class="faq-item-wrapper" data-aos="fade-up">
             <div class="faq-item" data-controller="faq" data-faq-target="item">
                 <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
-                    <span class="question-text">How can i show appreciation?</span>
+                    <span class="question-text" data-i18n="faq_question_support">How can i show appreciation?</span>
                     <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
@@ -359,7 +359,7 @@
                     <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
                 </span>
                 </button>
-                <div class="faq-answer" data-faq-target="answer">
+                <div class="faq-answer" data-faq-target="answer" data-i18n-html="faq_answer_support">
                     Wow, so nice of you to ask. You don't have to pay anything to use the split tracker.<br>
                     A lot of effort went into this, so if you want to <a
                         href="https://buymeacoffee.com/derjunker" target="_blank"
@@ -391,21 +391,21 @@
 
                     </button>
                 </div>
-                <p  data-about-target="speechParagraph">
+                <p data-about-target="speechParagraph" data-i18n="about_greeting">
                     Hey 🐸, Whats up!
                 </p>
-                <p  data-about-target="speechParagraph">
+                <p data-about-target="speechParagraph" data-i18n="about_intro">
                     First of all, thanks for checking out my split tracker :D. I put a lot of effort into it
                     and i hope you like it.
                 </p>
-                <p  data-about-target="speechParagraph">
+                <p data-about-target="speechParagraph" data-i18n="about_junker">
                     I'm Junker. I enjoy playing/ speedrunning Pogostuck a lot :D. However, the integrated split-tracker was pretty basic.
                     So i set out to improve upon it!
                 </p>
-                <p  data-about-target="speechParagraph">
+                <p data-about-target="speechParagraph" data-i18n="about_how_it_works">
                     It works by reading the Pogostuck log file for events like passing a split, etc.. With that information i can track stuff like gold splits and all the other features mentioned above.
                 </p>
-                <p  data-about-target="speechParagraph">
+                <p data-about-target="speechParagraph" data-i18n="about_feedback">
                     I hope you like it and feedback is greatly appreciated! The program is
                     completely free
                     to use, however if you want to support me you can choose to do so with the buttons below.
@@ -413,8 +413,8 @@
             </div>
         </div>
         <div class="buttons">
-            <a class="btn" href="https://buymeacoffee.com/derjunker">Buy me a coffee</a>
-            <a class="btn" href="https://github.com/derJunker/pogostuck-split-tracker" target="_blank">Star my project</a>
+            <a class="btn" href="https://buymeacoffee.com/derjunker" data-i18n="cta_buy_me_a_coffee">Buy me a coffee</a>
+            <a class="btn" href="https://github.com/derJunker/pogostuck-split-tracker" target="_blank" data-i18n="cta_star_my_project">Star my project</a>
         </div>
     </div>
 </div>
