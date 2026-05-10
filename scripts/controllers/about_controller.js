@@ -1,11 +1,12 @@
 import {Controller} from "@hotwired/stimulus";
 
 export default class extends Controller {
-    static targets = ['speechParagraph', 'speechTextField', 'speech']
+    static targets = ['speechParagraph', 'speechTextField', 'speech', 'avatarOpened', 'avatarDefault']
     static values = { index: Number, isSpeaking: Boolean, skipCurrentAnimation: Boolean }
 
     connect() {
         if (this.speechParagraphTargets.length > 1) this.speechTarget.classList.add('has-next-text')
+        this.showDefaultAvatar();
     }
 
     next() {
@@ -54,10 +55,31 @@ export default class extends Controller {
                 } else {
                     speed = Math.max(endSpeed, speed * .95)
                 }
+                // Speaking "animation"
+                if (i % 5 === 0) {
+                    this.switchAvatars();
+                }
             }
             this.isSpeakingValue = false;
             this.skipCurrentAnimationValue = false;
+            this.showDefaultAvatar()
             resolve();
         })
+    }
+
+    showDefaultAvatar() {
+        this.avatarDefaultTarget.style.display = '';
+        this.avatarOpenedTarget.style.display = 'none';
+    }
+
+    switchAvatars() {
+        if (this.avatarOpenedTarget.style.display === 'none') {
+            this.avatarOpenedTarget.style.display = '';
+            this.avatarDefaultTarget.style.display = 'none';
+        } else {
+            this.avatarOpenedTarget.style.display = 'none';
+            this.avatarDefaultTarget.style.display = '';
+        }
+
     }
 }
