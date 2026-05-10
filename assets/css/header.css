@@ -13,4 +13,18 @@ header {
     justify-content: space-between;
     padding: var(--gap-m) var(--gap-xl);
     z-index: 100;
+
+    .logo-container {
+        max-height: 3rem;
+        aspect-ratio: 1;
+    }
+    nav {
+        display: flex;
+        ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: var(--gap-l)
+        }
+    }
 }
