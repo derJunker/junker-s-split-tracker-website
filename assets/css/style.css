@@ -98,24 +98,3 @@ html {
     margin-inline: auto;
     padding-inline: 1rem;
 }
-
-.section.about {
-    position: relative;
-    padding-block: calc(var(--section-spacing)/2);
-    &::before,
-    &::after {
-        content: "";
-        position: absolute;
-        z-index: 2;
-        left: 0; right: 0;
-        height: 1px;
-        background: linear-gradient(
-                to right,
-                transparent,
-                color-mix(in srgb, var(--accent) 40%, transparent) 40% 60%,
-                transparent
-        );
-    }
-    &::before { top: 2px; }
-    &::after { bottom: 2px; }
-}

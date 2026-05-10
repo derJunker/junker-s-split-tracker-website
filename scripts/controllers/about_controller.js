@@ -27,14 +27,14 @@ export default class extends Controller {
 
     showCurrentText() {
         const target = this.speechParagraphTargets[this.indexValue]
-        const targetWidth = target.offsetWidth;
-        const targetHeight = target.offsetHeight;
+        const targetWidth = target.offsetWidth+1; // dont ask me why but sometimes there is a 1px diff
+        const targetHeight = target.offsetHeight+1;
 
         this.speechTarget.style.setProperty("--speech-width", targetWidth+"px");
         this.speechTarget.style.setProperty("--speech-height", targetHeight+"px");
 
         this.isSpeakingValue = true;
-        this.animateText(target.textContent)
+        this.animateText(target.textContent.trim())
     }
 
     async animateText(text) {
@@ -56,7 +56,7 @@ export default class extends Controller {
                     speed = Math.max(endSpeed, speed * .95)
                 }
                 // Speaking "animation"
-                if (i % 5 === 0) {
+                if (i % 5 === 4) {
                     this.switchAvatars();
                 }
             }
