@@ -103,6 +103,7 @@
         }
         .buttons {
             opacity: 0;
+            pointer-events: none;
             transition: opacity 1s, transform 1.5s;
             transform: translateY(10px);
             display: inline-grid;
@@ -120,6 +121,7 @@
     .buttons {
         opacity: 1;
         transform: none;
+        pointer-events: auto;
     }
 }
 

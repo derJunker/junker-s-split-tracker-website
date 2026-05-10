@@ -3,6 +3,7 @@ import FeaturesSpeedrunSection from "./sections/features";
 import {getSingularControllerForIdentifier} from "../controllers/register-controller";
 import ConfigureSpeedrunSection from "./sections/configure";
 import FaqSpeedrunSection from "./sections/faq";
+import AboutSpeedrunSection from "./sections/about";
 
 /**
  * @type Array<SpeedrunSection>
@@ -17,6 +18,7 @@ const sectionNameToClassMap = {
     "features": FeaturesSpeedrunSection,
     "configure": ConfigureSpeedrunSection,
     "faq": FaqSpeedrunSection,
+    "about": AboutSpeedrunSection,
 }
 
 export function startSpeedrun() {

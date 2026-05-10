@@ -49,10 +49,17 @@ export default class extends Controller {
             },
             "faq": {
                 index: 3,
-                resets: 0,
+                resets: 4,
                 pbTime: 18.120,
                 goldTime: 3.241,
-                goldPace: 9.900
+                goldPace: 16.900
+            },
+            "about": {
+                index: 4,
+                resets: 1,
+                pbTime: 25.120,
+                goldTime: 5.241,
+                goldPace: 20.900
             }
         }
     }

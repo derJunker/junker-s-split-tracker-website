@@ -1,6 +1,6 @@
 import SpeedrunSection from "./speedrun-section";
 
-export default class ConfigureSpeedrunSection extends SpeedrunSection {
+export default class AboutSpeedrunSection extends SpeedrunSection {
     constructor(stopEventCallback, sectionName, section) {
         super(stopEventCallback, sectionName, section);
     }
@@ -20,14 +20,10 @@ export default class ConfigureSpeedrunSection extends SpeedrunSection {
 
     handleMutations(mutationsList) {
         for (const mutation of mutationsList) {
-            // Check if the "class" attribute was modified
             if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-                // Get the new and old class lists
                 const newClassList = mutation.target.classList;
                 const oldClassList = mutation.oldValue?.split(' ') || [];
-
-                // Check if "special" was added (not present before, now present)
-                const wasAdded = !oldClassList.includes('all-selected') && newClassList.contains('all-selected');
+                const wasAdded = !oldClassList.includes('dialog-done') && newClassList.contains('dialog-done');
 
                 if (wasAdded) {
                     this.stopEventCallback();
@@ -36,3 +32,4 @@ export default class ConfigureSpeedrunSection extends SpeedrunSection {
         }
     }
 }
+

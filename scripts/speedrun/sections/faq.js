@@ -12,10 +12,6 @@ export default class FaqSpeedrunSection extends SpeedrunSection {
             attributeFilter: ['class'],
             attributeOldValue: true
         })
-
-        if (this.sectionElement.classList.contains('all-opened')) {
-            this.stopEventCallback();
-        }
     }
 
     onStop() {

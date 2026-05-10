@@ -61,7 +61,7 @@
                 class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
                 class="num"></span></span><span class="split-time">00:49.410</span>
         </div>
-        <div class="split" data-split-id="4" data-overlay-target="split"><span class="split-name">About</span><span
+        <div class="split" data-split-name="about" data-split-id="4" data-overlay-target="split"><span class="split-name">About</span><span
                 class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
                 class="num"></span></span><span class="split-time">00:49.410</span>
         </div>
@@ -308,6 +308,39 @@
         <div class="faq-item-wrapper" data-aos="fade-up">
             <div class="faq-item" data-controller="faq" data-faq-target="item">
                 <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
+                    <span class="question-text">Does this tool work borderless and fullscreen?</span>
+                    <span class="media-container faq-icon faq-icon-open">
+                    <img src="assets/clipboard.ico" alt="split tracker logo">
+                </span>
+                    <span class="media-container faq-icon faq-icon-closed">
+                    <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
+                </span>
+                </button>
+                <div class="faq-answer" data-faq-target="answer">
+                    Sadly no, on Windows fullscreen does not allow other windows in front :(. So sadly you can only put this tool on your second monitor, or let it run in the background to track your golds.
+                </div>
+            </div>
+        </div>
+        <div class="faq-item-wrapper" data-aos="fade-up">
+            <div class="faq-item" data-controller="faq" data-faq-target="item">
+                <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
+                    <span class="question-text">Why is a virus warning showing up when i want to install it?</span>
+                    <span class="media-container faq-icon faq-icon-open">
+                    <img src="assets/clipboard.ico" alt="split tracker logo">
+                </span>
+                    <span class="media-container faq-icon faq-icon-closed">
+                    <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
+                </span>
+                </button>
+                <div class="faq-answer" data-faq-target="answer">
+                    Sry for that! Because the installer has no signed certificate, some virus programs give out a warning.
+                    If you don't trust it, don't use it^^. Otherwise you can also check out the source code on GitHub and ask around on the Pogostuck Discord.
+                </div>
+            </div>
+        </div>
+        <div class="faq-item-wrapper" data-aos="fade-up">
+            <div class="faq-item" data-controller="faq" data-faq-target="item">
+                <button class="faq-question" data-action="faq#toggle" data-faq-target="question">
                     <span class="question-text">Is this tool really that awesome?</span>
                     <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
@@ -320,7 +353,6 @@
                     Not sure, weird question to ask tbh.
                 </div>
             </div>
-
         </div>
         <div class="faq-item-wrapper" data-aos="fade-up">
             <div class="faq-item" data-controller="faq" data-faq-target="item">
@@ -341,16 +373,14 @@
                     here</a>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
-<div class="section about" data-controller="about" data-about-index-value="0" data-about-is-speaking-value="false" data-about-skip-current-animation-value="false">
+<div class="section about" data-controller="about" data-about-index-value="0" data-about-is-speaking-value="false" data-about-skip-current-animation-value="false" data-speed-section="about" data-speed-index="4">
     <div class="inside">
-        <h2 data-i18n="about_title">About</h2>
         <div class="character-speech-cnt">
             <div class="character">
-                <div class="character-container media-container">
+                <div class="character-container media-container" data-action="click->about#next">
                     <img src="assets/avatar_mouth_closed.png" alt="avatar of creator" data-about-target="avatarDefault">
                     <img src="assets/avatar_mouth_open.png" alt="" data-about-target="avatarOpened">
                 </div>
@@ -381,16 +411,6 @@
             <a class="btn" href="https://buymeacoffee.com/derjunker">Buy me a coffee</a>
             <a class="btn" href="https://github.com/derJunker/pogostuck-split-tracker" target="_blank">Star my project</a>
         </div>
-    </div>
-</div>
-<div class="section text-block">
-    <div class="inside">
-        <h2 data-i18n="limitations_title">Limitations</h2>
-        <ul class="check-list">
-            <li data-i18n="limitation_borderless_only">Only works with borderless not fullscreen</li>
-            <li data-i18n="limitation_windows_only">Only tested on Windows</li>
-            <li data-i18n="limitation_av_warning">Anti-Virus programs might give a warning when installing :)</li>
-        </ul>
     </div>
 </div>
 <footer class="section">
