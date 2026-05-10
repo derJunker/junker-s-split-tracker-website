@@ -47,9 +47,11 @@ export default class extends Controller {
             let speed = startSpeed;
 
             while (i < text.length) {
-                this.speechTextFieldTarget.innerHTML += text.charAt(i);
+                const char = text.charAt(i);
+                this.speechTextFieldTarget.innerHTML += char;
                 i++;
-                await new Promise(r => setTimeout(r, speed));
+                const timeout = this.decideTimeoutDuration(char, speed);
+                await new Promise(r => setTimeout(r, timeout));
                 if (this.skipCurrentAnimationValue) {
                     speed = 0
                 } else {
@@ -65,6 +67,20 @@ export default class extends Controller {
             this.showDefaultAvatar()
             resolve();
         })
+    }
+
+    // When talking slow down after a comma, stop,etc.
+    decideTimeoutDuration(char, speed) {
+        switch (char) {
+            case '.':
+            case '!':
+            case '?':
+                return speed*15;
+            case ',':
+                return speed*7.5;
+            default:
+                return speed;
+        }
     }
 
     showDefaultAvatar() {
