@@ -43,5 +43,10 @@ AOS.init({
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual'; // disable browser auto-restore
+    }
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0; // Safari fallback
     startSpeedrun()
 })
