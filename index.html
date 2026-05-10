@@ -33,12 +33,8 @@
     <nav>
         <ul>
             <li><a class="btn" data-i18n="btn_feedback" href="https://docs.google.com/forms/d/e/1FAIpQLSeXa6HiFg7rdbIEup3HRJPcMTwQiwQxi5fOc5Fe1AJEw4nPmQ/viewform?usp=publish-editor" target="_blank">Feedback</a></li>
-        </ul>
-        <ul>
-            <li><a id="nav-download-btn" class="btn" onclick="openDownload()" data-i18n="download_button">Download</a></li>
-        </ul>
-        <ul>
-            <li><a id="lang-toggle" class="btn" onclick="toggleLanguage()">日本語</a></li>
+            <li><button id="nav-download-btn" class="btn" data-controller="download" data-action="click->download#open" data-i18n="download_button">Download</button></li>
+            <li><button id="lang-toggle" class="btn" data-controller="language" data-action="click->language#toggle">日本語</button></li>
         </ul>
     </nav>
 </header>

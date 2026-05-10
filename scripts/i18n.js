@@ -98,10 +98,6 @@ function translate(lang) {
     translate(lang);
 })();
 
-window.toggleLanguage = function() {
-    const current = document.documentElement.lang || 'en';
-    translate(current === 'ja' ? 'en' : 'ja');
-};
 
 // export for testing or further use
 export { translate, translations };

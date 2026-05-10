@@ -11,10 +11,6 @@ header {
     border-bottom: rgba(255, 255, 255, .5) 2px solid;
 
     justify-content: space-between;
-    padding: 8px 16px;
+    padding: var(--gap-m) var(--gap-xl);
     z-index: 100;
-
-    #name {
-        color: white;
-    }
 }

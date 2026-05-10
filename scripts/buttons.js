@@ -13,34 +13,3 @@ document.addEventListener('mouseup', function () {
     });
 })
 
-
-const latestReleaseUrl = "https://github.com/derJunker/pogostuck-split-tracker/releases/latest";
-let downloadLink = latestReleaseUrl;
-// findDownloadLink()
-
-function openLatestRelease() {
-    window.open(latestReleaseUrl, "_blank");
-}
-
-function openDownload() {
-    window.open(downloadLink, "_blank");
-}
-
-window.openLatestRelease = openLatestRelease;
-window.openDownload = openDownload;
-window.openFeedbackLink = openFeedbackLink;
-
-async function findDownloadLink() {
-    try {
-        let response = await fetch("https://api.github.com/repos/derJunker/pogostuck-split-tracker/releases/latest");
-        let data = await response.json();
-        for (let asset of data.assets) {
-            if (asset.name.endsWith(".exe")) {
-                downloadLink = asset.browser_download_url;
-                break;
-            }
-        }
-    } catch (error) {
-        console.error("Error fetching download link:", error);
-    }
-}
