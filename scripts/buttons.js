@@ -26,10 +26,6 @@ function openDownload() {
     window.open(downloadLink, "_blank");
 }
 
-function openFeedbackLink() {
-    window.open("https://docs.google.com/forms/d/e/1FAIpQLSeXa6HiFg7rdbIEup3HRJPcMTwQiwQxi5fOc5Fe1AJEw4nPmQ/viewform?usp=publish-editor", "_blank");
-}
-
 window.openLatestRelease = openLatestRelease;
 window.openDownload = openDownload;
 window.openFeedbackLink = openFeedbackLink;

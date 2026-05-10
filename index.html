@@ -29,15 +29,17 @@
 <header>
     <span id="logo-n-name">
         <img src="assets/clipboard.ico" alt="split tracker logo">
-        <span data-i18n="app_name" id="name">Junker's Split Tracker</span>
     </span>
     <nav>
-        <span id="nav-btns">
-            <button class="btn" data-i18n="btn_feedback" onclick="openFeedbackLink()">Feedback</button>
-            <button id="nav-download-btn" class="btn" onclick="openDownload()"
-                    data-i18n="download_button">Download</button>
-            <button id="lang-toggle" class="btn" onclick="toggleLanguage()">日本語</button>
-        </span>
+        <ul>
+            <li><a class="btn" data-i18n="btn_feedback" href="https://docs.google.com/forms/d/e/1FAIpQLSeXa6HiFg7rdbIEup3HRJPcMTwQiwQxi5fOc5Fe1AJEw4nPmQ/viewform?usp=publish-editor" target="_blank">Feedback</a></li>
+        </ul>
+        <ul>
+            <li><a id="nav-download-btn" class="btn" onclick="openDownload()" data-i18n="download_button">Download</a></li>
+        </ul>
+        <ul>
+            <li><a id="lang-toggle" class="btn" onclick="toggleLanguage()">日本語</a></li>
+        </ul>
     </nav>
 </header>
 <div class="splits-cnt">
