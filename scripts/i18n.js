@@ -72,7 +72,6 @@ const translations = {
 function translate(lang) {
     const map = translations[lang] || translations.en;
     document.documentElement.lang = lang;
-    localStorage.setItem('lang', lang);
 
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
@@ -89,12 +88,16 @@ function translate(lang) {
     if (toggle) toggle.textContent = (lang === 'ja') ? 'EN' : '日本語';
 }
 
+// Get language from query params or default to 'en'
+function getCurrentLanguage() {
+    const params = new URLSearchParams(window.location.search);
+    const lang = params.get('lang');
+    return (lang === 'ja') ? 'ja' : 'en';
+}
+
 // detect initial language
 (function initLocale() {
-    const saved = localStorage.getItem('lang');
-    let lang = 'en';
-    if (saved) lang = saved;
-    else if (navigator.language && navigator.language.toLowerCase().startsWith('ja')) lang = 'ja';
+    const lang = getCurrentLanguage();
     translate(lang);
 })();
 

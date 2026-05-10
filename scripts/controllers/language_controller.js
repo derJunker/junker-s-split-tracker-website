@@ -1,12 +1,18 @@
 import {Controller} from "@hotwired/stimulus";
-import {translate} from "../i18n.js";
 
 export default class extends Controller {
     toggle(event) {
         event?.preventDefault();
 
         const current = document.documentElement.lang || 'en';
-        translate(current === 'ja' ? 'en' : 'ja');
+        const newLang = current === 'ja' ? 'en' : 'ja';
+
+        // Create URL with new language parameter
+        const url = new URL(window.location);
+        url.searchParams.set('lang', newLang);
+
+        // Reload page with new language
+        window.location.href = url.toString();
     }
 }
 
