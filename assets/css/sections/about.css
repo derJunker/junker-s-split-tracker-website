@@ -1,0 +1,100 @@
+.about {
+    & > .inside {
+        .character-speech-cnt {
+            display: grid;
+            align-items: start;
+
+            .character {
+                padding-inline: 2rem;
+
+                .character-container {
+                    border-radius: 100%;
+                    padding: 1rem;
+                }
+            }
+
+            .speech-wrapper {
+                position: relative;
+                height: 100%;
+                /*  grouping these, bc i inquire the dimensions of the paragraphs with js to set it for the speech bubble
+                    so they have to have the same styling for padding and border
+                 */
+
+                .speech,
+                p[data-about-target="speechParagraph"] {
+                    padding: .5rem 1rem;
+                    border: transparent solid 3px;
+                }
+
+                .speech {
+                    position: relative;
+                    justify-self: start;
+                    background-color: white;
+                    border-color: black;
+                    border-radius: var(--border-radius);
+                    display: inline-block;
+
+                    &::before,
+                    &::after {
+                        content: ' ';
+                        position: absolute;
+                        width: 0;
+                        height: 0;
+                    }
+
+                    &::before {
+                        left: 14px;
+                        top: -19px;
+                        border: 8px solid;
+                        border-color: transparent black black transparent;
+                    }
+
+                    &::after {
+                        left: 15px;
+                        top: -11px;
+                        border: 6px solid;
+                        border-color: transparent white white transparent;
+                    }
+                    transition-property: width, height;
+                    transition-duration: 0.5s;
+                    transition-timing-function: ease-in-out;
+                    width: var(--speech-width);
+                    height: var(--speech-height);
+                }
+
+                p[data-about-target="speechParagraph"] {
+                    position: absolute;
+                    visibility: hidden;
+                    inset: 0;
+                    max-width: fit-content;
+                    max-height: fit-content;
+                }
+
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .about > .inside .character-speech-cnt {
+        grid-template-columns: 1fr 4fr;
+
+        .speech-wrapper {
+            .speech {
+                &::before {
+                    top: 14px;
+                    left: -19px;
+                    border: 8px solid;
+                    border-color: black black transparent transparent;
+                }
+
+                &::after {
+                    top: 17px;
+                    left: -11px;
+                    border: 6px solid;
+                    border-color: white white transparent transparent;
+                }
+            }
+        }
+    }
+}

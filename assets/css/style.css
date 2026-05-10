@@ -10,6 +10,7 @@
 @import 'sections/faq.css';
 @import 'sections/text-block.css';
 @import 'sections/tiles.css';
+@import 'sections/about.css';
 
 :root {
     --text: #636363;
