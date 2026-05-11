@@ -152,8 +152,12 @@ export default class extends Controller {
     }
 
     showResetButton() {
-        console.log("reset overlay", this.resetTarget.classList);
         this.resetTarget.classList.remove("hidden")
+    }
+
+    increaseResetsFor(splitName) {
+        this.splitInfos[splitName].resets++;
+        this.writeSplitInfosToLocalStorage(this.splitInfos)
     }
 }
 

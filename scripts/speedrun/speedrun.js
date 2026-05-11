@@ -101,6 +101,8 @@ window.resetSpeedrun = startSpeedrun;
 
 function reset() {
     currentSection.onStop();
+    console.log("currentSection", currentSection);
+    overlayController.increaseResetsFor(currentSection.sectionName);
     startSpeedrun();
 }
 

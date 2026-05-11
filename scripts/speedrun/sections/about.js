@@ -1,4 +1,5 @@
 import SpeedrunSection from "./speedrun-section";
+import {getSingularControllerForIdentifier} from "../../controllers/register-controller";
 
 export default class AboutSpeedrunSection extends SpeedrunSection {
     constructor(stopEventCallback, sectionName, section) {
@@ -12,6 +13,8 @@ export default class AboutSpeedrunSection extends SpeedrunSection {
             attributeFilter: ['class'],
             attributeOldValue: true
         })
+        this.sectionController = getSingularControllerForIdentifier('about');
+        this.sectionController.resetSpeechIndex()
     }
 
     onStop() {

@@ -72,6 +72,13 @@ export default class extends Controller {
             this.element.classList.add('all-opened');
         }
     }
+
+    resetFaqs() {
+        this.items.forEach(item => {
+            item.classList.remove('faq-open')
+        })
+        this.element.classList.remove('all-opened')
+    }
 }
 
 

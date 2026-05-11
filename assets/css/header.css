@@ -41,6 +41,7 @@ header {
             right: 0;
             height: 100dvh;
             overflow-x: hidden;
+            pointer-events: none;
             ul {
                 display: flex;
                 flex-direction: column;
@@ -105,6 +106,7 @@ header {
         nav {
             transition: box-shadow .1ms ease .5s;
             box-shadow: -4px 0px 8px 0 rgba(0, 0, 0, .25);
+            pointer-events: initial;
             ul {
                 transform: translateX(0);
             }

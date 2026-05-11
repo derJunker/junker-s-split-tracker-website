@@ -91,6 +91,10 @@ export default class extends Controller {
             this.avatarOpenedTarget.style.display = 'none';
             this.avatarDefaultTarget.style.display = '';
         }
+    }
 
+    resetSpeechIndex() {
+        this.indexValue = 0;
+        this.element.classList.remove('dialog-done');
     }
 }
