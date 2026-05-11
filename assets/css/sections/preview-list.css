@@ -20,7 +20,7 @@
             left: calc(-1ch - 1.5rem);
             height: 1.5rem;
             aspect-ratio: 1;
-            background-image: url('./frog-heart-eyes.png');
+            background-image: url('/junker-s-split-tracker-website/assets/frog-heart-eyes.png');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
