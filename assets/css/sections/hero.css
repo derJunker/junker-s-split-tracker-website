@@ -26,6 +26,7 @@
             }
             p {
                 margin-block-end: var(--gap-m);
+                text-align: center;
             }
         }
         .config-window-preview {

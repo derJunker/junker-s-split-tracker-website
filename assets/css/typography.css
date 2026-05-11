@@ -4,7 +4,7 @@ html {
 
     font-size: clamp(
             var(--min-font-size),
-            calc(1rem + 0.8vw),
+            calc(2.5vw),
             var(--max-font-size)
     );
 }

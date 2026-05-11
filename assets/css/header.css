@@ -63,9 +63,9 @@ header {
             background: transparent;
             border: none;
             cursor: pointer;
+            z-index: 2;
             .hamburger {
                 position: relative;
-                flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
                 width: 100%;
