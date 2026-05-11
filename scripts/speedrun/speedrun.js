@@ -12,6 +12,8 @@ const speedrunSections = [];
 let currentSection = null;
 let startTime = null;
 let lastSectionEndTime = null;
+let overlayController = null;
+let isRunning = false;
 
 const sectionNameToClassMap = {
     "hero": HeroSpeedrunSection,
@@ -31,6 +33,7 @@ export function startSpeedrun() {
             if (!sectionClass) throw new Error(`No section element found for ${sectionName}`);
             speedrunSections[index] = new sectionClass(() => onSectionCompleted(index), sectionName, sectionElement);
         })
+    overlayController = getSingularControllerForIdentifier('overlay')
     startSpeedrunSection(0)
 }
 
@@ -47,9 +50,12 @@ function startSpeedrunSection(index) {
 
     prevSection?.onStop();
     const time = new Date().getTime();
-    if (!prevSection) startTime = time;
+    if (!prevSection) {
+        startTime = time;
+        isRunning = true;
+        updateTimer();
+    }
     else {
-        const overlayController = getSingularControllerForIdentifier('overlay')
         overlayController.registerSplitPassed(
             (time - startTime) / 1000,
             (time - lastSectionEndTime) / 1000,
@@ -58,9 +64,22 @@ function startSpeedrunSection(index) {
         );
     }
     lastSectionEndTime = time;
-    nextSection?.onStart();
+    if (nextSection) {
+        nextSection.onStart();
+    } else {
+        isRunning = false;
+        overlayController.setTimer((time - startTime) / 1000);
+    }
 }
 
 function onSectionCompleted(index) {
     startSpeedrunSection(index+1)
+}
+
+function updateTimer() {
+    if (!isRunning) return;
+    const time = new Date().getTime();
+    const timeSinceStart = (time - startTime) / 1000;
+    overlayController.setTimer(timeSinceStart);
+    requestAnimationFrame(updateTimer);
 }

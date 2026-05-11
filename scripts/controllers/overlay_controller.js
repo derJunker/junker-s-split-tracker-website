@@ -1,7 +1,7 @@
 import {Controller} from "@hotwired/stimulus";
 
 export default class extends Controller {
-    static targets = ['overlay', 'split']
+    static targets = ['split', 'timer']
 
     initialize() {
         this.splitInfos = this.readSplitInfo();
@@ -83,6 +83,10 @@ export default class extends Controller {
         const absDiff = Math.abs(diff);
         splitElement.querySelector(".split-diff .sign").textContent = sign
         splitElement.querySelector(".split-diff .num").textContent = formatPbTime(absDiff, true);
+    }
+
+    setTimer(time) {
+        this.timerTarget.textContent = formatPbTime(time);
     }
 }
 

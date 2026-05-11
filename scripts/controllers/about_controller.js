@@ -71,16 +71,11 @@ export default class extends Controller {
 
     // When talking slow down after a comma, stop,etc.
     decideTimeoutDuration(char, speed) {
-        switch (char) {
-            case '.':
-            case '!':
-            case '?':
-                return speed*15;
-            case ',':
-                return speed*7.5;
-            default:
-                return speed;
-        }
+        const fullSlowdownChars = ['.', '!', '?', '。', '！'];
+        const semiSlowDownChars = [',', '、'];
+        if (fullSlowdownChars.indexOf(char) !== -1) return speed*15;
+        else if (semiSlowDownChars.indexOf(char) !== -1) return speed*7.5;
+        else return speed;
     }
 
     showDefaultAvatar() {
