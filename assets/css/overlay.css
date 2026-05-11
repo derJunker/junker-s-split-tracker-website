@@ -43,16 +43,22 @@
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
+
 .reset-message-cnt {
     top: unset;
     bottom: 0;
     right: 0;
-    overflow-x: hidden;
     border-radius: var(--border-radius) 0 0 var(--border-radius);
     transform: translateY(calc(100% + var(--gap-m)));
     font-weight: bold;
     cursor: pointer;
     user-select: initial;
+    transition: opacity .5s ease;
+    &.hidden {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
 }
 
 #splits {

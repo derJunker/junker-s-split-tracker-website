@@ -81,6 +81,7 @@ function startSpeedrunSection(index) {
         isRunning = false;
         overlayController.setTimer((time - startTime) / 1000);
         overlayController.writeNewPbTimeFromSplits(splitTimes)
+        overlayController.showResetButton();
     }
 }
 

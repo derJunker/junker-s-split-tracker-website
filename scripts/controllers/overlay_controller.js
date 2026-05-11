@@ -40,7 +40,7 @@ const DEFAULT_SPLIT_INFOS = {
 };
 
 export default class extends Controller {
-    static targets = ['split', 'timer']
+    static targets = ['split', 'timer', 'reset']
 
     initialize() {
         this.splitInfos = this.readSplitInfo();
@@ -149,6 +149,11 @@ export default class extends Controller {
 
     resetOverlay() {
         this.setSplitInfosToOverlay();
+    }
+
+    showResetButton() {
+        console.log("reset overlay", this.resetTarget.classList);
+        this.resetTarget.classList.remove("hidden")
     }
 }
 
