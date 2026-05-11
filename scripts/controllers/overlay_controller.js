@@ -1,5 +1,44 @@
 import {Controller} from "@hotwired/stimulus";
 
+const SPLIT_INFOS_STORAGE_KEY = "splitInfos";
+const DEFAULT_SPLIT_INFOS = {
+    "hero": {
+        index: 0,
+        resets: 0,
+        pbTime: null,
+        goldTime: null,
+        goldPace: null
+    },
+    "features": {
+        index: 1,
+        resets: 0,
+        pbTime: null,
+        goldTime: null,
+        goldPace: null
+    },
+    "configure": {
+        index: 2,
+        resets: 0,
+        pbTime: null,
+        goldTime: null,
+        goldPace: null
+    },
+    "faq": {
+        index: 3,
+        resets: 0,
+        pbTime: null,
+        goldTime: null,
+        goldPace: null
+    },
+    "about": {
+        index: 4,
+        resets: 0,
+        pbTime: null,
+        goldTime: null,
+        goldPace: null
+    }
+};
+
 export default class extends Controller {
     static targets = ['split', 'timer']
 
@@ -22,46 +61,46 @@ export default class extends Controller {
 
         splitElement.querySelector(".split-resets").textContent = splitInfo.resets;
         splitElement.querySelector(".split-time").textContent = formatPbTime(splitInfo.pbTime)
+        splitElement.querySelector(".split-diff").classList.remove("golden", "early", "late");
+        splitElement.querySelector(".split-time").classList.remove("golden", "early", "late");
+        splitElement.querySelector(".split-diff .sign").textContent = '';
+        splitElement.querySelector(".split-diff .num").textContent = '';
+        splitElement.querySelector(".split-name").classList.remove("gold-pace");
     }
 
     readSplitInfo() {
-        return {
-            "hero": {
-                index: 0,
-                resets: 12,
-                pbTime: 3.501,
-                goldTime: 2.500,
-                goldPace: 2.500
-            },
-            "features": {
-                index: 1,
-                resets: 9,
-                pbTime: 6.120,
-                goldTime: 2.241,
-                goldPace: 5.400
-            },
-            "configure": {
-                index: 2,
-                resets: 2,
-                pbTime: 12.120,
-                goldTime: 5.241,
-                goldPace: 9.900
-            },
-            "faq": {
-                index: 3,
-                resets: 4,
-                pbTime: 18.120,
-                goldTime: 3.241,
-                goldPace: 16.900
-            },
-            "about": {
-                index: 4,
-                resets: 1,
-                pbTime: 25.120,
-                goldTime: 5.241,
-                goldPace: 20.900
-            }
+        const storedSplitInfos = this.readSplitInfosFromLocalStorage();
+        if (storedSplitInfos && this.hasMatchingSplitIndices(storedSplitInfos)) {
+            return storedSplitInfos;
         }
+
+        this.writeSplitInfosToLocalStorage(DEFAULT_SPLIT_INFOS);
+        return DEFAULT_SPLIT_INFOS;
+    }
+
+    readSplitInfosFromLocalStorage() {
+        if (typeof localStorage === "undefined") return null;
+
+        try {
+            const storedValue = localStorage.getItem(SPLIT_INFOS_STORAGE_KEY);
+            if (!storedValue) return null;
+            return JSON.parse(storedValue);
+        } catch {
+            return null;
+        }
+    }
+
+    writeSplitInfosToLocalStorage(splitInfos) {
+        if (typeof localStorage === "undefined") return;
+
+        localStorage.setItem(SPLIT_INFOS_STORAGE_KEY, JSON.stringify(splitInfos));
+    }
+
+    hasMatchingSplitIndices(splitInfos) {
+        return Object.entries(DEFAULT_SPLIT_INFOS).every(([splitName, defaultSplitInfo]) => {
+            const splitInfo = splitInfos?.[splitName];
+            return splitInfo && Number(splitInfo.index) === defaultSplitInfo.index;
+        });
     }
 
     findSplitElement(splitName, index) {
@@ -76,6 +115,7 @@ export default class extends Controller {
         splitElement.querySelector(".split-time").textContent = formatPbTime(time);
         const splitInfo = this.splitInfos[splitName];
         const {gold, goldPace, early, late, diff} = getSplitPassInfo(splitInfo, time, splitDuration);
+        this.updateSplitInfosIfChanged(gold, goldPace, time, splitDuration, splitInfo)
         addSplitPassInfoColorClasses(gold, goldPace, early, late, splitElement);
         let sign = '';
         if (diff >= 0) sign = '+';
@@ -85,8 +125,30 @@ export default class extends Controller {
         splitElement.querySelector(".split-diff .num").textContent = formatPbTime(absDiff, true);
     }
 
+    writeNewPbTimeFromSplits(splitTimes) {
+        const lastSplit = Object.keys(this.splitInfos).map(key => this.splitInfos[key]).sort((a, b) => b.index-a.index)[0];
+        const lastSplitTime = lastSplit.pbTime;
+        if (lastSplitTime <= splitTimes[lastSplit.index].time) return // dont save if not pb
+        Object.values(this.splitInfos).forEach(splitInfo => {
+            const splitTimeInfo = splitTimes[splitInfo.index]
+            splitInfo.pbTime = splitTimeInfo.time;
+        })
+        this.writeSplitInfosToLocalStorage(this.splitInfos);
+    }
+
+    updateSplitInfosIfChanged(gold, goldPace, time, splitDuration, splitInfo) {
+        if (gold) splitInfo.goldTime = splitDuration;
+        if (goldPace) splitInfo.goldPace = time;
+
+        if (goldPace || gold) this.writeSplitInfosToLocalStorage(this.splitInfos)
+    }
+
     setTimer(time) {
         this.timerTarget.textContent = formatPbTime(time);
+    }
+
+    resetOverlay() {
+        this.setSplitInfosToOverlay();
     }
 }
 
@@ -117,9 +179,9 @@ function formatPbTime(seconds, noZeroFill = false) {
 }
 
 function getSplitPassInfo(splitInfo, time, splitDuration) {
-    const diff = time - splitInfo.pbTime ;
-    const gold = splitInfo.goldTime > splitDuration;
-    const goldPace = splitInfo.goldPace > time;
+    const diff = splitInfo.pbTime !== null ? time - splitInfo.pbTime : -1*time;
+    const gold = splitInfo.goldTime !== null ?  splitInfo.goldTime > splitDuration : true;
+    const goldPace = splitInfo.goldPace !== null ? splitInfo.goldPace > time : true;
     const early = diff < 0;
     const late = diff > 0;
     return { gold, goldPace, early, late, diff };

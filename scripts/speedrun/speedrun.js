@@ -14,6 +14,7 @@ let startTime = null;
 let lastSectionEndTime = null;
 let overlayController = null;
 let isRunning = false;
+let splitTimes = {};
 
 const sectionNameToClassMap = {
     "hero": HeroSpeedrunSection,
@@ -24,6 +25,11 @@ const sectionNameToClassMap = {
 }
 
 export function startSpeedrun() {
+    overlayController = getSingularControllerForIdentifier('overlay')
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0; // Safari fallback
+    overlayController.resetOverlay();
+    currentSection = null;
     const sectionElements = [...document.querySelectorAll(".section[data-speed-section]")]
     sectionElements
         .forEach(sectionElement => {
@@ -33,7 +39,6 @@ export function startSpeedrun() {
             if (!sectionClass) throw new Error(`No section element found for ${sectionName}`);
             speedrunSections[index] = new sectionClass(() => onSectionCompleted(index), sectionName, sectionElement);
         })
-    overlayController = getSingularControllerForIdentifier('overlay')
     startSpeedrunSection(0)
 }
 
@@ -53,6 +58,7 @@ function startSpeedrunSection(index) {
     if (!prevSection) {
         startTime = time;
         isRunning = true;
+        splitTimes = {}
         updateTimer();
     }
     else {
@@ -60,8 +66,13 @@ function startSpeedrunSection(index) {
             (time - startTime) / 1000,
             (time - lastSectionEndTime) / 1000,
             index - 1,
-            prevSection.sectionName
+            prevSection.sectionName,
         );
+        splitTimes[index - 1] = {
+            time: (time - startTime) / 1000,
+            index: index-1,
+            name: prevSection.sectionName
+        }
     }
     lastSectionEndTime = time;
     if (nextSection) {
@@ -69,6 +80,7 @@ function startSpeedrunSection(index) {
     } else {
         isRunning = false;
         overlayController.setTimer((time - startTime) / 1000);
+        overlayController.writeNewPbTimeFromSplits(splitTimes)
     }
 }
 
@@ -83,3 +95,14 @@ function updateTimer() {
     overlayController.setTimer(timeSinceStart);
     requestAnimationFrame(updateTimer);
 }
+
+window.resetSpeedrun = startSpeedrun;
+
+function reset() {
+    currentSection.onStop();
+    startSpeedrun();
+}
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "r") reset();
+})
