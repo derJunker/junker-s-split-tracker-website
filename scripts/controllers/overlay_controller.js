@@ -128,7 +128,7 @@ export default class extends Controller {
     writeNewPbTimeFromSplits(splitTimes) {
         const lastSplit = Object.keys(this.splitInfos).map(key => this.splitInfos[key]).sort((a, b) => b.index-a.index)[0];
         const lastSplitTime = lastSplit.pbTime;
-        if (lastSplitTime <= splitTimes[lastSplit.index].time) return // dont save if not pb
+        if (lastSplitTime !== null && lastSplitTime <= splitTimes[lastSplit.index].time) return // dont save if not pb
         Object.values(this.splitInfos).forEach(splitInfo => {
             const splitTimeInfo = splitTimes[splitInfo.index]
             splitInfo.pbTime = splitTimeInfo.time;

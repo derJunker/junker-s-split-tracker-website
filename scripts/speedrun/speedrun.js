@@ -100,9 +100,10 @@ function updateTimer() {
 window.resetSpeedrun = startSpeedrun;
 
 function reset() {
-    currentSection.onStop();
-    console.log("currentSection", currentSection);
-    overlayController.increaseResetsFor(currentSection.sectionName);
+    if (currentSection) {
+        currentSection.onStop();
+        overlayController.increaseResetsFor(currentSection.sectionName);
+    }
     startSpeedrun();
 }
 
