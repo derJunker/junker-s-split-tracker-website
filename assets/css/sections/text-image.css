@@ -1,7 +1,7 @@
 .text-image {
-    &>.inside {
-        display: flex;
-        flex-direction: column;
+    &>.inside .content {
+        display: grid;
+        grid-template-columns: 1fr;
         align-items: center;
         row-gap: var(--gap-xl);
         column-gap: var(--gap-xl);
@@ -17,17 +17,19 @@
         .right {
             --basis: 45%;
             flex-basis: var(--basis);
+            max-width: min(400px, 100%);
         }
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .text-image {
-        &>.inside {
-            flex-direction: row;
-        }
-        &.reversed >.inside {
-            flex-direction: row-reverse;
+        &>.inside .content {
+            grid-template-columns: 2fr 1fr;
+            align-items: center;
+            .right {
+                max-width: unset;
+            }
         }
     }
 }

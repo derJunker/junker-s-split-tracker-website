@@ -66,6 +66,7 @@
                 overflow-y: auto;
                 padding-block: var(--padding-block);
                 background: rgba(0, 0, 0, 0.025);
+                visibility: hidden;
             }
 
             &.faq-open {
@@ -81,6 +82,7 @@
                 }
                 .faq-answer {
                     height: var(--answer-height);
+                    visibility: visible;
                 }
             }
         }

@@ -74,11 +74,11 @@
                 display: flex;
                 gap: var(--gap-xl);
                 position: absolute;
-                top: 0;
-                right: 0;
-                transform: translate(+100%, -75%);
                 color: var(--text-muted);
                 font-size: .8rem;
+                top: 0;
+                right: 50%;
+                transform: translate(+100%, -75%);
 
                 .arrow-container {
                     box-shadow: none !important;
@@ -101,6 +101,14 @@
                 }
             }
         }
+    }
+}
+
+@media (min-width: 768px) {
+    .left .preview-link .click-cnt .click-hint {
+        top: 0;
+        right: 0;
+        transform: translate(+100%, -75%);
     }
 }
 

@@ -1,12 +1,13 @@
 :root {
-    --hero-image-margin: -300px;
+    --hero-img-height: 600px; /* gets overridden by hero_controller */
 }
 
-.hero {
+.hero.section {
     min-height: calc(100dvh - var(--header-height));
     display: grid;
     justify-items: center;
-    margin-block-end: calc(-1*var(--hero-image-margin));
+    margin-block: 0 calc(var(--hero-img-height)/2);
+    padding-block-start: calc(var(--section-spacing) *2);
     &>.inside {
         display: flex;
         flex-direction: column;
@@ -18,12 +19,6 @@
             display: grid;
             place-items: center;
             gap: var(--gap-m);
-            h1 {
-                --border-width: 2px;
-                font-size: 3rem;
-                text-align: center;
-                line-height: 1.2;
-            }
             p {
                 margin-block-end: var(--gap-m);
                 text-align: center;
@@ -32,11 +27,11 @@
         .config-window-preview {
             --box-shadow-position: -4px;
             max-width: 900px;
-            margin-bottom: var(--hero-image-margin);
+            margin-bottom: calc(var(--hero-img-height)/-2);
         }
     }
 }
 
 .hero + .section {
-    margin-top: calc(-1*var(--hero-image-margin) + var(--section-spacing));
+    margin-top: calc(var(--hero-img-height)/2 + var(--section-spacing));
 }

@@ -73,7 +73,7 @@
     </div>
 
 </div>
-<div class="hero section" data-speed-section="hero" data-speed-index="0">
+<div class="hero section" data-speed-section="hero" data-speed-index="0" data-controller="hero">
     <div class="inside">
         <div class="hero__content">
             <h1 data-i18n="hero_h1" data-aos="fade-down">
@@ -81,105 +81,107 @@
             </h1>
             <p data-i18n="hero_intro" data-aos="fade-down">A simple overlay for a split tracker with a bunch of new features.</p>
             <div data-aos="fade-down">
-                <button class="btn" onclick="openLatestRelease()"
+                <a class="btn" href="https://github.com/derJunker/pogostuck-split-tracker/releases/latest" target="_blank"
                         data-i18n="try_button">
                     Try it out now!
-                </button>
+                </a>
             </div>
         </div>
-        <div class="config-window-preview media-container" data-aos="fade-up" data-aos-delay="500">
+        <div class="config-window-preview media-container" data-aos="fade-up" data-aos-delay="500" data-hero-target="image">
             <img src="assets/config-preferences.png" alt="split tracker config preferences">
         </div>
     </div>
 </div>
-<div class="separator section">
+<div data-aos="fade-up" class="separator section">
     <div class="inside"></div>
 </div>
 <div class="features section text-image preview-list" data-controller="preview-list" data-preview-list-target="list"
      data-speed-section="features" data-speed-index="1">
     <div class="inside">
-        <div class="left">
-            <h2 data-i18n="features_title" data-aos-delay="250" data-aos="fade-down">
-                Features
-            </h2>
-            <ul class="check-list animate-aos" data-overall-aos-delay="750">
-                <li class="preview-link" data-preview="0" data-preview-list-target="link">
-                    <div class="click-cnt">
-                        <span data-i18n="feature_default">Default Pogostuck Split-Tracker Functionality</span>
-                        <div class="click-hint">
-                            <div class="media-container arrow-container">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="4106.4824 49.5747 1048.3452 1283.8862"
-                                     width="1048.35px" height="1283.89px">
-                                    <polyline id="preview-arrow-path"
-                                              style="fill: none; stroke: rgb(0, 0, 0); stroke-width: 26px; stroke-linejoin: round; stroke-linecap: round;"
-                                              points="5120.277 82.057 5026.746 109.679 4944.299 149.387 4798.292 236.744 4705.624 310.693 4633.648 390.564 4593.901 457.622 4580.467 508.268 4580.043 544.604 4593.888 590.85 4626.597 620.416 4689.954 651.679 4774.905 653.787 4860.811 641.863 4933.609 613.854 4998.458 570.251 5031.756 520.203 5035.388 494.926 5031.604 473.673 5019.287 456.221 5003.237 446.278 4976.419 434.15 4935.795 426.381 4886.737 427.405 4836.813 434.841 4776.01 452.987 4715.157 481.331 4676.242 510.016 4626.959 549.55 4548.201 622.066 4494.345 687.861 4438.645 764.555 4366.044 880.474 4303.146 1000.908 4210.314 1214.683 4186.388 1260.108 4140.507 1101.261 4186.809 1260.583 4332.773 1161.142"/>
-                                </svg>
+        <h2 data-i18n="features_title" data-aos-delay="250" data-aos="fade-down">
+            Features
+        </h2>
+        <div class="content">
+            <div class="left">
+                <ul class="check-list animate-aos" data-overall-aos-delay="750">
+                    <li class="preview-link" data-preview="0" data-preview-list-target="link">
+                        <div class="click-cnt">
+                            <span data-i18n="feature_default">Default Pogostuck Split-Tracker Functionality</span>
+                            <div class="click-hint">
+                                <div class="media-container arrow-container">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="4106.4824 49.5747 1048.3452 1283.8862"
+                                         width="1048.35px" height="1283.89px">
+                                        <polyline id="preview-arrow-path"
+                                                  style="fill: none; stroke: rgb(0, 0, 0); stroke-width: 26px; stroke-linejoin: round; stroke-linecap: round;"
+                                                  points="5120.277 82.057 5026.746 109.679 4944.299 149.387 4798.292 236.744 4705.624 310.693 4633.648 390.564 4593.901 457.622 4580.467 508.268 4580.043 544.604 4593.888 590.85 4626.597 620.416 4689.954 651.679 4774.905 653.787 4860.811 641.863 4933.609 613.854 4998.458 570.251 5031.756 520.203 5035.388 494.926 5031.604 473.673 5019.287 456.221 5003.237 446.278 4976.419 434.15 4935.795 426.381 4886.737 427.405 4836.813 434.841 4776.01 452.987 4715.157 481.331 4676.242 510.016 4626.959 549.55 4548.201 622.066 4494.345 687.861 4438.645 764.555 4366.044 880.474 4303.146 1000.908 4210.314 1214.683 4186.388 1260.108 4140.507 1101.261 4186.809 1260.583 4332.773 1161.142"/>
+                                    </svg>
+                                </div>
+                                <span data-i18n="feature_hover_hint"> Hover me :)</span>
                             </div>
-                            <span data-i18n="feature_hover_hint"> Hover me :)</span>
                         </div>
+
+                    </li>
+                    <li data-i18n="feature_gold_splits" class="preview-link" data-preview="1"
+                        data-preview-list-target="link">Gold Splits
+                    </li>
+                    <li data-i18n="feature_gold_paces" class="preview-link" data-preview="2"
+                        data-preview-list-target="link">Gold Paces
+                    </li>
+                    <li data-i18n="feature_pace_estimations" class="preview-link" data-preview="3"
+                        data-preview-list-target="link">Pace Estimations
+                    </li>
+                    <li data-i18n="feature_sum_of_best" class="preview-link" data-preview="4"
+                        data-preview-list-target="link">Sum of Best
+                    </li>
+                    <li data-i18n="feature_reset_counters" class="preview-link" data-preview="6"
+                        data-preview-list-target="link">Reset Counters
+                    </li>
+                    <li data-i18n="feature_custom_modes" class="preview-link" data-preview="7"
+                        data-preview-list-target="link">Custom Modes
+                    </li>
+                    <li data-i18n="feature_more_customization" class="preview-link" data-preview="9"
+                        data-preview-list-target="link">More Customization
+                        (coloring, hide skipped splits, size)
+                    </li>
+                    <li data-i18n="feature_reversed_ud" class="preview-link" data-preview="10"
+                        data-preview-list-target="link">Reversed UD Splits
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="preview-container" data-preview-list-target="container">
+                    <div class="media-container preview-el" data-preview="default" data-preview-list-target="default">
+                        <img src="/assets/features/zz_all_features.png" alt="split tracker logo">
+                    </div>
+                    <div class="media-container preview-el" data-preview="0" data-preview-list-target="element">
+                        <img src="/assets/features/zz_basic-tracker.png" alt="split tracker logo">
+                    </div>
+                    <div class="media-container preview-el" data-preview="1" data-preview-list-target="element">
+                        <img src="/assets/features/zz_gold.png" alt="split tracker logo">
+                    </div>
+                    <div class="media-container preview-el" data-preview="2" data-preview-list-target="element">
+                        <img src="/assets/features/zz_gold_pace.png" alt="split tracker logo">
+                    </div>
+                    <div class="media-container preview-el" data-preview="3" data-preview-list-target="element">
+                        <img src="/assets/features/zz_pace.png" alt="split tracker logo">
+                    </div>
+                    <div class="media-container preview-el" data-preview="4" data-preview-list-target="element">
+                        <img src="/assets/features/zz_sob.png" alt="split tracker logo">
+                    </div>
+                    <div class="media-container preview-el" data-preview="6" data-preview-list-target="element">
+                        <img src="/assets/features/zz_resets.png" alt="split tracker logo">
+                    </div>
+                    <div class="media-container preview-el" data-preview="7" data-preview-list-target="element">
+                        <img src="/assets/features/zz_custom.png" alt="split tracker logo">
+                    </div>
+                    <div class="media-container preview-el" data-preview="9" data-preview-list-target="element">
+                        <img src="/assets/features/zz_customize.png" alt="split tracker logo">
+                    </div>
+                    <div class="media-container preview-el" data-preview="10" data-preview-list-target="element">
+                        <img src="/assets/features/zz_ud_splits.png" alt="split tracker logo">
                     </div>
 
-                </li>
-                <li data-i18n="feature_gold_splits" class="preview-link" data-preview="1"
-                    data-preview-list-target="link">Gold Splits
-                </li>
-                <li data-i18n="feature_gold_paces" class="preview-link" data-preview="2"
-                    data-preview-list-target="link">Gold Paces
-                </li>
-                <li data-i18n="feature_pace_estimations" class="preview-link" data-preview="3"
-                    data-preview-list-target="link">Pace Estimations
-                </li>
-                <li data-i18n="feature_sum_of_best" class="preview-link" data-preview="4"
-                    data-preview-list-target="link">Sum of Best
-                </li>
-                <li data-i18n="feature_reset_counters" class="preview-link" data-preview="6"
-                    data-preview-list-target="link">Reset Counters
-                </li>
-                <li data-i18n="feature_custom_modes" class="preview-link" data-preview="7"
-                    data-preview-list-target="link">Custom Modes
-                </li>
-                <li data-i18n="feature_more_customization" class="preview-link" data-preview="9"
-                    data-preview-list-target="link">More Customization
-                    (coloring, hide skipped splits, size)
-                </li>
-                <li data-i18n="feature_reversed_ud" class="preview-link" data-preview="10"
-                    data-preview-list-target="link">Reversed UD Splits
-                </li>
-            </ul>
-        </div>
-        <div class="right">
-            <div class="preview-container" data-preview-list-target="container">
-                <div class="media-container preview-el" data-preview="default" data-preview-list-target="default">
-                    <img src="/assets/features/zz_all_features.png" alt="split tracker logo">
                 </div>
-                <div class="media-container preview-el" data-preview="0" data-preview-list-target="element">
-                    <img src="/assets/features/zz_basic-tracker.png" alt="split tracker logo">
-                </div>
-                <div class="media-container preview-el" data-preview="1" data-preview-list-target="element">
-                    <img src="/assets/features/zz_gold.png" alt="split tracker logo">
-                </div>
-                <div class="media-container preview-el" data-preview="2" data-preview-list-target="element">
-                    <img src="/assets/features/zz_gold_pace.png" alt="split tracker logo">
-                </div>
-                <div class="media-container preview-el" data-preview="3" data-preview-list-target="element">
-                    <img src="/assets/features/zz_pace.png" alt="split tracker logo">
-                </div>
-                <div class="media-container preview-el" data-preview="4" data-preview-list-target="element">
-                    <img src="/assets/features/zz_sob.png" alt="split tracker logo">
-                </div>
-                <div class="media-container preview-el" data-preview="6" data-preview-list-target="element">
-                    <img src="/assets/features/zz_resets.png" alt="split tracker logo">
-                </div>
-                <div class="media-container preview-el" data-preview="7" data-preview-list-target="element">
-                    <img src="/assets/features/zz_custom.png" alt="split tracker logo">
-                </div>
-                <div class="media-container preview-el" data-preview="9" data-preview-list-target="element">
-                    <img src="/assets/features/zz_customize.png" alt="split tracker logo">
-                </div>
-                <div class="media-container preview-el" data-preview="10" data-preview-list-target="element">
-                    <img src="/assets/features/zz_ud_splits.png" alt="split tracker logo">
-                </div>
-
             </div>
         </div>
     </div>
@@ -375,7 +377,7 @@
         </div>
     </div>
 </div>
-<div class="section separator">
+<div data-aos="fade-up" class="section separator">
     <div class="inside"></div>
 </div>
 <div class="section about" data-controller="about" data-about-index-value="0" data-about-is-speaking-value="false" data-about-skip-current-animation-value="false" data-speed-section="about" data-speed-index="4">
