@@ -43,4 +43,11 @@ export default class extends Controller {
             controller.defaultTarget.classList.add("active");
         });
     }
+
+    resetPreviewLinks() {
+        this.linkTargets.forEach(link => link.classList.remove("shown"));
+        this.listTarget.classList.remove('all-shown');
+        [...this.elementTargets, this.defaultTarget].forEach(el => el.classList.remove("active"));
+        this.defaultTarget.classList.add("active");
+    }
 }

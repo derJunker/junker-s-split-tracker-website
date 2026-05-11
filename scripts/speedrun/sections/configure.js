@@ -1,4 +1,5 @@
 import SpeedrunSection from "./speedrun-section";
+import {getSingularControllerForIdentifier} from "../../controllers/register-controller";
 
 export default class ConfigureSpeedrunSection extends SpeedrunSection {
     constructor(stopEventCallback, sectionName, section) {
@@ -12,6 +13,8 @@ export default class ConfigureSpeedrunSection extends SpeedrunSection {
             attributeFilter: ['class'],
             attributeOldValue: true
         })
+        this.sectionController = getSingularControllerForIdentifier('configure');
+        this.sectionController.resetTiles()
     }
 
     onStop() {

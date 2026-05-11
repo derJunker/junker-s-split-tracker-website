@@ -1,4 +1,5 @@
 import SpeedrunSection from "./speedrun-section";
+import {getSingularControllerForIdentifier} from "../../controllers/register-controller";
 
 export default class FeaturesSpeedrunSection extends SpeedrunSection {
     constructor(stopEventCallback, sectionName, section) {
@@ -12,6 +13,9 @@ export default class FeaturesSpeedrunSection extends SpeedrunSection {
             attributeFilter: ['class'],
             attributeOldValue: true
         })
+
+        this.sectionController = getSingularControllerForIdentifier('preview-list');
+        this.sectionController.resetPreviewLinks()
     }
 
     onStop() {
