@@ -25,7 +25,7 @@ export default class extends Controller {
         })
     }
 
-    resetTiles() {
+    reset() {
         this.targetListeners.forEach(({target, clickListener}) => {
             target.classList.remove('selected')
             this.sectionTarget.classList.remove('all-selected')

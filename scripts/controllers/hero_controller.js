@@ -6,4 +6,10 @@ export default class extends Controller {
         const imageHeight = this.imageTarget.offsetHeight;
         document.documentElement.style.setProperty("--hero-img-height", imageHeight+"px");
     }
+
+    // obligatory function, but does nothing in this case
+    // all section controllers have this function called when sb resets
+    reset() {
+
+    }
 }

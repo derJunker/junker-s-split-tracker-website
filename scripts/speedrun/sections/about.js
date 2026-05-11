@@ -7,14 +7,13 @@ export default class AboutSpeedrunSection extends SpeedrunSection {
     }
 
     onStart() {
+        super.onStart();
         this.observer = new MutationObserver((mutations => this.handleMutations(mutations)));
         this.observer.observe(this.sectionElement,  {
             attributes: true,
             attributeFilter: ['class'],
             attributeOldValue: true
         })
-        this.sectionController = getSingularControllerForIdentifier('about');
-        this.sectionController.resetSpeechIndex()
     }
 
     onStop() {

@@ -44,7 +44,7 @@ export default class extends Controller {
         });
     }
 
-    resetPreviewLinks() {
+    reset() {
         this.linkTargets.forEach(link => link.classList.remove("shown"));
         this.listTarget.classList.remove('all-shown');
         [...this.elementTargets, this.defaultTarget].forEach(el => el.classList.remove("active"));

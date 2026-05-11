@@ -104,6 +104,7 @@ function reset() {
         currentSection.onStop();
         overlayController.increaseResetsFor(currentSection.sectionName);
     }
+    speedrunSections.forEach(section => section.reset())
     startSpeedrun();
 }
 

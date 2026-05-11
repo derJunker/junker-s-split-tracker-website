@@ -6,6 +6,7 @@ export default class HeroSpeedrunSection extends SpeedrunSection {
     }
 
     onStart() {
+        super.onStart();
         this.scrollListener = () => {
             const nextSibling = this.sectionElement.nextSibling.nextSibling
             const siblingYPos = nextSibling.offsetTop

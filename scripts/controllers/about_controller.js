@@ -40,13 +40,14 @@ export default class extends Controller {
     async animateText(text) {
         this.speechTextFieldTarget.innerHTML = "";
         return new Promise(async resolve => {
+            const speakingIndex = this.indexValue;
             /* timeout per character = speed */
             const startSpeed = 70;
             const endSpeed = 20;
             let i = 0;
             let speed = startSpeed;
 
-            while (i < text.length) {
+            while (i < text.length && this.indexValue === speakingIndex) {
                 const char = text.charAt(i);
                 this.speechTextFieldTarget.innerHTML += char;
                 i++;
@@ -93,7 +94,8 @@ export default class extends Controller {
         }
     }
 
-    resetSpeechIndex() {
+    reset() {
+        this.isSpeakingValue = false;
         this.indexValue = 0;
         this.element.classList.remove('dialog-done');
     }
