@@ -8,6 +8,7 @@ import FaqSectionController from "./faq_section_controller"
 import AboutSectionController from "./about_controller"
 import DownloadController from "./download_controller"
 import LanguageController from "./language_controller"
+import HeaderController from "./header_controller"
 
 window.Stimulus = Application.start()
 Stimulus.register("faq", FaqController)
@@ -18,6 +19,7 @@ Stimulus.register('faq-section', FaqSectionController)
 Stimulus.register('about', AboutSectionController)
 Stimulus.register('download', DownloadController)
 Stimulus.register('language', LanguageController)
+Stimulus.register('header', HeaderController)
 
 export function getSingularControllerForIdentifier(identifier) {
     const controllerEl = document.querySelector(`[data-controller="${identifier}"]`);

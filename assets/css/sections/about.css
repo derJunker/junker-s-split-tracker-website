@@ -27,7 +27,7 @@
                  */
                 .speech,
                 p[data-about-target="speechParagraph"] {
-                    padding: .5rem 1rem;
+                    padding: .75rem calc(.5rem + 10px) .75rem .5rem;
                     border: transparent solid 3px;
                 }
 

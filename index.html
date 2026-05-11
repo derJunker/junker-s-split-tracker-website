@@ -26,12 +26,15 @@
     <title data-i18n="app_name">Junker's Split Tracker</title>
 </head>
 <body>
-<header>
+<header data-controller="header" data-header-target="header">
     <div class="logo-container">
         <div class="logo media-container">
             <img src="assets/clipboard.ico" alt="split tracker logo">
         </div>
     </div>
+    <button class="hamburger-wrapper" data-action="header#toggle">
+        <span class="hamburger"> <span></span> <span></span> <span></span> </span>
+    </button>
     <nav>
         <ul>
             <li><a class="btn" data-i18n="btn_feedback" href="https://docs.google.com/forms/d/e/1FAIpQLSeXa6HiFg7rdbIEup3HRJPcMTwQiwQxi5fOc5Fe1AJEw4nPmQ/viewform?usp=publish-editor" target="_blank">Feedback</a></li>

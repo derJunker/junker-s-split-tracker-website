@@ -3,7 +3,6 @@ import 'aos/dist/aos.js';
 import 'aos/dist/aos.css';
 
 import './i18n.js';
-import './header.js';
 import './buttons.js';
 import './controllers/register-controller.js'
 import {startSpeedrun} from "./speedrun/speedrun";
