@@ -42,9 +42,12 @@ if ('scrollRestoration' in history) {
 document.documentElement.scrollTop = 0;
 document.body.scrollTop = 0; // Safari fallback
 
-AOS.init({
-    duration: 1500,
-    once: true,
-});
 
-document.addEventListener("DOMContentLoaded", () => startSpeedrun());
+document.addEventListener("DOMContentLoaded", () => {
+    AOS.init({
+        duration: 700,
+        offset: 120,
+        once: true,
+    });
+    startSpeedrun()
+});

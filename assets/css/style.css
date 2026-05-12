@@ -102,3 +102,8 @@ html {
 [data-aos] {
     opacity: 0;
 }
+
+*:focus-visible {
+    outline: color-mix(in srgb, var(--accent) 50%, transparent) 1px solid;
+    box-shadow: 0 0 14px 6px rgba(183, 208, 25, 0.38);
+}
