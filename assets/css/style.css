@@ -56,8 +56,11 @@ html {
     font-weight: bold;
     margin: 0;
     padding: 0;
-    background: url("./aurora-gradient-1778021307601.png");
+    background-color: #ffffff;
+    background-image: radial-gradient(circle at center, #ffffff 0%, var(--accent) 100%), url("../aurora-gradient-1778021307601.png");
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 
