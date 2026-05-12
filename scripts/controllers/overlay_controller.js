@@ -40,7 +40,7 @@ const DEFAULT_SPLIT_INFOS = {
 };
 
 export default class extends Controller {
-    static targets = ['split', 'timer', 'reset']
+    static targets = ['split', 'timer', 'reset', 'pace', 'sob']
 
     initialize() {
         this.splitInfos = this.readSplitInfo();
@@ -117,12 +117,30 @@ export default class extends Controller {
         const {gold, goldPace, early, late, diff} = getSplitPassInfo(splitInfo, time, splitDuration);
         this.updateSplitInfosIfChanged(gold, goldPace, time, splitDuration, splitInfo)
         addSplitPassInfoColorClasses(gold, goldPace, early, late, splitElement);
+        this.updateRunInfos(index, time)
         let sign = '';
         if (diff >= 0) sign = '+';
         else if (diff < 0) sign = '-';
         const absDiff = Math.abs(diff);
         splitElement.querySelector(".split-diff .sign").textContent = sign
         splitElement.querySelector(".split-diff .num").textContent = formatPbTime(absDiff, true);
+    }
+
+    updateRunInfos(index, time) {
+        const remainingSplits = Object.keys(this.splitInfos).filter(key => this.splitInfos[key].index > index).map(key => this.splitInfos[key]);
+        const paceTime = remainingSplits.reduce((sobTime, splitInfo) => {
+            if (sobTime === null) return null;
+            else if (splitInfo.goldTime !== null) return sobTime + splitInfo.goldTime;
+            else return null;
+        }, time)
+        this.setPace(paceTime);
+
+        const sobTime = Object.values(this.splitInfos).reduce((sobTime, splitInfo) => {
+            if (sobTime === null) return null;
+            else if (splitInfo.goldTime !== null) return sobTime + splitInfo.goldTime;
+            else return null;
+        }, 0)
+        this.setSoB(sobTime);
     }
 
     writeNewPbTimeFromSplits(splitTimes) {
@@ -158,6 +176,16 @@ export default class extends Controller {
     increaseResetsFor(splitName) {
         this.splitInfos[splitName].resets++;
         this.writeSplitInfosToLocalStorage(this.splitInfos)
+    }
+
+    setPace(time) {
+        if (time === null) this.paceTarget.textContent = "?";
+        else this.paceTarget.textContent = formatPbTime(time);
+    }
+
+    setSoB(time) {
+        if (time === null) this.sobTarget.textContent = "?";
+        else this.sobTarget.textContent = formatPbTime(time);
     }
 }
 

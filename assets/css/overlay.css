@@ -81,6 +81,11 @@
     text-wrap: nowrap
 }
 
+.run-info {
+    margin-block-start: var(--gap-sm);
+    grid-column: 1 / -1;
+}
+
 /*Split names should be the one shrinking*/
 .split-name {
     text-overflow: ellipsis;

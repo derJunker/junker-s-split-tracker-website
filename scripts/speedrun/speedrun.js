@@ -25,9 +25,10 @@ const sectionNameToClassMap = {
 }
 
 export function startSpeedrun() {
-    overlayController = getSingularControllerForIdentifier('overlay')
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0; // Safari fallback
+    overlayController = getSingularControllerForIdentifier('overlay')
+    overlayController.updateRunInfos(-1, 0);
     overlayController.resetOverlay();
     currentSection = null;
     const sectionElements = [...document.querySelectorAll(".section[data-speed-section]")]
@@ -97,7 +98,7 @@ function updateTimer() {
     requestAnimationFrame(updateTimer);
 }
 
-window.resetSpeedrun = startSpeedrun;
+window.resetSpeedrun = reset;
 
 function reset() {
     if (currentSection) {
