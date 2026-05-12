@@ -100,7 +100,6 @@ html {
 }
 
 [data-aos] {
-    opacity: 0;
 }
 
 *:focus-visible {

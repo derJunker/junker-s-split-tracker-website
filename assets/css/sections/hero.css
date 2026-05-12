@@ -26,8 +26,11 @@
         }
         .config-window-preview {
             --box-shadow-position: -4px;
-            max-width: 900px;
+            width: 100%;
             margin-bottom: calc(var(--hero-img-height)/-2);
+            &[data-aos]:not(.aos-animate) {
+                transition-duration: 0s !important;
+            }
         }
     }
 }
