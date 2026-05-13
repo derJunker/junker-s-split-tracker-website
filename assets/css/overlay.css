@@ -35,6 +35,7 @@
 
 .reset-message-cnt {
     margin-left: auto;
+    pointer-events: visible;
 }
 
 .reset-message-cnt,
