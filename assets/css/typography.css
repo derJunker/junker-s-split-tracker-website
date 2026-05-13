@@ -1,11 +1,18 @@
 html {
-    --min-font-size: 14px;
-    --max-font-size: 18px;
+    --fs-min: 12px;
+    --fs-max: 18px;
+    --bp-min: 320px;
+    --bp-max: 1280px;
+
+    --slope: tan(atan2(
+            var(--fs-max) - var(--fs-min),
+            var(--bp-max) - var(--bp-min)
+    ));
 
     font-size: clamp(
-            var(--min-font-size),
-            calc(2.5vw),
-            var(--max-font-size)
+            var(--fs-min),
+            calc(var(--fs-min) + var(--slope) * (100vw - var(--bp-min))),
+            var(--fs-max)
     );
 }
 

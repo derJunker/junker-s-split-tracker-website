@@ -11,13 +11,35 @@
     font-family: 'Courier Prime', monospace;
     color: white;
     user-select: none;
+    position: fixed;
+    inset: calc(var(--header-height) + var(--gap-m)) 0 0 0;
+    z-index: 9999;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-m);
+}
+
+.row-1 {
+    display: flex;
+    gap: var(--gap-m);
+    flex-flow: row wrap;
+    align-items: start;
+    .timer-cnt {
+        margin-right: auto;
+    }
+    .splits-cnt {
+        margin-left: auto;
+    }
+}
+
+.reset-message-cnt {
+    margin-left: auto;
 }
 
 .reset-message-cnt,
 .timer-cnt,
 .splits-cnt {
-    position: fixed;
-    top: calc(var(--header-height) + var(--gap-m));
 
     padding: var(--gap-m);
 
@@ -45,11 +67,7 @@
 
 
 .reset-message-cnt {
-    top: unset;
-    bottom: 0;
-    right: 0;
     border-radius: var(--border-radius) 0 0 var(--border-radius);
-    transform: translateY(calc(100% + var(--gap-m)));
     font-weight: bold;
     cursor: pointer;
     user-select: initial;

@@ -55,51 +55,53 @@
     </nav>
 </header>
 <div class="overlay text-border" data-controller="overlay">
-    <div class="splits-cnt">
-        <div id="splits">
-            <div class="split" data-split-name="hero" data-split-id="0" data-overlay-target="split"><span
-                    class="split-name" data-i18n="overlay_split_hero">Hero</span><span
-                    class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
-                    class="num"></span></span><span class="split-time">00:19.234</span>
+    <div class="row-1">
+        <div class="timer-cnt">
+            <div class="timer" data-overlay-target="timer">
+
             </div>
-            <div class="split" data-split-name="features" data-split-id="1" data-overlay-target="split"><span
-                    class="split-name" data-i18n="overlay_split_features">Features</span><span
-                    class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
-                    class="num"></span></span><span class="split-time">00:49.410</span>
-            </div>
-            <div class="split" data-split-name="configure" data-split-id="2" data-overlay-target="split"><span
-                    class="split-name" data-i18n="overlay_split_customization">Customization</span><span
-                    class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
-                    class="num"></span></span><span class="split-time">00:49.410</span>
-            </div>
-            <div class="split" data-split-name="faq" data-split-id="3" data-overlay-target="split"><span
-                    class="split-name" data-i18n="overlay_split_faq">FAQ</span><span
-                    class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
-                    class="num"></span></span><span class="split-time">00:49.410</span>
-            </div>
-            <div class="split" data-split-name="about" data-split-id="4" data-overlay-target="split"><span
-                    class="split-name" data-i18n="overlay_split_pb">PB</span><span
-                    class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
-                    class="num"></span></span><span class="split-time">00:49.410</span>
-            </div>
-            <div class="run-info">
+        </div>
+        <div class="splits-cnt">
+            <div id="splits">
+                <div class="split" data-split-name="hero" data-split-id="0" data-overlay-target="split"><span
+                        class="split-name" data-i18n="overlay_split_hero">Hero</span><span
+                        class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
+                        class="num"></span></span><span class="split-time">00:19.234</span>
+                </div>
+                <div class="split" data-split-name="features" data-split-id="1" data-overlay-target="split"><span
+                        class="split-name" data-i18n="overlay_split_features">Features</span><span
+                        class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
+                        class="num"></span></span><span class="split-time">00:49.410</span>
+                </div>
+                <div class="split" data-split-name="configure" data-split-id="2" data-overlay-target="split"><span
+                        class="split-name" data-i18n="overlay_split_customization">Customization</span><span
+                        class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
+                        class="num"></span></span><span class="split-time">00:49.410</span>
+                </div>
+                <div class="split" data-split-name="faq" data-split-id="3" data-overlay-target="split"><span
+                        class="split-name" data-i18n="overlay_split_faq">FAQ</span><span
+                        class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
+                        class="num"></span></span><span class="split-time">00:49.410</span>
+                </div>
+                <div class="split" data-split-name="about" data-split-id="4" data-overlay-target="split"><span
+                        class="split-name" data-i18n="overlay_split_pb">PB</span><span
+                        class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
+                        class="num"></span></span><span class="split-time">00:49.410</span>
+                </div>
+                <div class="run-info">
                 <span class="pace-cnt">
                     Pace: <span class="pace" data-overlay-target="pace">00:49.410</span>
                 </span>
-                <span class="sob-cnt">
+                    <span class="sob-cnt">
                     SoB: <span class="sob" data-overlay-target="sob">00:49.410</span>
                 </span>
+                </div>
             </div>
         </div>
-        <button class="reset-message-cnt text-border hidden" data-overlay-target="reset" onclick="resetSpeedrun()">
-            Reset <span class="keyboard-text">R</span>
-        </button>
     </div>
-    <div class="timer-cnt">
-        <div class="timer" data-overlay-target="timer">
-
-        </div>
-    </div>
+    <button class="reset-message-cnt text-border hidden" data-overlay-target="reset" onclick="resetSpeedrun()">
+        Reset <span class="keyboard-text">R</span>
+    </button>
 </div>
 <div class="hero section" data-speed-section="hero" data-speed-index="0" data-controller="hero">
     <div class="inside">
