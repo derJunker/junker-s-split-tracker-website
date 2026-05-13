@@ -137,8 +137,8 @@ function translate(lang) {
     const map = translations[lang] || translations.en;
     document.documentElement.lang = lang;
 
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
+    document.querySelectorAll('[data-i18n], [data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n') || el.getAttribute('data-i18n-html');
         const text = map[key] ?? translations.en[key] ?? '';
         if (el.hasAttribute('data-i18n-html')) {
             el.innerHTML = text;
