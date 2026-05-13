@@ -77,6 +77,9 @@ export default class extends Controller {
         this.items.forEach(item => {
             item.classList.remove('faq-open')
         })
+        this.openedItems = new Set();
+        this.items = Array.from(this.element.querySelectorAll('.faq-item'));
+        this.total = this.items.length;
         this.element.classList.remove('all-opened')
     }
 }
