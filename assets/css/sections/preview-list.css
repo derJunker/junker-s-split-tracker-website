@@ -1,6 +1,6 @@
 .preview-list {
-    &.all-shown {
-
+    .right {
+        order: -1;
     }
     .preview-link {
         position: relative;
@@ -104,11 +104,14 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .left .preview-link .click-cnt .click-hint {
         top: 0;
         right: 0;
         transform: translate(+100%, -75%);
+    }
+    .preview-list .right {
+        order: 1;
     }
 }
 
