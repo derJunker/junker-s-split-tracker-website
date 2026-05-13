@@ -1,5 +1,5 @@
 .faq-section {
-    &>.inside {
+    &>.inside .faq-list {
         display: flex;
         flex-direction: column;
         gap: var(--gap-l);
@@ -66,7 +66,13 @@
                 overflow-y: auto;
                 padding-block: var(--padding-block);
                 background: rgba(0, 0, 0, 0.025);
-                visibility: hidden;
+            }
+
+            &:not(.faq-open) {
+                .faq-answer {
+                    visibility: hidden;
+                    transition: visibility 0s .5s
+                }
             }
 
             &.faq-open {

@@ -28,11 +28,17 @@
 </head>
 <body>
 <header data-controller="header" data-header-target="header">
-    <div class="logo-container">
-        <div class="logo media-container">
-            <img src="assets/clipboard.ico" alt="split tracker logo">
+    <a class="left" href="/">
+        <div class="logo-container">
+            <div class="logo media-container">
+                <img src="assets/clipboard.ico" alt="split tracker logo">
+            </div>
         </div>
-    </div>
+        <h1 class="page-name">
+            Junker's<br>
+            Split-Tracker
+        </h1>
+    </a>
     <button class="hamburger-wrapper" data-action="header#toggle">
         <span class="hamburger"> <span></span> <span></span> <span></span> </span>
     </button>
@@ -295,134 +301,136 @@
 <div class="faq-section section" data-controller="faq" data-speed-section="faq" data-speed-index="3">
     <div class="inside">
         <h2 data-i18n="faq_title" data-aos="fade-up">Frequently Asked Questions</h2>
-        <div class="faq-item-wrapper" data-aos="fade-up">
-            <div class="faq-item" data-controller="faq_item" data-faq_item-target="item">
-                <button class="faq-question" data-action="faq_item#toggle" data-faq_item-target="question">
+        <div class="faq-list">
+            <div class="faq-item-wrapper" data-aos="fade-up">
+                <div class="faq-item" data-controller="faq_item" data-faq_item-target="item">
+                    <button class="faq-question" data-action="faq_item#toggle" data-faq_item-target="question">
                     <span class="question-text"
                           data-i18n="faq_question_os">On what OS does the Split Tracker run?</span>
-                    <span class="media-container faq-icon faq-icon-open">
+                        <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
-                    <span class="media-container faq-icon faq-icon-closed">
+                        <span class="media-container faq-icon faq-icon-closed">
                     <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
                 </span>
-                </button>
-                <div class="faq-answer" data-faq_item-target="answer" data-i18n="faq_answer_os">
-                    Only Windows. There might be plans to make it compatible with Linux. If you are a Linux user let me
-                    know!
+                    </button>
+                    <div class="faq-answer" data-faq_item-target="answer" data-i18n="faq_answer_os">
+                        Only Windows. There might be plans to make it compatible with Linux. If you are a Linux user let me
+                        know!
+                    </div>
                 </div>
-            </div>
 
-        </div>
-        <div class="faq-item-wrapper" data-aos="fade-up">
-            <div class="faq-item" data-controller="faq_item" data-faq_item-target="item">
-                <button class="faq-question" data-action="faq_item#toggle" data-faq_item-target="question">
-                    <span class="question-text" data-i18n="faq_question_setup">How do I set it up?</span>
-                    <span class="media-container faq-icon faq-icon-open">
+            </div>
+            <div class="faq-item-wrapper" data-aos="fade-up">
+                <div class="faq-item" data-controller="faq_item" data-faq_item-target="item">
+                    <button class="faq-question" data-action="faq_item#toggle" data-faq_item-target="question">
+                        <span class="question-text" data-i18n="faq_question_setup">How do I set it up?</span>
+                        <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
-                    <span class="media-container faq-icon faq-icon-closed">
+                        <span class="media-container faq-icon faq-icon-closed">
                     <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
                 </span>
-                </button>
-                <div class="faq-answer" data-faq_item-target="answer" data-i18n-html="faq_answer_setup">
-                    Download the installer (there might be a virus warning, as the program isn't signed). There is a
-                    "Setup"
-                    tab in the program itself. If that isn't enough check out <a
-                        href="https://www.youtube.com/watch?v=TiV_zLOi0zc" target="_blank">this video</a>
+                    </button>
+                    <div class="faq-answer" data-faq_item-target="answer" data-i18n-html="faq_answer_setup">
+                        Download the installer (there might be a virus warning, as the program isn't signed). There is a
+                        "Setup"
+                        tab in the program itself. If that isn't enough check out <a
+                            href="https://www.youtube.com/watch?v=TiV_zLOi0zc" target="_blank">this video</a>
+                    </div>
                 </div>
-            </div>
 
-        </div>
-        <div class="faq-item-wrapper" data-aos="fade-up">
-            <div class="faq-item" data-controller="faq_item" data-faq_item-target="item">
-                <button class="faq-question" data-action="faq_item#toggle" data-faq_item-target="question">
-                    <span class="question-text" data-i18n="faq_question_feedback">How do i leave feedback / report a bug?</span>
-                    <span class="media-container faq-icon faq-icon-open">
+            </div>
+            <div class="faq-item-wrapper" data-aos="fade-up">
+                <div class="faq-item" data-controller="faq_item" data-faq_item-target="item">
+                    <button class="faq-question" data-action="faq_item#toggle" data-faq_item-target="question">
+                        <span class="question-text" data-i18n="faq_question_feedback">How do i leave feedback / report a bug?</span>
+                        <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
-                    <span class="media-container faq-icon faq-icon-closed">
+                        <span class="media-container faq-icon faq-icon-closed">
                     <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
                 </span>
-                </button>
-                <div class="faq-answer" data-faq_item-target="answer" data-i18n-html="faq_answer_feedback">
-                    Easy! Just click here <a
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSeXa6HiFg7rdbIEup3HRJPcMTwQiwQxi5fOc5Fe1AJEw4nPmQ/viewform?usp=publish-editor"
-                        target="_blank">here</a>.
+                    </button>
+                    <div class="faq-answer" data-faq_item-target="answer" data-i18n-html="faq_answer_feedback">
+                        Easy! Just click here <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSeXa6HiFg7rdbIEup3HRJPcMTwQiwQxi5fOc5Fe1AJEw4nPmQ/viewform?usp=publish-editor"
+                            target="_blank">here</a>.
+                    </div>
                 </div>
-            </div>
 
-        </div>
-        <div class="faq-item-wrapper" data-aos="fade-up">
-            <div class="faq-item" data-controller="faq_item" data-faq_item-target="item">
-                <button class="faq-question" data-action="faq_item#toggle" data-faq_item-target="question">
-                    <span class="question-text" data-i18n="faq_question_overlay">Does this tool work borderless and fullscreen?</span>
-                    <span class="media-container faq-icon faq-icon-open">
+            </div>
+            <div class="faq-item-wrapper" data-aos="fade-up">
+                <div class="faq-item" data-controller="faq_item" data-faq_item-target="item">
+                    <button class="faq-question" data-action="faq_item#toggle" data-faq_item-target="question">
+                        <span class="question-text" data-i18n="faq_question_overlay">Does this tool work borderless and fullscreen?</span>
+                        <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
-                    <span class="media-container faq-icon faq-icon-closed">
+                        <span class="media-container faq-icon faq-icon-closed">
                     <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
                 </span>
-                </button>
-                <div class="faq-answer" data-faq_item-target="answer" data-i18n="faq_answer_overlay">
-                    Sadly no, on Windows fullscreen does not allow other windows in front :(. So sadly you can only put
-                    this tool on your second monitor, or let it run in the background to track your golds.
+                    </button>
+                    <div class="faq-answer" data-faq_item-target="answer" data-i18n="faq_answer_overlay">
+                        Sadly no, on Windows fullscreen does not allow other windows in front :(. So sadly you can only put
+                        this tool on your second monitor, or let it run in the background to track your golds.
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="faq-item-wrapper" data-aos="fade-up">
-            <div class="faq-item" data-controller="faq_item" data-faq_item-target="item">
-                <button class="faq-question" data-action="faq_item#toggle" data-faq_item-target="question">
-                    <span class="question-text" data-i18n="faq_question_warning">Why is a virus warning showing up when i want to install it?</span>
-                    <span class="media-container faq-icon faq-icon-open">
+            <div class="faq-item-wrapper" data-aos="fade-up">
+                <div class="faq-item" data-controller="faq_item" data-faq_item-target="item">
+                    <button class="faq-question" data-action="faq_item#toggle" data-faq_item-target="question">
+                        <span class="question-text" data-i18n="faq_question_warning">Why is a virus warning showing up when i want to install it?</span>
+                        <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
-                    <span class="media-container faq-icon faq-icon-closed">
+                        <span class="media-container faq-icon faq-icon-closed">
                     <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
                 </span>
-                </button>
-                <div class="faq-answer" data-faq_item-target="answer" data-i18n="faq_answer_warning">
-                    Sry for that! Because the installer has no signed certificate, some virus programs give out a
-                    warning.
-                    If you don't trust it, don't use it^^. Otherwise you can also check out the source code on GitHub
-                    and ask around on the Pogostuck Discord.
+                    </button>
+                    <div class="faq-answer" data-faq_item-target="answer" data-i18n="faq_answer_warning">
+                        Sry for that! Because the installer has no signed certificate, some virus programs give out a
+                        warning.
+                        If you don't trust it, don't use it^^. Otherwise you can also check out the source code on GitHub
+                        and ask around on the Pogostuck Discord.
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="faq-item-wrapper" data-aos="fade-up">
-            <div class="faq-item" data-controller="faq_item" data-faq_item-target="item">
-                <button class="faq-question" data-action="faq_item#toggle" data-faq_item-target="question">
+            <div class="faq-item-wrapper" data-aos="fade-up">
+                <div class="faq-item" data-controller="faq_item" data-faq_item-target="item">
+                    <button class="faq-question" data-action="faq_item#toggle" data-faq_item-target="question">
                     <span class="question-text"
                           data-i18n="faq_question_awesome">Is this tool really that awesome?</span>
-                    <span class="media-container faq-icon faq-icon-open">
+                        <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
-                    <span class="media-container faq-icon faq-icon-closed">
+                        <span class="media-container faq-icon faq-icon-closed">
                     <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
                 </span>
-                </button>
-                <div class="faq-answer" data-faq_item-target="answer" data-i18n="faq_answer_awesome">
-                    Not sure, weird question to ask tbh.
+                    </button>
+                    <div class="faq-answer" data-faq_item-target="answer" data-i18n="faq_answer_awesome">
+                        Not sure, weird question to ask tbh.
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="faq-item-wrapper" data-aos="fade-up">
-            <div class="faq-item" data-controller="faq_item" data-faq_item-target="item">
-                <button class="faq-question" data-action="faq_item#toggle" data-faq_item-target="question">
-                    <span class="question-text" data-i18n="faq_question_support">How can i show appreciation?</span>
-                    <span class="media-container faq-icon faq-icon-open">
+            <div class="faq-item-wrapper" data-aos="fade-up">
+                <div class="faq-item" data-controller="faq_item" data-faq_item-target="item">
+                    <button class="faq-question" data-action="faq_item#toggle" data-faq_item-target="question">
+                        <span class="question-text" data-i18n="faq_question_support">How can i show appreciation?</span>
+                        <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
-                    <span class="media-container faq-icon faq-icon-closed">
+                        <span class="media-container faq-icon faq-icon-closed">
                     <img src="assets/frog-closed-eyes.ico" alt="split tracker logo">
                 </span>
-                </button>
-                <div class="faq-answer" data-faq_item-target="answer" data-i18n-html="faq_answer_support">
-                    Wow, so nice of you to ask. You don't have to pay anything to use the split tracker.<br>
-                    A lot of effort went into this, so if you want to <a
-                        href="https://buymeacoffee.com/derjunker" target="_blank"
-                        title="buy me a coffee">you can buy me a coffee
-                    here</a>
+                    </button>
+                    <div class="faq-answer" data-faq_item-target="answer" data-i18n-html="faq_answer_support">
+                        Wow, so nice of you to ask. You don't have to pay anything to use the split tracker.<br>
+                        A lot of effort went into this, so if you want to <a
+                            href="https://buymeacoffee.com/derjunker" target="_blank"
+                            title="buy me a coffee">you can buy me a coffee
+                        here</a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -59,6 +59,12 @@ h1 {
     line-height: 1.2;
 }
 
+.section h2 {
+    color: color-mix(var(--accent) 90%, black);
+    text-shadow: none;
+    margin-bottom: calc(var(--gap-l));
+}
+
 @media (min-width: 500px) {
     h1 {
         font-size: 3rem;
