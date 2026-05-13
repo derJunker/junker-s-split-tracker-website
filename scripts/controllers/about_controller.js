@@ -7,6 +7,12 @@ export default class extends Controller {
     connect() {
         if (this.speechParagraphTargets.length > 1) this.speechTarget.classList.add('has-next-text')
         this.showDefaultAvatar();
+        this.resizeHandler = () => this.updateSpeechDimensions();
+        document.addEventListener('resize', this.resizeHandler);
+    }
+
+    disconnect() {
+        document.removeEventListener('resize', this.resizeHandler);
     }
 
     next() {
@@ -27,14 +33,24 @@ export default class extends Controller {
 
     showCurrentText() {
         const target = this.speechParagraphTargets[this.indexValue]
+        this.updateSpeechDimensionsForTarget(target);
+
+        this.isSpeakingValue = true;
+        this.animateText(target.textContent.trim())
+    }
+
+    updateSpeechDimensions() {
+        console.log("hi ")
+        const target = this.speechParagraphTargets[this.indexValue]
+        this.updateSpeechDimensionsForTarget(target);
+    }
+
+    updateSpeechDimensionsForTarget(target) {
         const targetWidth = target.offsetWidth+1; // dont ask me why but sometimes there is a 1px diff
         const targetHeight = target.offsetHeight+1;
 
         this.speechTarget.style.setProperty("--speech-width", targetWidth+"px");
         this.speechTarget.style.setProperty("--speech-height", targetHeight+"px");
-
-        this.isSpeakingValue = true;
-        this.animateText(target.textContent.trim())
     }
 
     async animateText(text) {

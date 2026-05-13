@@ -38,15 +38,25 @@
     </button>
     <nav>
         <ul>
-            <li><a class="btn" data-i18n="btn_feedback" href="https://docs.google.com/forms/d/e/1FAIpQLSeXa6HiFg7rdbIEup3HRJPcMTwQiwQxi5fOc5Fe1AJEw4nPmQ/viewform?usp=publish-editor" target="_blank">Feedback</a></li>
-            <li><button id="nav-download-btn" class="btn" data-controller="download" data-action="click->download#open" data-i18n="download_button">Download</button></li>
-            <li><button id="lang-toggle" class="btn" data-controller="language" data-action="click->language#toggle">日本語</button></li>
+            <li><a class="btn" data-i18n="btn_feedback"
+                   href="https://docs.google.com/forms/d/e/1FAIpQLSeXa6HiFg7rdbIEup3HRJPcMTwQiwQxi5fOc5Fe1AJEw4nPmQ/viewform?usp=publish-editor"
+                   target="_blank">Feedback</a></li>
+            <li>
+                <button id="nav-download-btn" class="btn" data-controller="download" data-action="click->download#open"
+                        data-i18n="download_button">Download
+                </button>
+            </li>
+            <li>
+                <button id="lang-toggle" class="btn" data-controller="language" data-action="click->language#toggle">
+                    日本語
+                </button>
+            </li>
         </ul>
     </nav>
 </header>
 <div class="overlay text-border" data-controller="overlay">
     <div class="splits-cnt">
-        <div id="splits" >
+        <div id="splits">
             <div class="split" data-split-name="hero" data-split-id="0" data-overlay-target="split"><span
                     class="split-name" data-i18n="overlay_split_hero">Hero</span><span
                     class="split-resets">0</span><span class="split-diff"><span class="sign"></span><span
@@ -97,15 +107,18 @@
             <h1 data-i18n="hero_h1" data-aos="fade-down">
                 Level up your Pogostuck Speedrunning experience
             </h1>
-            <p data-i18n="hero_intro" data-aos="fade-down">A simple overlay for a split tracker with a bunch of new features.</p>
+            <p data-i18n="hero_intro" data-aos="fade-down">A simple overlay for a split tracker with a bunch of new
+                features.</p>
             <div data-aos="fade-down">
-                <a class="btn" href="https://github.com/derJunker/pogostuck-split-tracker/releases/latest" target="_blank"
-                        data-i18n="try_button">
+                <a class="btn" href="https://github.com/derJunker/pogostuck-split-tracker/releases/latest"
+                   target="_blank"
+                   data-i18n="try_button">
                     Try it out now!
                 </a>
             </div>
         </div>
-        <div class="config-window-preview media-container" data-aos="fade-up" data-aos-delay="500" data-aos-duration="2000" data-aos-offset="-300" data-hero-target="image">
+        <div class="config-window-preview media-container" data-aos="fade-up" data-aos-delay="500"
+             data-aos-duration="2000" data-aos-offset="-300" data-hero-target="image">
             <img src="assets/config-preferences.png" alt="split tracker config preferences">
         </div>
     </div>
@@ -127,7 +140,8 @@
                             <span data-i18n="feature_default">Default Pogostuck Split-Tracker Functionality</span>
                             <div class="click-hint">
                                 <div class="media-container arrow-container">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="4106.4824 49.5747 1048.3452 1283.8862"
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                         viewBox="4106.4824 49.5747 1048.3452 1283.8862"
                                          width="1048.35px" height="1283.89px">
                                         <polyline id="preview-arrow-path"
                                                   style="fill: none; stroke: rgb(0, 0, 0); stroke-width: 26px; stroke-linejoin: round; stroke-linecap: round;"
@@ -212,52 +226,64 @@
         </h2>
         <ul class="tile-list">
             <li class="tile-cnt" data-aos="fade-up" data-aos-delay="0">
-                <div class="tile" tabindex="0" data-configure-target="tile">
+                <div class="tile" tabindex="0" role="button" data-configure-target="tile"
+                     data-action="click->configure#toggle keydown.enter->configure#toggle keydown.space->configure#toggle">
 
                     <h3 data-i18n="configure_launch_title">Launch Pogostuck at the same time</h3>
-                    <p data-i18n="configure_launch_text">Just open the split-tracker and Pogostuck will open automatically.</p>
+                    <p data-i18n="configure_launch_text">Just open the split-tracker and Pogostuck will open
+                        automatically.</p>
 
                 </div>
             </li>
             <li class="tile-cnt" data-aos="fade-up" data-aos-delay="400">
-                <div class="tile" tabindex="0" data-configure-target="tile">
+                <div class="tile" tabindex="0" role="button" data-configure-target="tile"
+                     data-action="click->configure#toggle keydown.enter->configure#toggle keydown.space->configure#toggle">
 
                     <h3 data-i18n="configure_colors_title">Adjust Split Colors</h3>
-                    <p data-i18n="configure_colors_text">Change any of the used colors: fast, slow, gold splits and even gold pace.</p>
+                    <p data-i18n="configure_colors_text">Change any of the used colors: fast, slow, gold splits and even
+                        gold pace.</p>
 
                 </div>
             </li>
             <li class="tile-cnt" data-aos="fade-up" data-aos-delay="800">
-                <div class="tile" tabindex="0" data-configure-target="tile">
+                <div class="tile" tabindex="0" role="button" data-configure-target="tile"
+                     data-action="click->configure#toggle keydown.enter->configure#toggle keydown.space->configure#toggle">
 
                     <h3 data-i18n="configure_overlay_title">Use it as an overlay or on a second monitor</h3>
                     <p data-i18n="configure_overlay_text_1">If you play on fullscreen the overlay is not an option.</p>
-                    <p data-i18n="configure_overlay_text_2">Just set a background and put it on a 2nd monitor (or let it run in the background).</p>
+                    <p data-i18n="configure_overlay_text_2">Just set a background and put it on a 2nd monitor (or let it
+                        run in the background).</p>
 
                 </div>
             </li>
             <li class="tile-cnt" data-aos="fade-up" data-aos-delay="800">
-                <div class="tile" tabindex="0" data-configure-target="tile">
+                <div class="tile" tabindex="0" role="button" data-configure-target="tile"
+                     data-action="click->configure#toggle keydown.enter->configure#toggle keydown.space->configure#toggle">
 
                     <h3 data-i18n="configure_hide_title">Hide features you don't want</h3>
-                    <p data-i18n="configure_hide_text">You just want the gold splits but not the rest of the fuss? Sure thing, just hide them in the
+                    <p data-i18n="configure_hide_text">You just want the gold splits but not the rest of the fuss? Sure
+                        thing, just hide them in the
                         settings!</p>
 
                 </div>
             </li>
             <li class="tile-cnt" data-aos="fade-up" data-aos-delay="400">
-                <div class="tile" tabindex="0" data-configure-target="tile">
+                <div class="tile" tabindex="0" role="button" data-configure-target="tile"
+                     data-action="click->configure#toggle keydown.enter->configure#toggle keydown.space->configure#toggle">
 
                     <h3 data-i18n="configure_old_names_title">Old Split Names</h3>
-                    <p data-i18n-html="configure_old_names_text">I can't relate, but <span id="hover-pug">"some"</span> people like them.</p>
+                    <p data-i18n-html="configure_old_names_text">I can't relate, but <span id="hover-pug">"some"</span>
+                        people like them.</p>
 
                 </div>
             </li>
             <li class="tile-cnt" data-aos="fade-up" data-aos-delay="000">
-                <div class="tile" tabindex="0" data-configure-target="tile">
+                <div class="tile" tabindex="0" role="button" data-configure-target="tile"
+                     data-action="click->configure#toggle keydown.enter->configure#toggle keydown.space->configure#toggle">
 
                     <h3 data-i18n="configure_background_title">Add a Background Color or leave it transparent</h3>
-                    <p data-i18n="configure_background_text">Background is best for 2nd Monitors, transparent for an overlay.</p>
+                    <p data-i18n="configure_background_text">Background is best for 2nd Monitors, transparent for an
+                        overlay.</p>
 
                 </div>
             </li>
@@ -270,7 +296,8 @@
         <div class="faq-item-wrapper" data-aos="fade-up">
             <div class="faq-item" data-controller="faq_item" data-faq_item-target="item">
                 <button class="faq-question" data-action="faq_item#toggle" data-faq_item-target="question">
-                    <span class="question-text" data-i18n="faq_question_os">On what OS does the Split Tracker run?</span>
+                    <span class="question-text"
+                          data-i18n="faq_question_os">On what OS does the Split Tracker run?</span>
                     <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
@@ -336,7 +363,8 @@
                 </span>
                 </button>
                 <div class="faq-answer" data-faq_item-target="answer" data-i18n="faq_answer_overlay">
-                    Sadly no, on Windows fullscreen does not allow other windows in front :(. So sadly you can only put this tool on your second monitor, or let it run in the background to track your golds.
+                    Sadly no, on Windows fullscreen does not allow other windows in front :(. So sadly you can only put
+                    this tool on your second monitor, or let it run in the background to track your golds.
                 </div>
             </div>
         </div>
@@ -352,15 +380,18 @@
                 </span>
                 </button>
                 <div class="faq-answer" data-faq_item-target="answer" data-i18n="faq_answer_warning">
-                    Sry for that! Because the installer has no signed certificate, some virus programs give out a warning.
-                    If you don't trust it, don't use it^^. Otherwise you can also check out the source code on GitHub and ask around on the Pogostuck Discord.
+                    Sry for that! Because the installer has no signed certificate, some virus programs give out a
+                    warning.
+                    If you don't trust it, don't use it^^. Otherwise you can also check out the source code on GitHub
+                    and ask around on the Pogostuck Discord.
                 </div>
             </div>
         </div>
         <div class="faq-item-wrapper" data-aos="fade-up">
             <div class="faq-item" data-controller="faq_item" data-faq_item-target="item">
                 <button class="faq-question" data-action="faq_item#toggle" data-faq_item-target="question">
-                    <span class="question-text" data-i18n="faq_question_awesome">Is this tool really that awesome?</span>
+                    <span class="question-text"
+                          data-i18n="faq_question_awesome">Is this tool really that awesome?</span>
                     <span class="media-container faq-icon faq-icon-open">
                     <img src="assets/clipboard.ico" alt="split tracker logo">
                 </span>
@@ -398,7 +429,8 @@
 <div data-aos="fade-up" class="section separator">
     <div class="inside"></div>
 </div>
-<div class="section about" data-controller="about" data-about-index-value="0" data-about-is-speaking-value="false" data-about-skip-current-animation-value="false" data-speed-section="about" data-speed-index="4">
+<div class="section about dialog-done" data-controller="about" data-about-index-value="0" data-about-is-speaking-value="false"
+     data-about-skip-current-animation-value="false" data-speed-section="about" data-speed-index="4">
     <div class="inside">
         <div class="character-speech-cnt">
             <div class="character" data-aos="fade-up">
@@ -424,11 +456,13 @@
                     and i hope you like it.
                 </p>
                 <p data-about-target="speechParagraph" data-i18n="about_junker">
-                    I'm Junker. I enjoy playing/ speedrunning Pogostuck a lot :D. However, the integrated split-tracker was pretty basic.
+                    I'm Junker. I enjoy playing/ speedrunning Pogostuck a lot :D. However, the integrated split-tracker
+                    was pretty basic.
                     So i set out to improve upon it!
                 </p>
                 <p data-about-target="speechParagraph" data-i18n="about_how_it_works">
-                    It works by reading the Pogostuck log file for events like passing a split, etc.. With that information i can track stuff like gold splits and all the other features mentioned above.
+                    It works by reading the Pogostuck log file for events like passing a split, etc.. With that
+                    information i can track stuff like gold splits and all the other features mentioned above.
                 </p>
                 <p data-about-target="speechParagraph" data-i18n="about_feedback">
                     I hope you like it and feedback is greatly appreciated! The program is
@@ -438,22 +472,60 @@
             </div>
         </div>
         <div class="buttons">
-            <a class="btn" href="https://buymeacoffee.com/derjunker" data-i18n="cta_buy_me_a_coffee">Buy me a coffee</a>
-            <a class="btn" href="https://github.com/derJunker/pogostuck-split-tracker" target="_blank" data-i18n="cta_star_my_project">Star my project</a>
+            <a class="btn btn-bmc btn-icon" href="https://buymeacoffee.com/derjunker">
+                <div class="icon-container">
+                    <img src="/assets/bmc-brand-icon.svg" alt="buy me a coffee">
+                </div>
+                <span data-i18n="cta_buy_me_a_coffee">Buy me a coffee</span>
+            </a>
+            <a class="btn btn-github btn-icon" href="https://github.com/derJunker/pogostuck-split-tracker"
+               target="_blank">
+                <div class="icon-container">
+                    <img src="/assets/github.svg" alt="github">
+                </div>
+                <span data-i18n="cta_star_my_project">
+                    Star my project
+                </span>
+            </a>
         </div>
     </div>
 </div>
 <footer class="section">
     <div class="inside">
         <span data-i18n="creator">Made by @derjunker</span>
-        <a href="https://github.com/derJunker/pogostuck-split-tracker" target="_blank" data-i18n="a_github_page">Github
-            -Page</a>
-        <a href="https://github.com/derJunker/pogostuck-split-tracker/releases/latest" target="_blank"
-           data-i18n="a_latest_release">Latest
-            Split-Tracker Release</a>
-        <a href="https://www.youtube.com/watch?v=TiV_zLOi0zc" target="_blank" data-i18n="a_setup_guide">Setup Guide
-            (Video)</a>
-        <a href="https://discord.gg/pnqrjdWF7R" target="_blank" data-i18n="a_discord">Pogostuck Discord</a>
+        <a href="https://github.com/derJunker/pogostuck-split-tracker" target="_blank" class="footer-icon-link">
+            <div class="icon-container">
+                <img src="/assets/github.svg" alt="github">
+            </div>
+            <span data-i18n="a_github_page">Github
+            -Page</span>
+        </a>
+        <a href="https://www.youtube.com/watch?v=TiV_zLOi0zc" target="_blank" class="footer-icon-link">
+            <div class="icon-container">
+                <img src="/assets/youtube.svg" alt="youtube">
+            </div>
+            <span data-i18n="a_setup_guide">
+                Setup Guide (Video)
+            </span>
+        </a>
+        <a href="https://github.com/derJunker/pogostuck-split-tracker/releases/latest" target="_blank" class="footer-icon-link">
+            <div class="icon-container">
+                <img src="/assets/github.svg" alt="github">
+            </div>
+            <span data-i18n="a_latest_release">Latest Split-Tracker Release</span>
+        </a>
+        <a href="https://discord.gg/pnqrjdWF7R" target="_blank" class="footer-icon-link">
+            <div class="icon-container">
+                <img src="/assets/discord.svg" alt="discord">
+            </div>
+            <span data-i18n="a_discord">Pogostuck Discord</span>
+        </a>
+        <a href="https://buymeacoffee.com/derjunker" target="_blank" class="footer-icon-link">
+            <div class="icon-container bmc-container">
+                <img src="/assets/bmc-brand-icon.svg" alt="buy me a coffee">
+            </div>
+            <span data-i18n="cta_buy_me_a_coffee">Buy me a coffee</span>
+        </a>
         <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSeXa6HiFg7rdbIEup3HRJPcMTwQiwQxi5fOc5Fe1AJEw4nPmQ/viewform?usp=publish-editor"
                 target="_blank"

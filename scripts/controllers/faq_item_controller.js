@@ -7,17 +7,22 @@ export default class extends Controller {
     static targets = ['item', 'question', 'answer'];
 
     connect() {
-        // TODO if you would want to make it perfect, i would need a listener to these, but it's a minor edge case
+        this.updateHeights();
+        this.resizeHandler = () => this.updateHeights();
+        document.addEventListener('resize', this.resizeHandler);
+        AOS.refresh();
+    }
+
+    updateHeights() {
         this.answerHeight = this.answerTarget.getBoundingClientRect().height;
         this.questionHeight = this.questionTarget.getBoundingClientRect().height;
 
         this.itemTarget.style.setProperty("--question-height", this.questionHeight+ "px")
         this.itemTarget.style.setProperty("--answer-height", this.answerHeight + "px")
-        AOS.refresh();
     }
 
     disconnect() {
-
+        document.removeEventListener('resize', this.resizeHandler);
     }
 
     toggle() {

@@ -5,13 +5,21 @@
     border-radius: var(--border-radius);
     font-size: 1rem;
     border: 2px solid white;
-    transition: transform 0.2s ease-in, box-shadow 0.15s ease-in-out, border-color 0.25s ease-in;
+    transition-property: box-shadow, transform, border-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
     line-height: 1;
     display: inline-block;
+    box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
 .btn:focus {
     outline: transparent;
+}
+
+.btn:hover {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.3);
 }
 
 .btn.pressed:focus,
@@ -28,4 +36,34 @@ a:focus-visible,
 
 a.btn {
     text-decoration: none;
+}
+
+.btn-github {
+    background: #717171;
+}
+
+.btn-bmc {
+    background: #fd0;
+    .icon-container {
+        background: #fff;
+        border-radius: var(--border-radius);
+        padding: .1rem;
+        aspect-ratio: 1;
+    }
+}
+
+.btn.btn-icon {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--gap-m);
+    align-items: center;
+    .icon-container {
+        height: 1.5rem;
+        width: auto;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
 }

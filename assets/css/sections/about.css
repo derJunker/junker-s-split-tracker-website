@@ -64,8 +64,8 @@
                     transition-property: width, height;
                     transition-duration: 0.5s;
                     transition-timing-function: ease-in-out;
-                    width: var(--speech-width);
-                    height: var(--speech-height);
+                    width: min(var(--speech-width), 100%);
+                    height: min(var(--speech-height), 100%);
 
                     .next-icon-button {
                         position: absolute;
@@ -109,7 +109,7 @@
             display: inline-grid;
             grid-template-columns: 1fr 1fr;
             margin-inline: auto;
-            gap: var(--gap-m);
+            gap: var(--gap-l);
             .btn {
                 text-align: center;
             }
