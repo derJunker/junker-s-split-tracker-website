@@ -4,18 +4,37 @@ export default class extends Controller {
     static targets = ['image']
 
     connect() {
-        this.updateHeroImageHeight();
         this.resizeHandler = () => this.updateHeroImageHeight();
-        document.addEventListener('resize', this.resizeHandler);
+        this.heroImage = this.imageTarget.querySelector("img");
+
+        if (this.heroImage && !this.heroImage.complete) {
+            this.heroImage.addEventListener("load", this.resizeHandler);
+        }
+
+        this.resizeObserver = new ResizeObserver(this.resizeHandler);
+        this.resizeObserver.observe(this.imageTarget);
+
+        window.addEventListener("resize", this.resizeHandler);
+        this.updateHeroImageHeight();
     }
 
     updateHeroImageHeight() {
         const imageHeight = this.imageTarget.offsetHeight;
-        document.documentElement.style.setProperty("--hero-img-height", imageHeight+"px");
+        if (imageHeight > 0) {
+            document.documentElement.style.setProperty("--hero-img-height", imageHeight + "px");
+        }
     }
 
     disconnect() {
-        document.removeEventListener('resize', this.resizeHandler);
+        if (this.heroImage) {
+            this.heroImage.removeEventListener("load", this.resizeHandler);
+        }
+
+        if (this.resizeObserver) {
+            this.resizeObserver.disconnect();
+        }
+
+        window.removeEventListener("resize", this.resizeHandler);
     }
 
     // obligatory function, but does nothing in this case
