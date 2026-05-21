@@ -1,9 +1,12 @@
 import {Controller} from "@hotwired/stimulus";
+import AOS from 'aos';
 
 export default class extends Controller {
     static targets = ['image']
 
     connect() {
+        this.lastImageHeight = 0;
+        this.aosRefreshScheduled = false;
         this.resizeHandler = () => this.updateHeroImageHeight();
         this.heroImage = this.imageTarget.querySelector("img");
 
@@ -20,9 +23,25 @@ export default class extends Controller {
 
     updateHeroImageHeight() {
         const imageHeight = this.imageTarget.offsetHeight;
-        if (imageHeight > 0) {
+        if (imageHeight > 0 && imageHeight !== this.lastImageHeight) {
+            this.lastImageHeight = imageHeight;
             document.documentElement.style.setProperty("--hero-img-height", imageHeight + "px");
+            this.scheduleAosRefresh();
         }
+    }
+
+    scheduleAosRefresh() {
+        if (this.aosRefreshScheduled) {
+            return;
+        }
+
+        this.aosRefreshScheduled = true;
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                AOS.refreshHard();
+                this.aosRefreshScheduled = false;
+            });
+        });
     }
 
     disconnect() {

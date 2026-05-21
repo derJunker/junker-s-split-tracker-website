@@ -49,5 +49,10 @@ document.addEventListener("DOMContentLoaded", () => {
         offset: 120,
         once: true,
     });
+
+    window.addEventListener("load", () => {
+        AOS.refreshHard();
+    }, {once: true});
+
     startSpeedrun()
 });
